@@ -29,7 +29,7 @@
     <link rel="canonical" href="https://hakanbayraktar.github.io/" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👨‍💻</text></svg>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/avatar.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -118,7 +118,7 @@
 <body>
     <header class="navbar">
         <div class="container nav-inner">
-            <div class="logo">Hakan<span>Bayraktar</span></div>
+            <a class="logo" href="#home">Hakan<span>Bayraktar</span></a>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -1262,14 +1262,16 @@
         if (certCarouselTrack && certCards.length > 0) {
             let certCurrentIndex = 0;
             const totalCerts = certCards.length;
+            let certsPerView = window.innerWidth >= 900 ? 2 : 1;
+            let totalCertSlides = Math.ceil(totalCerts / certsPerView);
 
             // Create dots
             function createCertDots() {
                 certDotsContainer.innerHTML = '';
-                for (let i = 0; i < totalCerts; i++) {
+                for (let i = 0; i < totalCertSlides; i++) {
                     const dot = document.createElement('button');
                     dot.classList.add('carousel-dot');
-                    dot.setAttribute('aria-label', `Go to certification ${i + 1}`);
+                    dot.setAttribute('aria-label', `Go to certification slide ${i + 1}`);
                     if (i === 0) dot.classList.add('active');
                     dot.addEventListener('click', () => goToCertSlide(i));
                     certDotsContainer.appendChild(dot);
@@ -1279,8 +1281,8 @@
             // Update carousel position
             function updateCertCarousel() {
                 const cardWidth = certCards[0].offsetWidth;
-                const gap = 16;
-                const offset = -(certCurrentIndex * (cardWidth + gap));
+                const gap = 16; // 1rem gap
+                const offset = -(certCurrentIndex * certsPerView * (cardWidth + gap));
                 certCarouselTrack.style.transform = `translateX(${offset}px)`;
 
                 // Update dots
@@ -1290,7 +1292,7 @@
 
                 // Update button states
                 certPrevBtn.disabled = certCurrentIndex === 0;
-                certNextBtn.disabled = certCurrentIndex >= totalCerts - 1;
+                certNextBtn.disabled = certCurrentIndex >= totalCertSlides - 1;
             }
 
             // Go to specific slide
@@ -1309,7 +1311,7 @@
 
             // Next slide
             certNextBtn.addEventListener('click', () => {
-                if (certCurrentIndex < totalCerts - 1) {
+                if (certCurrentIndex < totalCertSlides - 1) {
                     certCurrentIndex++;
                     updateCertCarousel();
                 }
@@ -1320,7 +1322,18 @@
             window.addEventListener('resize', () => {
                 clearTimeout(certResizeTimer);
                 certResizeTimer = setTimeout(() => {
-                    updateCertCarousel();
+                    const newCertsPerView = window.innerWidth >= 900 ? 2 : 1;
+                    if (newCertsPerView !== certsPerView) {
+                        certsPerView = newCertsPerView;
+                        totalCertSlides = Math.ceil(totalCerts / certsPerView);
+                        if (certCurrentIndex >= totalCertSlides) {
+                            certCurrentIndex = totalCertSlides - 1;
+                        }
+                        createCertDots();
+                        updateCertCarousel();
+                    } else {
+                        updateCertCarousel();
+                    }
                 }, 250);
             });
 
