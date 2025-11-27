@@ -488,6 +488,30 @@
                             </article>
 
                             <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/django-ECS.jpg');" data-label="Django ECS"></div>
+                                <div class="project-body">
+                                    <h3>Production-Grade Django Application Platform on AWS ECS Fargate</h3>
+                                    <p>Architected a highly resilient, secure, and scalable Django platform on AWS using serverless containers (ECS Fargate) with Dual-Layer CI/CD and advanced observability.</p>
+                                    <ul class="chip-list">
+                                        <li>ECS Fargate · RDS Multi-AZ</li>
+                                        <li>GitHub Actions · CodePipeline</li>
+                                        <li>Managed Prometheus/Grafana</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Serverless Compute: Terraform-provisioned VPC with ECS Fargate running stateless Django tasks behind ALB, connected to HA RDS PostgreSQL Multi-AZ.</li>
+                                            <li>Dual-Layer CI/CD: GitHub Actions for rapid testing, Docker builds, ECR push, and Terraform Plans; AWS CodePipeline orchestrates governed end-to-end production deployments.</li>
+                                            <li>Security: Least-privilege IAM roles, Secrets Manager for credentials/Django secrets injected at runtime, secure S3 for static assets.</li>
+                                            <li>Advanced Observability: CloudWatch logs/metrics streamed via Kinesis Firehose to Amazon Managed Prometheus (AMP) and visualized in Amazon Managed Grafana (AMG).</li>
+                                            <li>Stack: AWS (ECS Fargate, RDS Multi-AZ, S3, VPC, ALB, ECR, Secrets Manager, CodePipeline, CloudWatch, AMP/AMG), Terraform, Docker, Django (Python), GitHub Actions.</li>
+                                            <li><a class="link" href="assets/django-ECS.jpg" target="_blank" rel="noreferrer">View architecture diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <article class="project-card">
                                 <div class="project-thumb" style="background-image:url('assets/centralized-log-management.jpg');" data-label="ELK Stack"></div>
                                 <div class="project-body">
                                     <h3>Centralized Log Management and Analytics (ELK)</h3>
