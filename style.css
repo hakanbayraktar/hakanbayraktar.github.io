@@ -1228,7 +1228,7 @@ details[open] summary {
 }
 
 .cert-card {
-    flex: 0 0 calc(50% - 0.5rem);
+    flex: 0 0 100%;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -1243,12 +1243,6 @@ details[open] summary {
 .cert-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 16px 45px rgba(15, 23, 42, 0.15);
-}
-
-@media (max-width: 899px) {
-    .cert-card {
-        flex: 0 0 100%;
-    }
 }
 
 .cert-badge {
