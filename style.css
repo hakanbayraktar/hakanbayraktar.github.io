@@ -541,20 +541,14 @@ nav a:hover {
 }
 
 .project-card {
-    flex: 0 0 calc(33.333% - 0.67rem);
+    flex: 0 0 calc(50% - 0.5rem);
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
     display: grid;
-    grid-template-rows: 170px auto;
+    grid-template-rows: 210px auto;
     box-shadow: var(--shadow);
-}
-
-@media (max-width: 1024px) {
-    .project-card {
-        flex: 0 0 calc(50% - 0.5rem);
-    }
 }
 
 @media (max-width: 640px) {
