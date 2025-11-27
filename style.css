@@ -1257,81 +1257,39 @@ details[open] summary {
     width: 64px;
     height: 64px;
     border-radius: 12px;
-    background: linear-gradient(135deg, #e0edff, #dbeafe);
-    border: 2px solid #93c5fd;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #1d4ed8;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .cert-badge.aws {
-    background: linear-gradient(135deg, #fff7ed, #fed7aa);
-    border-color: #fb923c;
-    color: #c2410c;
-}
-
-.cert-badge.aws::before {
-    content: "AWS";
-    font-size: 0.8rem;
+    background-image: url('https://cdn.simpleicons.org/amazonaws/FF9900');
 }
 
 .cert-badge.terraform {
-    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
-    border-color: #c084fc;
-    color: #7c3aed;
-}
-
-.cert-badge.terraform::before {
-    content: "TF";
-    font-size: 0.9rem;
+    background-image: url('https://cdn.simpleicons.org/terraform/7B42BC');
 }
 
 .cert-badge.kubernetes {
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-    border-color: #60a5fa;
-    color: #1e40af;
-}
-
-.cert-badge.kubernetes::before {
-    content: "K8s";
-    font-size: 0.8rem;
+    background-image: url('https://cdn.simpleicons.org/kubernetes/326CE5');
 }
 
 .cert-badge.redhat {
-    background: linear-gradient(135deg, #fee2e2, #fecaca);
-    border-color: #f87171;
-    color: #b91c1c;
-}
-
-.cert-badge.redhat::before {
-    content: "RH";
-    font-size: 0.9rem;
+    background-image: url('https://cdn.simpleicons.org/redhat/EE0000');
 }
 
 .cert-badge.security {
-    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-    border-color: #4ade80;
-    color: #15803d;
-}
-
-.cert-badge.security::before {
-    content: "CEH";
-    font-size: 0.8rem;
+    background-image: url('https://cdn.simpleicons.org/letsencrypt/003A70');
 }
 
 .cert-badge.microsoft {
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
-    border-color: #60a5fa;
-    color: #1e3a8a;
-}
-
-.cert-badge.microsoft::before {
-    content: "MS";
-    font-size: 0.9rem;
+    background-image: url('https://cdn.simpleicons.org/microsoft/5E5E5E');
 }
 
 .cert-body h4 {
