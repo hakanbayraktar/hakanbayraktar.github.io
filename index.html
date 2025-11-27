@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <title>Hakan Bayraktar | DevOps · SRE · Cloud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Hakan Bayraktar - DevOps, SRE ve Cloud projeleri, diyagramlar ve modern CV." />
+    <meta name="description" content="Hakan Bayraktar - AWS Certified Solutions Architect & DevOps Engineer. Cloud, Kubernetes, CI/CD, GitOps, training, projects and diagrams." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -148,29 +148,29 @@
         <section id="projeler" class="section alt">
             <div class="container section-head">
                 <div>
-                    <p class="eyebrow">Projeler</p>
+                    <p class="eyebrow">Projects</p>
                     <h2>Selected projects solving real-world needs</h2>
                 </div>
-                <p class="muted">Görseller placeholder, kendi ekran görüntülerinle güncelleyebilirsin.</p>
+                <p class="muted">Images are placeholders—swap with your own screenshots.</p>
             </div>
 
             <div class="container grid-3 gap project-grid">
                 <article class="project-card">
                     <div class="project-thumb" style="background-image:url('assets/project-eks-gitops.png');" data-label="EKS GitOps"></div>
                     <div class="project-body">
-                        <h3>EKS GitOps Platformu</h3>
-                        <p>Terraform ile kurulu, ArgoCD + Jenkins + Keycloak + SonarQube entegre üretim platformu.</p>
+                        <h3>EKS GitOps Platform</h3>
+                        <p>Production platform on AWS with Terraform, ArgoCD, Jenkins, Keycloak, and SonarQube.</p>
                         <ul class="chip-list">
                             <li>Terraform · EKS · ArgoCD</li>
                             <li>Jenkins · OIDC</li>
                             <li>Prometheus/Grafana</li>
                         </ul>
                         <details>
-                            <summary>Detay</summary>
+                            <summary>Details</summary>
                             <ul class="list">
-                                <li>VPC, EKS, bastion ve VPN erişimi Terraform ile tanımlandı.</li>
-                                <li>Jenkins CI + ArgoCD GitOps akışı; image taraması ve kalite için SonarQube.</li>
-                                <li>RabbitMQ ve MariaDB Operator ile stateful servisler; gözlemlenebilirlik stack’i.</li>
+                                <li>VPC, EKS, bastion, and VPN access defined with Terraform.</li>
+                                <li>Jenkins CI + ArgoCD GitOps; image scanning and quality gates via SonarQube.</li>
+                                <li>RabbitMQ and MariaDB Operator for stateful services; observability stack included.</li>
                             </ul>
                         </details>
                     </div>
@@ -179,19 +179,19 @@
                 <article class="project-card">
                     <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.png');" data-label="Laravel AWS"></div>
                     <div class="project-body">
-                        <h3>Laravel Modernizasyonu (AWS)</h3>
-                        <p>Legacy PHP uygulamasını AWS EC2 + RDS üzerine taşıyıp GitHub Actions ile CI/CD hızlandırıldı.</p>
+                        <h3>Laravel Modernization (AWS)</h3>
+                        <p>Modernized legacy PHP by migrating to AWS EC2 + RDS and accelerating CI/CD with GitHub Actions.</p>
                         <ul class="chip-list">
                             <li>EC2 · RDS · ALB</li>
                             <li>GitHub Actions</li>
                             <li>Security scans</li>
                         </ul>
                         <details>
-                            <summary>Detay</summary>
+                            <summary>Details</summary>
                             <ul class="list">
-                                <li>Test, güvenlik taraması ve deploy adımları otomatik; ~%40 daha hızlı release.</li>
-                                <li>Blue/Green benzeri trafiği ALB ile yönetilen güvenli dağıtım.</li>
-                                <li>Yedekleme ve gözlemlenebilirlik için CloudWatch + RDS snapshot politikaları.</li>
+                                <li>Automated tests, security scans, and deploy steps; ~40% faster releases.</li>
+                                <li>Safer rollouts with ALB-managed traffic shifts.</li>
+                                <li>Backups and observability via CloudWatch and RDS snapshot policies.</li>
                             </ul>
                         </details>
                     </div>
@@ -200,19 +200,19 @@
                 <article class="project-card">
                     <div class="project-thumb" style="background-image:url('assets/project-observability.png');" data-label="Observability"></div>
                     <div class="project-body">
-                        <h3>Gözlemlenebilirlik Paketi</h3>
-                        <p>Prometheus, Grafana, ELK ve OpenTelemetry ile 50+ sunucu için merkezi izleme.</p>
+                        <h3>Observability Package</h3>
+                        <p>Centralized monitoring for 50+ servers with Prometheus, Grafana, ELK, and OpenTelemetry.</p>
                         <ul class="chip-list">
                             <li>Prometheus · Grafana</li>
                             <li>ELK · Alerts</li>
                             <li>Capacity planning</li>
                         </ul>
                         <details>
-                            <summary>Detay</summary>
+                            <summary>Details</summary>
                             <ul class="list">
-                                <li>Ölçümler ve loglar için çoklu ortam toplanması, alarm ve SLO dashboard’ları.</li>
-                                <li>Agent dağıtımı Ansible ile standardize edildi; drift kontrolü sağlandı.</li>
-                                <li>Incident sonrası post-mortem için hazır panolar ve kayıtlar.</li>
+                                <li>Multi-environment metrics and logs, alerts, and SLO dashboards.</li>
+                                <li>Agent rollout standardized with Ansible; drift controlled.</li>
+                                <li>Dashboards and records ready for post-incident reviews.</li>
                             </ul>
                         </details>
                     </div>
@@ -221,19 +221,19 @@
                 <article class="project-card">
                     <div class="project-thumb" style="background-image:url('assets/project-cicd-security.png');" data-label="CI/CD"></div>
                     <div class="project-body">
-                        <h3>CI/CD & Güvenlik Tarama</h3>
-                        <p>GitLab CI ve Jenkins’te DinD pipeline’lar, image taraması, imzalama ve Nexus yayın akışı.</p>
+                        <h3>CI/CD & Security Scanning</h3>
+                        <p>GitLab CI and Jenkins DinD pipelines with image scanning, signing, and Nexus publishing.</p>
                         <ul class="chip-list">
                             <li>GitLab CI · Jenkins</li>
                             <li>DinD · Nexus</li>
                             <li>Security scanning</li>
                         </ul>
                         <details>
-                            <summary>Detay</summary>
+                            <summary>Details</summary>
                             <ul class="list">
-                                <li>Docker build + versiyonlama + imzalama; yayın sonrası otomatik kalite raporu.</li>
-                                <li>OWASP/Trivy taramalarıyla güvenlik kapıları; GitOps dağıtım tetikleri.</li>
-                                <li>Takımlar arası standardize şablonlarla tekrarlanabilir pipeline kütüphanesi.</li>
+                                <li>Docker build, versioning, signing; automated quality reports after publish.</li>
+                                <li>OWASP/Trivy security gates; GitOps deploy triggers.</li>
+                                <li>Reusable pipeline templates standardized across teams.</li>
                             </ul>
                         </details>
                     </div>
@@ -252,7 +252,7 @@
 
             <div class="container grid-3 gap diagram-grid">
                 <article class="card diagram-card">
-                    <h3>GitOps Akışı</h3>
+                    <h3>GitOps Flow</h3>
                     <svg viewBox="0 0 280 170" role="img">
                         <defs>
                             <marker id="arrow-gitops" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
@@ -275,7 +275,7 @@
                 </article>
 
                 <article class="card diagram-card">
-                    <h3>Yedekleme Mimarisi</h3>
+                    <h3>Backup Architecture</h3>
                     <svg viewBox="0 0 280 170" role="img">
                         <defs>
                             <marker id="arrow-backup" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
@@ -296,7 +296,7 @@
                 </article>
 
                 <article class="card diagram-card">
-                    <h3>Gözlemleme Akışı</h3>
+                    <h3>Observability Flow</h3>
                     <svg viewBox="0 0 280 170" role="img">
                         <defs>
                             <marker id="arrow-obs" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
@@ -438,6 +438,7 @@
                 <div class="section-actions">
                     <a class="btn primary" href="mailto:hbayraktar@gmail.com">hbayraktar@gmail.com</a>
                     <a class="btn ghost" href="https://www.linkedin.com/in/hakanbayraktar/" target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a class="btn ghost" href="https://github.com/hakanbayraktar" target="_blank" rel="noreferrer">GitHub</a>
                 </div>
             </div>
             <div class="container contact-grid">
@@ -447,6 +448,10 @@
                         <li>Prefer remote, Europe/Turkey time zones.</li>
                         <li>Ways of working: Sprint/Kanban, GitOps-first.</li>
                         <li>Documentation: diagrams, runbooks, SLO reports.</li>
+                        <li>LinkedIn: <a href="https://www.linkedin.com/in/hakanbayraktar/" target="_blank" rel="noreferrer">hakanbayraktar</a></li>
+                        <li>GitHub: <a href="https://github.com/hakanbayraktar" target="_blank" rel="noreferrer">hakanbayraktar</a></li>
+                        <li>X (Twitter): <a href="https://x.com/hbayraktar" target="_blank" rel="noreferrer">@hbayraktar</a></li>
+                        <li>Site: <a href="https://www.devopsatolyesi.com" target="_blank" rel="noreferrer">devopsatolyesi.com</a></li>
                     </ul>
                 </article>
                 <article class="card highlight">
@@ -460,7 +465,7 @@
     <footer class="footer">
         <div class="container footer-inner">
             <p>© <span id="year"></span> Hakan Bayraktar · DevOps & SRE</p>
-            <p class="small">GitHub Pages üzerinde yayınlandı.</p>
+            <p class="small">Published on GitHub Pages.</p>
         </div>
     </footer>
 
