@@ -1,202 +1,345 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
     <meta charset="UTF-8" />
-    <title>Hakan Bayraktar | DevOps & SRE</title>
+    <title>Hakan Bayraktar | DevOps · SRE · Cloud</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="DevOps, SRE & Cloud Engineer Portfolio - Hakan Bayraktar" />
+    <meta name="description" content="Hakan Bayraktar - DevOps, SRE ve Cloud projeleri, diyagramlar ve modern CV." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <!-- Navbar -->
     <header class="navbar">
         <div class="container nav-inner">
-            <div class="logo">Hakan <span>Bayraktar</span></div>
+            <div class="logo">Hakan<span>Bayraktar</span></div>
             <nav>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#hero">Ana Sayfa</a>
+                <a href="#profil">Profil & CV</a>
+                <a href="#projeler">Projeler</a>
+                <a href="#diyagramlar">Diyagramlar</a>
+                <a href="#iletisim">İletişim</a>
             </nav>
+            <a class="pill" href="#cv">CV indir</a>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="container hero-inner">
-            <div class="hero-text">
-                <p class="hello">Hello 👋</p>
-                <h1>I'm <span>Hakan Bayraktar</span></h1>
-                <h2>DevOps / Cloud / SRE Engineer</h2>
-                <p class="hero-desc">
-                    I design, automate and operate reliable cloud infrastructures on AWS & Kubernetes.
-                    I focus on IaC, CI/CD, observability and production-ready systems.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn primary">View Projects</a>
-                    <a href="#contact" class="btn ghost">Contact Me</a>
+    <main>
+        <section id="hero" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="eyebrow">DevOps · SRE · Cloud</div>
+                    <h1>Merhaba, ben Hakan Bayraktar.</h1>
+                    <p class="lede">
+                        AWS, Kubernetes ve Terraform ile üretime hazır platformlar kuruyor, CI/CD, gözlemlenebilirlik
+                        ve otomasyonu uçtan uca tasarlıyorum.
+                    </p>
+                    <div class="badge-row">
+                        <span class="badge">AWS & Kubernetes</span>
+                        <span class="badge">Terraform · GitOps</span>
+                        <span class="badge">SRE & Observability</span>
+                    </div>
+                    <div class="hero-actions">
+                        <a class="btn primary" href="#projeler">Projeleri Gör</a>
+                        <a class="btn ghost" href="#iletisim">Beraber Çalışalım</a>
+                    </div>
+                    <div class="meta-grid">
+                        <div>
+                            <p class="meta-label">Konum</p>
+                            <p class="meta-value">Türkiye · Remote</p>
+                        </div>
+                        <div>
+                            <p class="meta-label">Roller</p>
+                            <p class="meta-value">DevOps / Cloud / Platform</p>
+                        </div>
+                        <div>
+                            <p class="meta-label">Diller</p>
+                            <p class="meta-value">Türkçe (ana dil), İngilizce</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-panel">
+                    <div class="panel-top">
+                        <p class="panel-kicker">Durum</p>
+                        <h3>Yeni proje ve işbirliklerine açığım.</h3>
+                        <p class="panel-desc">Yeşil alan: platform mimarisi, otomasyon, güvenlik; Sarı alan:
+                            danışmanlık & eğitim.</p>
+                        <div class="status-row">
+                            <span class="status-pill live">Uygun</span>
+                            <span class="status-pill warm">Danışmanlık</span>
+                        </div>
+                    </div>
+                    <div class="panel-stats">
+                        <div>
+                            <p class="stat-number">30+</p>
+                            <p class="stat-label">CI/CD akışı</p>
+                        </div>
+                        <div>
+                            <p class="stat-number">50+ TB</p>
+                            <p class="stat-label">Yedeklenen veri</p>
+                        </div>
+                        <div>
+                            <p class="stat-number">99.9%</p>
+                            <p class="stat-label">Hedef SLA</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="hero-card">
-                <h3>Quick Info</h3>
-                <ul>
-                    <li><strong>Location:</strong> Türkiye (Remote worldwide)</li>
-                    <li><strong>Role:</strong> DevOps / Cloud Engineer</li>
-                    <li><strong>Focus:</strong> AWS · Kubernetes · Terraform · CI/CD</li>
-                    <li><strong>Languages:</strong> Turkish (native), English (B1/B2)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p>
-                I am a DevOps & Cloud Engineer focused on building practical, exam-ready and
-                production-grade infrastructures. I work with AWS (EC2, VPC, S3, RDS, EKS),
-                Docker, Kubernetes, Terraform and CI/CD tools like GitHub Actions and Jenkins.
-            </p>
-            <p>
-                I enjoy creating real-world DevOps projects, writing technical guides, and
-                helping others learn DevOps, SRE and cloud fundamentals.
-            </p>
-
-            <div class="grid-2 about-grid">
+        <section id="profil" class="section">
+            <div class="container section-head">
                 <div>
-                    <h3>Core Skills</h3>
-                    <ul class="tag-list">
-                        <li>AWS (EC2, VPC, S3, RDS, EKS)</li>
-                        <li>Docker & Kubernetes</li>
-                        <li>Terraform (IaC)</li>
-                        <li>GitHub Actions / Jenkins</li>
-                        <li>Monitoring & Logging</li>
-                        <li>Linux & Bash</li>
-                    </ul>
+                    <p class="eyebrow">Profil & CV</p>
+                    <h2>Güvenilir platformlar için DevOps + SRE odağı</h2>
+                    <p class="muted">İnşa ettiğim sistemler testten canlıya kadar otomasyon, görünürlük ve güvenliği
+                        kapsıyor.</p>
                 </div>
-                <div>
-                    <h3>What I’m focusing on now</h3>
-                    <ul class="bullet-list">
-                        <li>Site Reliability Engineering (SRE) mindset</li>
-                        <li>Production-ready GitOps & Kubernetes platforms</li>
-                        <li>AI + DevOps (AIOps & automation)</li>
-                        <li>Strong English communication for global clients</li>
-                    </ul>
+                <div class="section-actions">
+                    <a id="cv" class="btn primary" href="assets/Hakan_Bayraktar_CV.pdf" download>CV (PDF) indir</a>
+                    <span class="pill subtle">PDF bağlantısını kendi CV’n ile değiştir</span>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Experience -->
-    <section id="experience" class="section alt">
-        <div class="container">
-            <h2 class="section-title">Experience & Highlights</h2>
+            <div class="container grid-2 gap">
+                <article class="card">
+                    <div class="card-head">
+                        <p class="eyebrow">Hakkımda</p>
+                        <h3>Uçtan uca otomasyon, sürekli teslim ve yüksek gözlemlenebilirlik.</h3>
+                    </div>
+                    <ul class="list">
+                        <li>AWS, Kubernetes ve konteyner ekosisteminde üretim ortamları kurma.</li>
+                        <li>Terraform, GitOps, GitHub Actions/Jenkins ile tekrar edilebilir altyapı.</li>
+                        <li>Prometheus, Grafana, Loki, OpenTelemetry ile metrik, log ve izleme.</li>
+                        <li>Takımlara workshop ve dokümantasyon ile bilgi transferi.</li>
+                    </ul>
+                </article>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>DevOps / Cloud Engineer</h3>
+                <article class="card stack-card">
+                    <div class="stack">
+                        <div>
+                            <p class="meta-label">Platform</p>
+                            <p class="meta-value">AWS · Kubernetes · Docker · Linux</p>
+                        </div>
+                        <div>
+                            <p class="meta-label">IaC & Pipelines</p>
+                            <p class="meta-value">Terraform · Helm · ArgoCD · GitHub Actions</p>
+                        </div>
+                        <div>
+                            <p class="meta-label">Gözlemlenebilirlik</p>
+                            <p class="meta-value">Prometheus · Grafana · Loki · Tempo</p>
+                        </div>
+                        <div>
+                            <p class="meta-label">Güvenlik</p>
+                            <p class="meta-value">IAM · VPC · Secrets · Policy as Code</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projeler" class="section alt">
+            <div class="container section-head">
+                <div>
+                    <p class="eyebrow">Projeler</p>
+                    <h2>Gerçek dünya problemlerine odaklanan seçili projeler</h2>
+                </div>
+                <p class="muted">Görseller placeholder, kendi ekran görüntülerinle güncelleyebilirsin.</p>
+            </div>
+
+            <div class="container grid-3 gap project-grid">
+                <article class="project-card">
+                    <div class="project-thumb" data-label="GitOps Platformu"></div>
+                    <div class="project-body">
+                        <h3>Kubernetes GitOps Platformu</h3>
+                        <p>Çoklu ortam (dev/stage/prod) için ArgoCD tabanlı, IaC ile kurulan eksiksiz pipeline.</p>
+                        <ul class="chip-list">
+                            <li>ArgoCD + Helm + Kustomize</li>
+                            <li>GitHub Actions + OIDC</li>
+                            <li>Policy & drift kontrol</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-thumb" data-label="AWS Backup"></div>
+                    <div class="project-body">
+                        <h3>AWS Yedekleme Otomasyonu</h3>
+                        <p>EC2 + S3 + IAM rolleriyle kimlik yönetimli, zamanlanmış ve denetlenebilir yedekleme.</p>
+                        <ul class="chip-list">
+                            <li>Python + Boto3</li>
+                            <li>Terraform modülleri</li>
+                            <li>CloudWatch alarmları</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-thumb" data-label="Observability"></div>
+                    <div class="project-body">
+                        <h3>Gözlemlenebilirlik Paketi</h3>
+                        <p>Prometheus, Loki ve Tempo ile tek tık kurulum; servis haritaları ve SLO dashboard’ları.</p>
+                        <ul class="chip-list">
+                            <li>Grafana dashboards</li>
+                            <li>OpenTelemetry</li>
+                            <li>SLO/SLI takibi</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="diyagramlar" class="section">
+            <div class="container section-head">
+                <div>
+                    <p class="eyebrow">Mimari Diyagramlar</p>
+                    <h2>Projeleri hızlı anlatmak için şema kütüphanesi</h2>
+                </div>
+                <p class="muted">SVG’ler örnektir, kendi görsellerinle değiştirebilirsin.</p>
+            </div>
+
+            <div class="container grid-3 gap diagram-grid">
+                <article class="card diagram-card">
+                    <h3>GitOps Akışı</h3>
+                    <svg viewBox="0 0 280 170" role="img">
+                        <defs>
+                            <marker id="arrow-gitops" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
+                                orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                            </marker>
+                        </defs>
+                        <rect x="10" y="20" width="80" height="40" class="node" />
+                        <text x="50" y="45" class="node-text">Repo</text>
+                        <rect x="110" y="20" width="80" height="40" class="node accent" />
+                        <text x="150" y="45" class="node-text">CI</text>
+                        <rect x="210" y="20" width="60" height="40" class="node" />
+                        <text x="240" y="45" class="node-text">Image</text>
+                        <rect x="70" y="100" width="140" height="50" class="node" />
+                        <text x="140" y="130" class="node-text">K8s Cluster</text>
+                        <line x1="90" y1="40" x2="110" y2="40" class="arrow" marker-end="url(#arrow-gitops)" />
+                        <line x1="190" y1="40" x2="210" y2="40" class="arrow" marker-end="url(#arrow-gitops)" />
+                        <line x1="140" y1="60" x2="140" y2="100" class="arrow" marker-end="url(#arrow-gitops)" />
+                    </svg>
+                </article>
+
+                <article class="card diagram-card">
+                    <h3>Yedekleme Mimarisi</h3>
+                    <svg viewBox="0 0 280 170" role="img">
+                        <defs>
+                            <marker id="arrow-backup" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
+                                orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                            </marker>
+                        </defs>
+                        <rect x="30" y="30" width="80" height="50" class="node" />
+                        <text x="70" y="60" class="node-text">EC2 Agent</text>
+                        <rect x="170" y="30" width="80" height="50" class="node accent" />
+                        <text x="210" y="60" class="node-text">S3</text>
+                        <rect x="100" y="110" width="80" height="40" class="node" />
+                        <text x="140" y="135" class="node-text">IAM</text>
+                        <line x1="110" y1="55" x2="170" y2="55" class="arrow" marker-end="url(#arrow-backup)" />
+                        <line x1="190" y1="80" x2="140" y2="110" class="arrow" marker-end="url(#arrow-backup)" />
+                        <line x1="90" y1="80" x2="140" y2="110" class="arrow" marker-end="url(#arrow-backup)" />
+                    </svg>
+                </article>
+
+                <article class="card diagram-card">
+                    <h3>Gözlemleme Akışı</h3>
+                    <svg viewBox="0 0 280 170" role="img">
+                        <defs>
+                            <marker id="arrow-obs" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6"
+                                orient="auto-start-reverse">
+                                <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                            </marker>
+                        </defs>
+                        <rect x="25" y="30" width="80" height="50" class="node" />
+                        <text x="65" y="60" class="node-text">App</text>
+                        <rect x="115" y="30" width="70" height="50" class="node accent" />
+                        <text x="150" y="60" class="node-text">OTel</text>
+                        <rect x="205" y="30" width="60" height="50" class="node" />
+                        <text x="235" y="60" class="node-text">Loki</text>
+                        <rect x="110" y="110" width="80" height="40" class="node" />
+                        <text x="150" y="135" class="node-text">Grafana</text>
+                        <line x1="105" y1="55" x2="115" y2="55" class="arrow" marker-end="url(#arrow-obs)" />
+                        <line x1="185" y1="55" x2="205" y2="55" class="arrow" marker-end="url(#arrow-obs)" />
+                        <line x1="150" y1="80" x2="150" y2="110" class="arrow" marker-end="url(#arrow-obs)" />
+                    </svg>
+                </article>
+            </div>
+        </section>
+
+        <section id="deneyim" class="section alt">
+            <div class="container section-head">
+                <div>
+                    <p class="eyebrow">Deneyim</p>
+                    <h2>Bulut, otomasyon ve eğitim kesişiminde</h2>
+                </div>
+            </div>
+            <div class="container timeline">
+                <article class="timeline-item">
                     <p class="timeline-meta">Freelance · Remote</p>
-                    <ul>
-                        <li>Designed and deployed AWS-based infrastructures with EC2, S3, RDS and VPC.</li>
-                        <li>Built CI/CD pipelines with GitHub Actions and Jenkins for containerized applications.</li>
-                        <li>Implemented Terraform modules for repeatable environments.</li>
+                    <h3>DevOps / Cloud Engineer</h3>
+                    <ul class="list">
+                        <li>CI/CD, IaC ve güvenlik politikalarını kapsayan üretim ortamları kurdum.</li>
+                        <li>GitOps ile çoklu ortamda sürülebilir, izlenebilir dağıtımlar sağladım.</li>
+                        <li>Olay müdahalesi, post-mortem ve SLO/SLA süreçlerini yönettim.</li>
                     </ul>
-                </div>
-
-                <div class="timeline-item">
-                    <h3>Training & Labs</h3>
-                    <p class="timeline-meta">DevOps & Cloud Education</p>
-                    <ul>
-                        <li>Hands-on labs for Docker, Kubernetes, Terraform and AWS core services.</li>
-                        <li>Created study guides for GCP / AWS DevOps certifications.</li>
-                        <li>Helped students understand real-world DevOps projects and interview questions.</li>
+                </article>
+                <article class="timeline-item">
+                    <p class="timeline-meta">Mentorluk & Eğitim</p>
+                    <h3>DevOps / SRE İçerikleri</h3>
+                    <ul class="list">
+                        <li>AWS, Kubernetes ve Terraform üzerine workshop ve canlı lab’ler.</li>
+                        <li>Pratik mimari diyagramları ve dokümantasyon şablonları hazırladım.</li>
+                        <li>Takımlara bulut maliyeti, gözlemlenebilirlik ve güvenlik kültürü kazandırdım.</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Selected Projects</h2>
-
-            <div class="grid-3 project-grid">
-                <article class="card">
-                    <h3>AWS Backup Automation (EC2 + S3 + IAM)</h3>
-                    <p>
-                        Migrated local Python backup scripts to AWS EC2 with IAM roles and S3.
-                        Achieved 24/7 secure backups without hard-coded credentials.
-                    </p>
-                    <p class="card-tags">AWS · EC2 · S3 · IAM · Python · Terraform</p>
-                </article>
-
-                <article class="card">
-                    <h3>Kubernetes CI/CD Pipeline</h3>
-                    <p>
-                        Built a containerized application pipeline with GitHub Actions, Docker and Kubernetes.
-                        Automated build, test and deployment to a cluster.
-                    </p>
-                    <p class="card-tags">Kubernetes · Docker · GitHub Actions</p>
-                </article>
-
-                <article class="card">
-                    <h3>DevOps Study Guides & Labs</h3>
-                    <p>
-                        Created detailed study guides for SRE & GCP/AWS DevOps certifications with
-                        labs, diagrams and interview preparation.
-                    </p>
-                    <p class="card-tags">DevOps · SRE · Education</p>
                 </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section alt">
-        <div class="container">
-            <h2 class="section-title">Contact</h2>
-            <p>
-                Want to work together on a DevOps / Cloud / SRE project or need help
-                designing your infrastructure? Feel free to reach out.
-            </p>
-
-            <div class="contact-grid">
+        <section id="iletisim" class="section contact">
+            <div class="container section-head">
                 <div>
-                    <h3>Details</h3>
-                    <ul class="contact-list">
-                        <li><strong>Email:</strong> your-email@example.com</li>
-                        <li><strong>Location:</strong> Türkiye · Remote</li>
-                        <li><strong>Upwork:</strong> link to your profile</li>
-                        <li><strong>LinkedIn:</strong> link to your profile</li>
-                    </ul>
+                    <p class="eyebrow">İletişim</p>
+                    <h2>Beraber bir sonraki sürümü tasarlayalım</h2>
+                    <p class="muted">Altyapı modernizasyonu, pipeline kurulumları veya gözlemlenebilirlik ihtiyaçlarınız
+                        için yazın.</p>
                 </div>
-                <div>
-                    <h3>Short Message</h3>
-                    <p>
-                        “I help teams move from ad-hoc deployments to reliable, automated
-                        and observable cloud platforms.”
-                    </p>
+                <div class="section-actions">
+                    <a class="btn primary" href="mailto:email@ornek.com">email@ornek.com</a>
+                    <a class="btn ghost" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="container contact-grid">
+                <article class="card">
+                    <h3>Hızlı bilgiler</h3>
+                    <ul class="list">
+                        <li>Tercih: Uzaktan, Avrupa / Türkiye saat dilimi.</li>
+                        <li>Çalışma şekli: Sprint + Kanban, GitOps-first.</li>
+                        <li>Dokümantasyon: Diyagram, runbook, SLO raporları.</li>
+                    </ul>
+                </article>
+                <article class="card highlight">
+                    <h3>Mesaj bırak</h3>
+                    <p>“Takımınızı ad-hoc deploylardan otomasyon ve görünürlük odaklı bir platforma taşıyayım.”</p>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container footer-inner">
             <p>© <span id="year"></span> Hakan Bayraktar · DevOps & SRE</p>
-            <p class="small">
-                Built with ❤ and hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-            </p>
+            <p class="small">GitHub Pages üzerinde yayınlandı.</p>
         </div>
     </footer>
 
     <script>
-        // Yıl otomatik güncellensin
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
