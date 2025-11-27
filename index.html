@@ -188,6 +188,30 @@
                 </article>
 
                 <article class="project-card">
+                    <div class="project-thumb" style="background-image:url('assets/onpremise-kubernetes.jpeg');" data-label="On-Prem K8s"></div>
+                    <div class="project-body">
+                        <h3>On-Prem Kubernetes Platform (GitOps)</h3>
+                        <p>Designed and operated a highly available on-prem K8s platform with GitOps, centralized identity, and secure supply chain.</p>
+                        <ul class="chip-list">
+                            <li>Kubernetes (on-prem)</li>
+                            <li>ArgoCD · Keycloak</li>
+                            <li>Nexus · SonarQube · Postgres</li>
+                        </ul>
+                        <details>
+                            <summary>Details</summary>
+                            <ul class="list">
+                                <li>Built/managed on bare-metal/VMs with CSI storage, CNI networking, and ingress controllers.</li>
+                                <li>ArgoCD as the GitOps controller to standardize deployments and eliminate drift across teams.</li>
+                                <li>Keycloak SSO securing ArgoCD, SonarQube, and Kubernetes API; centralized IAM.</li>
+                                <li>Supply chain: Nexus as artifact registry; SonarQube quality gates in CI before deploy.</li>
+                                <li>Persistent data: HA PostgreSQL clusters for platform services (Keycloak, SonarQube metadata).</li>
+                                <li><a class="link" href="assets/onpremise-kubernetes.jpeg" target="_blank" rel="noreferrer">View platform diagram</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </article>
+
+                <article class="project-card">
                     <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.jpg');" data-label="Laravel AWS"></div>
                     <div class="project-body">
                         <h3>Laravel Modernization (AWS + CI/CD)</h3>
@@ -236,21 +260,23 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/project-cicd-security.png');" data-label="CI/CD"></div>
+                    <div class="project-thumb" style="background-image:url('assets/Docker-inDocker.jpg');" data-label="CI/CD"></div>
                     <div class="project-body">
-                        <h3>CI/CD & Security Scanning</h3>
-                        <p>GitLab CI and Jenkins DinD pipelines with image scanning, signing, and Nexus publishing.</p>
+                        <h3>Container-Native CI/CD with DinD</h3>
+                        <p>Modernized pipelines with Docker-in-Docker across GitLab CI and Jenkins; secure, isolated builds with integrated scanning.</p>
                         <ul class="chip-list">
+                            <li>Docker DinD</li>
                             <li>GitLab CI · Jenkins</li>
-                            <li>DinD · Nexus</li>
-                            <li>Security scanning</li>
+                            <li>Nexus · Trivy</li>
                         </ul>
                         <details>
                             <summary>Details</summary>
                             <ul class="list">
-                                <li>Docker build, versioning, signing; automated quality reports after publish.</li>
-                                <li>OWASP/Trivy security gates; GitOps deploy triggers.</li>
-                                <li>Reusable pipeline templates standardized across teams.</li>
+                                <li>Ephemeral DinD build jobs ensure isolated, consistent environments and no host conflicts.</li>
+                                <li>Standardized pipeline patterns across GitLab CI and Jenkins; same build logic, different tooling.</li>
+                                <li>Automated build + SemVer tagging; images pushed to Nexus as single source of truth.</li>
+                                <li>Shift-left security: container scans (e.g., Trivy/Clair) fail builds with CVEs before registry publish.</li>
+                                <li><a class="link" href="assets/Docker-inDocker.jpg" target="_blank" rel="noreferrer">View pipeline diagram</a></li>
                             </ul>
                         </details>
                     </div>
