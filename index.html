@@ -477,6 +477,29 @@
                         </details>
                     </div>
                 </article>
+
+                <article class="project-card">
+                    <div class="project-thumb" style="background-image:url('assets/centralized-log-management.jpg');" data-label="ELK Stack"></div>
+                    <div class="project-body">
+                        <h3>Centralized Log Management and Analytics (ELK)</h3>
+                        <p>Built an ELK-based platform with Beats + Logstash pipelines, optimized Elasticsearch ILM, and Kibana dashboards for real-time troubleshooting.</p>
+                        <ul class="chip-list">
+                            <li>Elasticsearch · Logstash · Kibana</li>
+                            <li>Filebeat</li>
+                            <li>ILM · Dashboards</li>
+                        </ul>
+                        <details>
+                            <summary>Details</summary>
+                            <ul class="list">
+                                <li>Filebeat on app/DB nodes ships logs to Logstash; Grok parsing enriches with GeoIP and user-agent.</li>
+                                <li>Elasticsearch tuned sharding/replication; ILM hot-warm-cold tiers keep 7-day hot retention while cutting costs.</li>
+                                <li>Kibana dashboards for error rates, latency, anomalies; teams use Discover for self-service search without SSH.</li>
+                                <li>Impact: ~50% faster MTTR, 100% fleet visibility, 30% less storage via automated archiving/deletion.</li>
+                                <li><a class="link" href="assets/centralized-log-management.jpg" target="_blank" rel="noreferrer">View architecture diagram (JPG)</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </article>
             </div>
         </section>
         <section id="resume" class="section alt">
