@@ -617,13 +617,68 @@ nav a:hover {
     font-size: 0.9rem;
 }
 
-.training-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Training Carousel */
+.training-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
     gap: 1rem;
 }
 
+.training-carousel-container {
+    overflow: hidden;
+    flex: 1;
+    border-radius: var(--radius);
+}
+
+.training-carousel-track {
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.training-carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+}
+
+.training-carousel-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.training-carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.training-carousel-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.training-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
 .training-card {
+    flex: 0 0 calc(33.333% - 0.667rem);
     border: 1px solid var(--border);
     border-radius: var(--radius);
     overflow: hidden;
@@ -631,6 +686,12 @@ nav a:hover {
     box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.training-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.15);
 }
 
 .training-media {
@@ -876,23 +937,36 @@ details[open] summary {
     border: 1px solid #fecaca;
 }
 
-.form-note {
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.9rem;
-    color: var(--muted);
+.form-divider {
+    position: relative;
     text-align: center;
+    margin: 1.5rem 0 1rem;
 }
 
-.form-note a {
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 600;
+.form-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--border);
 }
 
-.form-note a:hover {
-    text-decoration: underline;
+.form-divider span {
+    position: relative;
+    display: inline-block;
+    padding: 0 1rem;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.email-btn {
+    width: 100%;
+    background: linear-gradient(120deg, #2563eb, #0ea5e9);
 }
 
 .spinner {
@@ -1091,14 +1165,68 @@ details[open] summary {
     gap: 1rem;
 }
 
-/* Certifications */
-.cert-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Certifications Carousel */
+.cert-carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.cert-carousel-container {
+    overflow: hidden;
+    flex: 1;
+    border-radius: var(--radius);
+}
+
+.cert-carousel-track {
+    display: flex;
     gap: 1rem;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cert-carousel-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.cert-carousel-btn:hover:not(:disabled) {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.cert-carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.cert-carousel-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.cert-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 1rem;
 }
 
 .cert-card {
+    flex: 0 0 100%;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -1348,6 +1476,11 @@ details[open] summary {
     .article-card {
         flex: 0 0 calc(50% - 0.5rem);
     }
+
+    /* Training carousel responsive */
+    .training-card {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
 }
 
 @media (max-width: 600px) {
@@ -1384,5 +1517,24 @@ details[open] summary {
 
     .article-thumb {
         height: 150px;
+    }
+
+    /* Training carousel mobile */
+    .training-card {
+        flex: 0 0 100%;
+    }
+
+    .training-carousel-wrapper {
+        gap: 0.5rem;
+    }
+
+    .training-carousel-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .training-carousel-btn svg {
+        width: 18px;
+        height: 18px;
     }
 }
