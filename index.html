@@ -357,173 +357,192 @@
                 </div>
             </div>
 
-            <div class="container grid-3 gap project-grid">
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/project-eks-gitops.jpg');" data-label="EKS GitOps"></div>
-                    <div class="project-body">
-                        <h3>End-to-End EKS GitOps Platform</h3>
-                        <p>Production-grade AWS platform built with Terraform, GitOps (ArgoCD), Jenkins CI, OIDC, and observability.</p>
-                        <ul class="chip-list">
-                            <li>Terraform · EKS</li>
-                            <li>Jenkins · ArgoCD</li>
-                            <li>Keycloak · Prometheus/Grafana</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>IaC: VPC, EKS, bastion, VPN all codified with Terraform; single-command rebuild/DR.</li>
-                                <li>CI/CD: Jenkins builds/tests/images with SonarQube quality gates; ArgoCD syncs manifests from Git.</li>
-                                <li>Security: Keycloak OIDC for SSO; controlled access via VPN/Bastion.</li>
-                                <li>Stateful: RabbitMQ and MariaDB Operator managed natively on Kubernetes.</li>
-                                <li>Observability: Prometheus scraping, Grafana dashboards for health and capacity.</li>
-                                <li><a class="link" href="assets/project-eks-gitops.jpg" target="_blank" rel="noreferrer">View architecture (JPG)</a></li>
-                                <li><a class="link" href="assets/project-eks-gitops.png" target="_blank" rel="noreferrer">View architecture (PNG)</a></li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
+            <div class="container">
+                <div class="project-carousel-wrapper">
+                    <button class="project-carousel-btn prev" aria-label="Previous projects">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
 
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/onpremise-kubernetes.jpeg');" data-label="On-Prem K8s"></div>
-                    <div class="project-body">
-                        <h3>On-Prem Kubernetes Platform (GitOps)</h3>
-                        <p>Designed and operated a highly available on-prem K8s platform with GitOps, centralized identity, and secure supply chain.</p>
-                        <ul class="chip-list">
-                            <li>Kubernetes (on-prem)</li>
-                            <li>ArgoCD · Keycloak</li>
-                            <li>Nexus · SonarQube · Postgres</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>Built/managed on bare-metal/VMs with CSI storage, CNI networking, and ingress controllers.</li>
-                                <li>ArgoCD as the GitOps controller to standardize deployments and eliminate drift across teams.</li>
-                                <li>Keycloak SSO securing ArgoCD, SonarQube, and Kubernetes API; centralized IAM.</li>
-                                <li>Supply chain: Nexus as artifact registry; SonarQube quality gates in CI before deploy.</li>
-                                <li>Persistent data: HA PostgreSQL clusters for platform services (Keycloak, SonarQube metadata).</li>
-                                <li><a class="link" href="assets/onpremise-kubernetes.jpeg" target="_blank" rel="noreferrer">View platform diagram</a></li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
+                    <div class="project-carousel-container">
+                        <div class="project-carousel-track">
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/project-eks-gitops.jpg');" data-label="EKS GitOps"></div>
+                                <div class="project-body">
+                                    <h3>End-to-End EKS GitOps Platform</h3>
+                                    <p>Production-grade AWS platform built with Terraform, GitOps (ArgoCD), Jenkins CI, OIDC, and observability.</p>
+                                    <ul class="chip-list">
+                                        <li>Terraform · EKS</li>
+                                        <li>Jenkins · ArgoCD</li>
+                                        <li>Keycloak · Prometheus/Grafana</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>IaC: VPC, EKS, bastion, VPN all codified with Terraform; single-command rebuild/DR.</li>
+                                            <li>CI/CD: Jenkins builds/tests/images with SonarQube quality gates; ArgoCD syncs manifests from Git.</li>
+                                            <li>Security: Keycloak OIDC for SSO; controlled access via VPN/Bastion.</li>
+                                            <li>Stateful: RabbitMQ and MariaDB Operator managed natively on Kubernetes.</li>
+                                            <li>Observability: Prometheus scraping, Grafana dashboards for health and capacity.</li>
+                                            <li><a class="link" href="assets/project-eks-gitops.jpg" target="_blank" rel="noreferrer">View architecture (JPG)</a></li>
+                                            <li><a class="link" href="assets/project-eks-gitops.png" target="_blank" rel="noreferrer">View architecture (PNG)</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
 
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.jpg');" data-label="Laravel AWS"></div>
-                    <div class="project-body">
-                        <h3>Laravel Modernization (AWS + CI/CD)</h3>
-                        <p>Migrated legacy PHP Laravel to AWS EC2/RDS with highly available architecture and automated GitHub Actions pipeline.</p>
-                        <ul class="chip-list">
-                            <li>EC2 · RDS · ALB</li>
-                            <li>GitHub Actions</li>
-                            <li>Security scans</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>AWS migration: EC2 with Auto Scaling + ALB for HA/elasticity; RDS for managed relational DB.</li>
-                                <li>CI/CD: GitHub Actions runs PHPUnit, static analysis, and security scans on every PR; zero-downtime deploys on approval.</li>
-                                <li>Impact: ~40% faster release lead time; standardized quality gates reduced manual errors.</li>
-                                <li>Stack: PHP (Laravel), AWS (EC2, RDS, ALB, ASG), GitHub Actions, Linux, Docker (build envs).</li>
-                                <li><a class="link" href="assets/project-laravel-modernization.jpg" target="_blank" rel="noreferrer">View architecture preview (JPG)</a></li>
-                                <li><a class="link" href="assets/project-laravel-modernization.png" target="_blank" rel="noreferrer">View architecture diagram (PNG)</a></li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/onpremise-kubernetes.jpeg');" data-label="On-Prem K8s"></div>
+                                <div class="project-body">
+                                    <h3>On-Prem Kubernetes Platform (GitOps)</h3>
+                                    <p>Designed and operated a highly available on-prem K8s platform with GitOps, centralized identity, and secure supply chain.</p>
+                                    <ul class="chip-list">
+                                        <li>Kubernetes (on-prem)</li>
+                                        <li>ArgoCD · Keycloak</li>
+                                        <li>Nexus · SonarQube · Postgres</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Built/managed on bare-metal/VMs with CSI storage, CNI networking, and ingress controllers.</li>
+                                            <li>ArgoCD as the GitOps controller to standardize deployments and eliminate drift across teams.</li>
+                                            <li>Keycloak SSO securing ArgoCD, SonarQube, and Kubernetes API; centralized IAM.</li>
+                                            <li>Supply chain: Nexus as artifact registry; SonarQube quality gates in CI before deploy.</li>
+                                            <li>Persistent data: HA PostgreSQL clusters for platform services (Keycloak, SonarQube metadata).</li>
+                                            <li><a class="link" href="assets/onpremise-kubernetes.jpeg" target="_blank" rel="noreferrer">View platform diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
 
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/project-observability.jpg');" data-label="Observability"></div>
-                    <div class="project-body">
-                        <h3>Enterprise-Grade Monitoring and Observability</h3>
-                        <p>Centralized Prometheus/Grafana stack for 50+ servers, shifting from reactive incidents to proactive operations.</p>
-                        <ul class="chip-list">
-                            <li>Prometheus · Grafana</li>
-                            <li>Alertmanager</li>
-                            <li>node_exporter</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>Prometheus TSDB scraping via HTTP pull; exporters on 50+ Linux/Windows nodes for CPU, memory, disk, network.</li>
-                                <li>Grafana dashboards with USE method and capacity-planning views for long-term forecasting.</li>
-                                <li>Alertmanager rules (high CPU, disk space, service down) routed to Slack/PagerDuty to cut MTTD.</li>
-                                <li>100% fleet visibility; data-driven hardware planning and proactive scaling.</li>
-                                <li>Stack: Prometheus, Grafana, Alertmanager, node_exporter, Linux, Docker.</li>
-                                <li><a class="link" href="assets/project-observability.jpg" target="_blank" rel="noreferrer">View monitoring architecture</a></li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.jpg');" data-label="Laravel AWS"></div>
+                                <div class="project-body">
+                                    <h3>Laravel Modernization (AWS + CI/CD)</h3>
+                                    <p>Migrated legacy PHP Laravel to AWS EC2/RDS with highly available architecture and automated GitHub Actions pipeline.</p>
+                                    <ul class="chip-list">
+                                        <li>EC2 · RDS · ALB</li>
+                                        <li>GitHub Actions</li>
+                                        <li>Security scans</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>AWS migration: EC2 with Auto Scaling + ALB for HA/elasticity; RDS for managed relational DB.</li>
+                                            <li>CI/CD: GitHub Actions runs PHPUnit, static analysis, and security scans on every PR; zero-downtime deploys on approval.</li>
+                                            <li>Impact: ~40% faster release lead time; standardized quality gates reduced manual errors.</li>
+                                            <li>Stack: PHP (Laravel), AWS (EC2, RDS, ALB, ASG), GitHub Actions, Linux, Docker (build envs).</li>
+                                            <li><a class="link" href="assets/project-laravel-modernization.jpg" target="_blank" rel="noreferrer">View architecture preview (JPG)</a></li>
+                                            <li><a class="link" href="assets/project-laravel-modernization.png" target="_blank" rel="noreferrer">View architecture diagram (PNG)</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
 
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/Docker-inDocker.jpg');" data-label="CI/CD"></div>
-                    <div class="project-body">
-                        <h3>Container-Native CI/CD with DinD</h3>
-                        <p>Modernized pipelines with Docker-in-Docker across GitLab CI and Jenkins; secure, isolated builds with integrated scanning.</p>
-                        <ul class="chip-list">
-                            <li>Docker DinD</li>
-                            <li>GitLab CI · Jenkins</li>
-                            <li>Nexus · Trivy</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>Ephemeral DinD build jobs ensure isolated, consistent environments and no host conflicts.</li>
-                                <li>Standardized pipeline patterns across GitLab CI and Jenkins; same build logic, different tooling.</li>
-                                <li>Automated build + SemVer tagging; images pushed to Nexus as single source of truth.</li>
-                                <li>Shift-left security: container scans (e.g., Trivy/Clair) fail builds with CVEs before registry publish.</li>
-                                <li><a class="link" href="assets/Docker-inDocker.jpg" target="_blank" rel="noreferrer">View pipeline diagram</a></li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/project-observability.jpg');" data-label="Observability"></div>
+                                <div class="project-body">
+                                    <h3>Enterprise-Grade Monitoring and Observability</h3>
+                                    <p>Centralized Prometheus/Grafana stack for 50+ servers, shifting from reactive incidents to proactive operations.</p>
+                                    <ul class="chip-list">
+                                        <li>Prometheus · Grafana</li>
+                                        <li>Alertmanager</li>
+                                        <li>node_exporter</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Prometheus TSDB scraping via HTTP pull; exporters on 50+ Linux/Windows nodes for CPU, memory, disk, network.</li>
+                                            <li>Grafana dashboards with USE method and capacity-planning views for long-term forecasting.</li>
+                                            <li>Alertmanager rules (high CPU, disk space, service down) routed to Slack/PagerDuty to cut MTTD.</li>
+                                            <li>100% fleet visibility; data-driven hardware planning and proactive scaling.</li>
+                                            <li>Stack: Prometheus, Grafana, Alertmanager, node_exporter, Linux, Docker.</li>
+                                            <li><a class="link" href="assets/project-observability.jpg" target="_blank" rel="noreferrer">View monitoring architecture</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
 
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/centralized-log-management.jpg');" data-label="ELK Stack"></div>
-                    <div class="project-body">
-                        <h3>Centralized Log Management and Analytics (ELK)</h3>
-                        <p>Built an ELK-based platform with Beats + Logstash pipelines, optimized Elasticsearch ILM, and Kibana dashboards for real-time troubleshooting.</p>
-                        <ul class="chip-list">
-                            <li>Elasticsearch · Logstash · Kibana</li>
-                            <li>Filebeat</li>
-                            <li>ILM · Dashboards</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>Filebeat on app/DB nodes ships logs to Logstash; Grok parsing enriches with GeoIP and user-agent.</li>
-                                <li>Elasticsearch tuned sharding/replication; ILM hot-warm-cold tiers keep 7-day hot retention while cutting costs.</li>
-                                <li>Kibana dashboards for error rates, latency, anomalies; teams use Discover for self-service search without SSH.</li>
-                                <li>Impact: ~50% faster MTTR, 100% fleet visibility, 30% less storage via automated archiving/deletion.</li>
-                                <li><a class="link" href="assets/centralized-log-management.jpg" target="_blank" rel="noreferrer">View architecture diagram (JPG)</a></li>
-                            </ul>
-                        </details>
-                    </div>
-                </article>
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/Docker-inDocker.jpg');" data-label="CI/CD"></div>
+                                <div class="project-body">
+                                    <h3>Container-Native CI/CD with DinD</h3>
+                                    <p>Modernized pipelines with Docker-in-Docker across GitLab CI and Jenkins; secure, isolated builds with integrated scanning.</p>
+                                    <ul class="chip-list">
+                                        <li>Docker DinD</li>
+                                        <li>GitLab CI · Jenkins</li>
+                                        <li>Nexus · Trivy</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Ephemeral DinD build jobs ensure isolated, consistent environments and no host conflicts.</li>
+                                            <li>Standardized pipeline patterns across GitLab CI and Jenkins; same build logic, different tooling.</li>
+                                            <li>Automated build + SemVer tagging; images pushed to Nexus as single source of truth.</li>
+                                            <li>Shift-left security: container scans (e.g., Trivy/Clair) fail builds with CVEs before registry publish.</li>
+                                            <li><a class="link" href="assets/Docker-inDocker.jpg" target="_blank" rel="noreferrer">View pipeline diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
 
-                <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/doks-deployment.jpg');" data-label="DOKS Angular"></div>
-                    <div class="project-body">
-                        <h3>Scalable Angular SPA on DigitalOcean Kubernetes</h3>
-                        <p>Terraform-provisioned DOKS + DOCR with GitHub Actions CI/CD, multi-stage builds, and secure ingress/TLS for Angular SPA delivery.</p>
-                        <ul class="chip-list">
-                            <li>Terraform · DOKS · DOCR</li>
-                            <li>Angular · Docker · Nginx</li>
-                            <li>GitHub Actions · Cert-Manager</li>
-                        </ul>
-                        <details>
-                            <summary>Details</summary>
-                            <ul class="list">
-                                <li>IaC: Terraform builds Kubernetes cluster, registry, networking on DigitalOcean; full env up/down with one command.</li>
-                                <li>Images: Multi-stage Docker builds compile Angular then serve static assets from Nginx alpine, cutting image size 80%.</li>
-                                <li>Delivery: GitHub Actions builds/tags/pushes to DOCR and triggers rolling updates for zero-downtime deploys.</li>
-                                <li>Ingress: Nginx Ingress + Cert-Manager automates Let’s Encrypt TLS for HTTPS by default.</li>
-                                <li>Impact: Reusable SPA template reduces setup from days to minutes; 99.9% uptime via K8s self-healing and rolling updates.</li>
-                                <li><a class="link" href="assets/doks-deployment.jpg" target="_blank" rel="noreferrer">View deployment diagram (JPG)</a></li>
-                            </ul>
-                        </details>
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/centralized-log-management.jpg');" data-label="ELK Stack"></div>
+                                <div class="project-body">
+                                    <h3>Centralized Log Management and Analytics (ELK)</h3>
+                                    <p>Built an ELK-based platform with Beats + Logstash pipelines, optimized Elasticsearch ILM, and Kibana dashboards for real-time troubleshooting.</p>
+                                    <ul class="chip-list">
+                                        <li>Elasticsearch · Logstash · Kibana</li>
+                                        <li>Filebeat</li>
+                                        <li>ILM · Dashboards</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Filebeat on app/DB nodes ships logs to Logstash; Grok parsing enriches with GeoIP and user-agent.</li>
+                                            <li>Elasticsearch tuned sharding/replication; ILM hot-warm-cold tiers keep 7-day hot retention while cutting costs.</li>
+                                            <li>Kibana dashboards for error rates, latency, anomalies; teams use Discover for self-service search without SSH.</li>
+                                            <li>Impact: ~50% faster MTTR, 100% fleet visibility, 30% less storage via automated archiving/deletion.</li>
+                                            <li><a class="link" href="assets/centralized-log-management.jpg" target="_blank" rel="noreferrer">View architecture diagram (JPG)</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/doks-deployment.jpg');" data-label="DOKS Angular"></div>
+                                <div class="project-body">
+                                    <h3>Scalable Angular SPA on DigitalOcean Kubernetes</h3>
+                                    <p>Terraform-provisioned DOKS + DOCR with GitHub Actions CI/CD, multi-stage builds, and secure ingress/TLS for Angular SPA delivery.</p>
+                                    <ul class="chip-list">
+                                        <li>Terraform · DOKS · DOCR</li>
+                                        <li>Angular · Docker · Nginx</li>
+                                        <li>GitHub Actions · Cert-Manager</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>IaC: Terraform builds Kubernetes cluster, registry, networking on DigitalOcean; full env up/down with one command.</li>
+                                            <li>Images: Multi-stage Docker builds compile Angular then serve static assets from Nginx alpine, cutting image size 80%.</li>
+                                            <li>Delivery: GitHub Actions builds/tags/pushes to DOCR and triggers rolling updates for zero-downtime deploys.</li>
+                                            <li>Ingress: Nginx Ingress + Cert-Manager automates Let’s Encrypt TLS for HTTPS by default.</li>
+                                            <li>Impact: Reusable SPA template reduces setup from days to minutes; 99.9% uptime via K8s self-healing and rolling updates.</li>
+                                            <li><a class="link" href="assets/doks-deployment.jpg" target="_blank" rel="noreferrer">View deployment diagram (JPG)</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </article>
+
+                    <button class="project-carousel-btn next" aria-label="Next projects">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="project-carousel-dots"></div>
             </div>
         </section>
         <section id="resume" class="section alt">
@@ -1304,6 +1323,92 @@
                     updateCarousel();
                 }
             });
+        }
+
+        // Projects carousel functionality
+        const projectCarouselTrack = document.querySelector('.project-carousel-track');
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectPrevBtn = document.querySelector('.project-carousel-btn.prev');
+        const projectNextBtn = document.querySelector('.project-carousel-btn.next');
+        const projectDotsContainer = document.querySelector('.project-carousel-dots');
+
+        if (projectCarouselTrack && projectCards.length > 0) {
+            let projectCurrentIndex = 0;
+            const totalProjects = projectCards.length;
+
+            function getProjectsPerView() {
+                if (window.innerWidth >= 1100) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            }
+
+            let projectsPerView = getProjectsPerView();
+            let totalProjectSlides = Math.ceil(totalProjects / projectsPerView);
+
+            function createProjectDots() {
+                projectDotsContainer.innerHTML = '';
+                for (let i = 0; i < totalProjectSlides; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-dot');
+                    dot.setAttribute('aria-label', `Go to project slide ${i + 1}`);
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToProjectSlide(i));
+                    projectDotsContainer.appendChild(dot);
+                }
+            }
+
+            function updateProjectCarousel() {
+                const cardWidth = projectCards[0].offsetWidth;
+                const gap = 16; // 1rem gap
+                const offset = -(projectCurrentIndex * projectsPerView * (cardWidth + gap));
+                projectCarouselTrack.style.transform = `translateX(${offset}px)`;
+
+                document.querySelectorAll('.project-carousel-dots .carousel-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === projectCurrentIndex);
+                });
+
+                projectPrevBtn.disabled = projectCurrentIndex === 0;
+                projectNextBtn.disabled = projectCurrentIndex >= totalProjectSlides - 1;
+            }
+
+            function goToProjectSlide(index) {
+                projectCurrentIndex = index;
+                updateProjectCarousel();
+            }
+
+            projectPrevBtn.addEventListener('click', () => {
+                if (projectCurrentIndex > 0) {
+                    projectCurrentIndex--;
+                    updateProjectCarousel();
+                }
+            });
+
+            projectNextBtn.addEventListener('click', () => {
+                if (projectCurrentIndex < totalProjectSlides - 1) {
+                    projectCurrentIndex++;
+                    updateProjectCarousel();
+                }
+            });
+
+            let projectResizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(projectResizeTimer);
+                projectResizeTimer = setTimeout(() => {
+                    const newPerView = getProjectsPerView();
+                    if (newPerView !== projectsPerView) {
+                        projectsPerView = newPerView;
+                        totalProjectSlides = Math.ceil(totalProjects / projectsPerView);
+                        if (projectCurrentIndex >= totalProjectSlides) {
+                            projectCurrentIndex = totalProjectSlides - 1;
+                        }
+                        createProjectDots();
+                    }
+                    updateProjectCarousel();
+                }, 250);
+            });
+
+            createProjectDots();
+            updateProjectCarousel();
         }
 
         // Certifications carousel functionality
