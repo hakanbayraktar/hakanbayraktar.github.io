@@ -1187,6 +1187,13 @@ details[open] summary {
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.cert-slide {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .cert-carousel-btn {
     width: 36px;
     height: 36px;
