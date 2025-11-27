@@ -1284,7 +1284,7 @@
 
             // Update carousel position
             function updateCertCarousel() {
-                const slideWidth = certSlides[0].offsetWidth;
+                const slideWidth = certSlides[0].getBoundingClientRect().width;
                 const gap = 16; // 1rem gap
                 const offset = -(certCurrentIndex * (slideWidth + gap));
                 certCarouselTrack.style.transform = `translateX(${offset}px)`;
