@@ -18,15 +18,20 @@
     <header class="navbar">
         <div class="container nav-inner">
             <div class="logo">Hakan<span>Bayraktar</span></div>
-            <nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#resume">Resume</a>
+                <a href="#resume">Experience</a>
                 <a href="#projects">Projects</a>
-                <a href="#training">Training</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a class="pill" href="https://docs.google.com/document/d/1pPn1MhG-YN19O8LtYAuhQoycKrOXxYmi/edit?usp=sharing&ouid=101251433821200801934&rtpof=true&sd=true" target="_blank" rel="noreferrer">Download CV</a>
+            <a class="pill nav-cv-btn" href="https://docs.google.com/document/d/1pPn1MhG-YN19O8LtYAuhQoycKrOXxYmi/edit?usp=sharing&ouid=101251433821200801934&rtpof=true&sd=true" target="_blank" rel="noreferrer">Download CV</a>
         </div>
     </header>
 
@@ -46,8 +51,23 @@
                         <span class="badge">CI/CD &amp; Observability</span>
                     </div>
                     <div class="hero-actions">
-                        <a class="btn primary" href="#projects">View Projects</a>
-                        <a class="btn ghost" href="#contact">Work Together</a>
+                        <a class="btn primary hire-cta" href="#contact">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="17 8 12 3 7 8"></polyline>
+                                <line x1="12" y1="3" x2="12" y2="15"></line>
+                            </svg>
+                            Hire Me
+                        </a>
+                        <a class="btn ghost" href="#projects">View Projects</a>
+                        <a class="btn ghost" href="https://docs.google.com/document/d/1pPn1MhG-YN19O8LtYAuhQoycKrOXxYmi/edit?usp=sharing&ouid=101251433821200801934&rtpof=true&sd=true" target="_blank" rel="noreferrer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            Download CV
+                        </a>
                     </div>
                     <div class="meta-grid">
                         <div>
@@ -287,26 +307,76 @@
             <div class="container section-head">
                 <div>
                     <p class="eyebrow">Experience</p>
-                    <h2>At the intersection of cloud, automation, and training</h2>
+                    <h2>20+ years building reliable infrastructure</h2>
+                    <p class="muted">From enterprise IT to cloud-native platforms</p>
                 </div>
             </div>
             <div class="container timeline">
                 <article class="timeline-item">
-                    <p class="timeline-meta">Freelance · Remote</p>
-                    <h3>AWS Solutions Architect / DevOps Engineer</h3>
+                    <div class="timeline-header">
+                        <div>
+                            <h3>AWS Solutions Architect | DevOps Engineer</h3>
+                            <p class="timeline-company">Freelance · Remote</p>
+                        </div>
+                        <p class="timeline-date">Nov 2023 – Present</p>
+                    </div>
                     <ul class="list">
-                        <li>Built production platforms with IaC, CI/CD, and security policies on AWS.</li>
-                        <li>Enabled multi-environment GitOps delivery with ArgoCD and Jenkins.</li>
-                        <li>Ran incident response, post-mortems, and SLO/SLA processes.</li>
+                        <li><strong>EKS GitOps Platform:</strong> Designed and deployed full EKS-based platform with Terraform, OpenVPN, Jenkins, ArgoCD, Keycloak, SonarQube, RabbitMQ, Prometheus/Grafana, and MariaDB Operator.</li>
+                        <li><strong>Laravel AWS Modernization:</strong> Migrated PHP Laravel workloads to AWS EC2 + RDS with GitHub Actions CI/CD, reducing release time by ~40%.</li>
+                        <li><strong>Infrastructure as Code:</strong> Automated VPC, EKS, CloudWatch provisioning with Terraform for repeatable, scalable environments.</li>
+                        <li><strong>Monitoring & Observability:</strong> Deployed Prometheus + Grafana stack monitoring 50+ servers with alerting and capacity planning.</li>
+                        <li><strong>Server Automation:</strong> Used Ansible to standardize configurations and eliminate configuration drift across multi-server environments.</li>
                     </ul>
                 </article>
+
                 <article class="timeline-item">
-                    <p class="timeline-meta">Mentoring & Training</p>
-                    <h3>DevOps / SRE Programs</h3>
+                    <div class="timeline-header">
+                        <div>
+                            <h3>DevOps Engineer</h3>
+                            <p class="timeline-company">Oreon Development · London, UK (Remote)</p>
+                        </div>
+                        <p class="timeline-date">Jan 2021 – Nov 2023</p>
+                    </div>
                     <ul class="list">
-                        <li>Workshops and live labs on AWS, Kubernetes, and Terraform.</li>
-                        <li>Practical diagrams and documentation templates for platform teams.</li>
-                        <li>Coached teams on cloud cost, observability, and security culture.</li>
+                        <li><strong>CI/CD Pipeline Modernization:</strong> Built Docker-in-Docker (DinD) pipelines in GitLab CI and Jenkins with automated image builds, versioning, and Nexus publishing with integrated security scanning.</li>
+                        <li><strong>Log Management:</strong> Deployed and tuned ELK stack (Elasticsearch, Kibana, Filebeat) for multi-project log aggregation with alert rules and dashboards.</li>
+                        <li><strong>Kubernetes Enterprise Deployment:</strong> Designed and operated on-prem Kubernetes cluster with ArgoCD (GitOps), Keycloak (SSO), Nexus, PostgreSQL, and SonarQube.</li>
+                        <li><strong>DevOps Automation:</strong> Implemented GitHub Actions pipelines for Java applications, enabling consistent build, test, and deployment.</li>
+                        <li><strong>Hybrid Infrastructure:</strong> Designed integrations between on-prem Linux environments and AWS services using Ansible for consistency.</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>AWS Solutions Architect | DevOps Engineer</h3>
+                            <p class="timeline-company">Freelance · Istanbul, Turkey</p>
+                        </div>
+                        <p class="timeline-date">May 2016 – Jan 2021</p>
+                    </div>
+                    <ul class="list">
+                        <li><strong>AWS Cloud Solutions:</strong> Built scalable architectures using EC2, S3, ECS, EKS, RDS, focusing on cost optimization, high availability, and security.</li>
+                        <li><strong>Containerization & Modernization:</strong> Led migration from monolithic to microservices, improving scalability and release frequency.</li>
+                        <li><strong>Cyber Security Company Technical Lead:</strong> Supported CentOS, VMware ESX, Wildfly, ActiveMQ, Zabbix, Elasticsearch, MySQL/Cassandra/PostgreSQL, Jenkins CI/CD, and Azure environments.</li>
+                        <li><strong>System Modernization:</strong> Led development of domain reputation & categorization engine, DNS Firewall, and Active Directory log parser/reporting tools.</li>
+                        <li><strong>Team & Project Coordination:</strong> Achieved ~25% reduction in system downtime through better processes and automation.</li>
+                    </ul>
+                </article>
+
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Information Systems & Network Manager</h3>
+                            <p class="timeline-company">Feza A.Ş. · Istanbul, Turkey</p>
+                        </div>
+                        <p class="timeline-date">Feb 1995 – Feb 2016</p>
+                    </div>
+                    <ul class="list">
+                        <li><strong>Enterprise Infrastructure:</strong> Designed and maintained large-scale corporate infrastructure including Citrix NetScaler, Palo Alto, Active Directory, Exchange 2010, Windows Server 2012, RDS.</li>
+                        <li><strong>Business Applications:</strong> Implemented and operated Dynamics AX ERP and EBA workflow systems across business units.</li>
+                        <li><strong>Virtualization & Early Cloud:</strong> Introduced VMware ESX virtualization, integrated AWS and RackSpace environments, used Cloudflare CDN.</li>
+                        <li><strong>Database & Web Stack:</strong> Managed Oracle, PostgreSQL, MySQL databases; maintained CentOS Linux, Wildfly, and Apache for business-critical applications.</li>
+                        <li><strong>Early DevOps Adoption:</strong> Rolled out Jenkins, GitLab, Jira, Elasticsearch for CI/CD, issue tracking, and log analysis.</li>
                     </ul>
                 </article>
             </div>
@@ -326,7 +396,7 @@
                         <img src="assets/sistem-network-atolyesi.jpg" alt="System & Network Lab banner" />
                     </div>
                     <div class="training-body">
-                        <p class="eyebrow">Workshop · Sep 30 – Oct 21</p>
+                        <p class="eyebrow">Workshop · Sep 30 – Oct 21, 2024</p>
                         <h3>System & Network Lab (AWS VPC)</h3>
                         <p class="muted">AWS VPC fundamentals, multi-VPC peering/Transit Gateway, VPN access, secure file sharing, HA and autoscaling.</p>
                         <a class="btn primary" href="https://www.instagram.com/tech_istanbul/p/DO52-bYiF1i/" target="_blank" rel="noreferrer">View training</a>
@@ -338,7 +408,7 @@
                         <img src="assets/devops-atolyesi.jpg" alt="DevOps Workshop banner" />
                     </div>
                     <div class="training-body">
-                        <p class="eyebrow">Workshop · May 21 – Jun 11</p>
+                        <p class="eyebrow">Workshop · May 21 – Jun 11, 2025</p>
                         <h3>DevOps Workshop (CI/CD + GitOps)</h3>
                         <p class="muted">CI/CD and GitOps with GitHub Actions, Jenkins, ArgoCD across Python, Node.js, Django, and Java workloads on AWS & GCP.</p>
                         <a class="btn primary" href="https://x.com/ibbtechistanbul/status/1921848969526726711" target="_blank" rel="noreferrer">View training</a>
@@ -350,7 +420,7 @@
                         <img src="assets/bulut-bootcamp.png" alt="Cloud Technologies Bootcamp banner" />
                     </div>
                     <div class="training-body">
-                        <p class="eyebrow">Bootcamp · Aug 6 – Sep 28</p>
+                        <p class="eyebrow">Bootcamp · Aug 6 – Sep 28, 2024</p>
                         <h3>Cloud Technologies Bootcamp</h3>
                         <p class="muted">End-to-end cloud journey: AWS core services, GCP/Azure/DigitalOcean basics, Docker & Kubernetes, DevOps/CI/CD foundations.</p>
                         <a class="btn primary" href="https://x.com/ibbtechistanbul/status/1832351964635484391" target="_blank" rel="noreferrer">View training</a>
@@ -359,15 +429,122 @@
             </div>
         </section>
 
+        <section id="certifications" class="section alt">
+            <div class="container section-head">
+                <div>
+                    <p class="eyebrow">Certifications</p>
+                    <h2>Industry-recognized credentials</h2>
+                    <p class="muted">Validated expertise in cloud, Kubernetes, and security</p>
+                </div>
+            </div>
+            <div class="container cert-grid">
+                <article class="cert-card">
+                    <div class="cert-badge aws"></div>
+                    <div class="cert-body">
+                        <h4>AWS Certified Solutions Architect</h4>
+                        <p class="cert-issuer">Amazon Web Services</p>
+                        <p class="cert-level">Associate Level</p>
+                        <a class="cert-verify" href="https://cp.certmetrics.com/amazon/en/public/verify/credential/1W74DJ022E1Q1ZGT" target="_blank" rel="noreferrer">Verify credential →</a>
+                    </div>
+                </article>
+                <article class="cert-card">
+                    <div class="cert-badge terraform"></div>
+                    <div class="cert-body">
+                        <h4>HashiCorp Certified: Terraform Associate</h4>
+                        <p class="cert-issuer">HashiCorp</p>
+                        <p class="cert-level">003</p>
+                        <a class="cert-verify" href="https://www.credly.com/badges/b5cd9b81-cbd2-4a90-974c-6713fd1e996a/linked_in_profile" target="_blank" rel="noreferrer">Verify on Credly →</a>
+                    </div>
+                </article>
+                <article class="cert-card">
+                    <div class="cert-badge kubernetes"></div>
+                    <div class="cert-body">
+                        <h4>Certified Kubernetes Administrator</h4>
+                        <p class="cert-issuer">Cloud Native Computing Foundation</p>
+                        <p class="cert-level">CKA</p>
+                        <a class="cert-verify" href="https://www.credly.com/badges/e1a38d9f-504a-4ced-814e-7db3ef3d080e/linked_in_profile" target="_blank" rel="noreferrer">Verify on Credly →</a>
+                    </div>
+                </article>
+                <article class="cert-card">
+                    <div class="cert-badge redhat"></div>
+                    <div class="cert-body">
+                        <h4>Red Hat Certified Technician</h4>
+                        <p class="cert-issuer">Red Hat</p>
+                        <p class="cert-level">RHEL 5</p>
+                    </div>
+                </article>
+                <article class="cert-card">
+                    <div class="cert-badge security"></div>
+                    <div class="cert-body">
+                        <h4>Certified Ethical Hacker</h4>
+                        <p class="cert-issuer">EC-Council</p>
+                        <p class="cert-level">CEH v6</p>
+                    </div>
+                </article>
+                <article class="cert-card">
+                    <div class="cert-badge microsoft"></div>
+                    <div class="cert-body">
+                        <h4>Microsoft Certified Solutions Expert</h4>
+                        <p class="cert-issuer">Microsoft</p>
+                        <p class="cert-level">MCSE</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container section-head">
+                <div>
+                    <p class="eyebrow">Education</p>
+                    <h2>Academic background</h2>
+                </div>
+            </div>
+            <div class="container timeline">
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>MBA, Business Administration</h3>
+                            <p class="timeline-company">Istanbul University</p>
+                        </div>
+                        <p class="timeline-date">2009 – 2010</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Computer Science</h3>
+                            <p class="timeline-company">Ahmet Yesevi University</p>
+                        </div>
+                        <p class="timeline-date">2004 – 2008</p>
+                    </div>
+                </article>
+                <article class="timeline-item">
+                    <div class="timeline-header">
+                        <div>
+                            <h3>Computer Programming</h3>
+                            <p class="timeline-company">Erciyes University</p>
+                        </div>
+                        <p class="timeline-date">1989 – 1992</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
         <section id="contact" class="section contact">
             <div class="container section-head">
                 <div>
-                    <p class="eyebrow">Contact</p>
-                    <h2>Let’s design your next release</h2>
-                    <p class="muted">For platform modernization, pipelines, or observability needs, drop a note.</p>
+                    <p class="eyebrow">Let's Work Together</p>
+                    <h2>Ready to build reliable cloud infrastructure?</h2>
+                    <p class="muted">Available for freelance projects, consulting, and full-time opportunities. Let's discuss how I can help your team.</p>
                 </div>
                 <div class="section-actions">
-                    <a class="btn primary" href="mailto:hbayraktar@gmail.com">hbayraktar@gmail.com</a>
+                    <a class="btn primary hire-cta" href="mailto:hbayraktar@gmail.com">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email Me
+                    </a>
                     <a class="btn ghost" href="https://www.linkedin.com/in/hakanbayraktar/" target="_blank" rel="noreferrer">LinkedIn</a>
                     <a class="btn ghost" href="https://github.com/hakanbayraktar" target="_blank" rel="noreferrer">GitHub</a>
                 </div>
@@ -376,9 +553,11 @@
                 <article class="card">
                     <h3>Quick facts</h3>
                     <ul class="list">
-                        <li>Remote-friendly · Europe / Turkey time zones.</li>
-                        <li>Focus: AWS, GCP, Kubernetes (EKS/GKE), Terraform, CI/CD &amp; GitOps.</li>
-                        <li>Documentation: diagrams, runbooks, SLO reports.</li>
+                        <li><strong>Availability:</strong> Open to freelance, contract, and full-time roles</li>
+                        <li><strong>Location:</strong> Turkey · Remote-friendly · Europe/Turkey time zones</li>
+                        <li><strong>Languages:</strong> English (Intermediate), Turkish (Native), German (Basic)</li>
+                        <li><strong>Specialization:</strong> AWS, GCP, Kubernetes (EKS/GKE), Terraform, CI/CD, GitOps</li>
+                        <li><strong>Work Style:</strong> Documentation-first, diagrams, runbooks, SLO reports</li>
                         <li class="social-wrap">
                             <div class="social-inline-label">Find me on</div>
                             <div class="social-row">

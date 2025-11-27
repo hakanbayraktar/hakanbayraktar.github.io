@@ -11,6 +11,10 @@
     --radius: 18px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -165,6 +169,18 @@ nav a:hover {
     border-color: transparent;
 }
 
+.btn.primary.hire-cta {
+    background: linear-gradient(120deg, #16a34a, #059669);
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+    font-size: 1rem;
+    padding: 0.85rem 1.5rem;
+}
+
+.btn.primary.hire-cta:hover {
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+    transform: translateY(-3px);
+}
+
 .btn.ghost {
     background: rgba(37, 99, 235, 0.08);
     color: #1d4ed8;
@@ -173,6 +189,10 @@ nav a:hover {
 .btn:hover {
     transform: translateY(-2px);
     border-color: rgba(37, 99, 235, 0.2);
+}
+
+.btn svg {
+    flex-shrink: 0;
 }
 
 .meta-grid {
@@ -421,6 +441,28 @@ nav a:hover {
     box-shadow: var(--shadow);
 }
 
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
+
+.timeline-company {
+    color: #1d4ed8;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-top: 0.2rem;
+}
+
+.timeline-date {
+    color: var(--muted);
+    font-size: 0.9rem;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
 .timeline-meta {
     color: #1d4ed8;
     font-size: 0.9rem;
@@ -544,6 +586,144 @@ details[open] summary {
 .small {
     font-size: 0.9rem;
     margin-top: 0.35rem;
+}
+
+/* Certifications */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 45px rgba(15, 23, 42, 0.15);
+}
+
+.cert-badge {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e0edff, #dbeafe);
+    border: 2px solid #93c5fd;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #1d4ed8;
+}
+
+.cert-badge.aws {
+    background: linear-gradient(135deg, #fff7ed, #fed7aa);
+    border-color: #fb923c;
+    color: #c2410c;
+}
+
+.cert-badge.aws::before {
+    content: "AWS";
+    font-size: 0.8rem;
+}
+
+.cert-badge.terraform {
+    background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    border-color: #c084fc;
+    color: #7c3aed;
+}
+
+.cert-badge.terraform::before {
+    content: "TF";
+    font-size: 0.9rem;
+}
+
+.cert-badge.kubernetes {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border-color: #60a5fa;
+    color: #1e40af;
+}
+
+.cert-badge.kubernetes::before {
+    content: "K8s";
+    font-size: 0.8rem;
+}
+
+.cert-badge.redhat {
+    background: linear-gradient(135deg, #fee2e2, #fecaca);
+    border-color: #f87171;
+    color: #b91c1c;
+}
+
+.cert-badge.redhat::before {
+    content: "RH";
+    font-size: 0.9rem;
+}
+
+.cert-badge.security {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border-color: #4ade80;
+    color: #15803d;
+}
+
+.cert-badge.security::before {
+    content: "CEH";
+    font-size: 0.8rem;
+}
+
+.cert-badge.microsoft {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    border-color: #60a5fa;
+    color: #1e3a8a;
+}
+
+.cert-badge.microsoft::before {
+    content: "MS";
+    font-size: 0.9rem;
+}
+
+.cert-body h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+}
+
+.cert-issuer {
+    color: #1d4ed8;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cert-level {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+}
+
+.cert-verify {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.cert-verify:hover {
+    color: #1d4ed8;
+    text-decoration: underline;
 }
 
 @media (max-width: 1024px) {
