@@ -500,6 +500,30 @@
                         </details>
                     </div>
                 </article>
+
+                <article class="project-card">
+                    <div class="project-thumb" style="background-image:url('assets/doks-deployment.jpg');" data-label="DOKS Angular"></div>
+                    <div class="project-body">
+                        <h3>Scalable Angular SPA on DigitalOcean Kubernetes</h3>
+                        <p>Terraform-provisioned DOKS + DOCR with GitHub Actions CI/CD, multi-stage builds, and secure ingress/TLS for Angular SPA delivery.</p>
+                        <ul class="chip-list">
+                            <li>Terraform · DOKS · DOCR</li>
+                            <li>Angular · Docker · Nginx</li>
+                            <li>GitHub Actions · Cert-Manager</li>
+                        </ul>
+                        <details>
+                            <summary>Details</summary>
+                            <ul class="list">
+                                <li>IaC: Terraform builds Kubernetes cluster, registry, networking on DigitalOcean; full env up/down with one command.</li>
+                                <li>Images: Multi-stage Docker builds compile Angular then serve static assets from Nginx alpine, cutting image size 80%.</li>
+                                <li>Delivery: GitHub Actions builds/tags/pushes to DOCR and triggers rolling updates for zero-downtime deploys.</li>
+                                <li>Ingress: Nginx Ingress + Cert-Manager automates Let’s Encrypt TLS for HTTPS by default.</li>
+                                <li>Impact: Reusable SPA template reduces setup from days to minutes; 99.9% uptime via K8s self-healing and rolling updates.</li>
+                                <li><a class="link" href="assets/doks-deployment.jpg" target="_blank" rel="noreferrer">View deployment diagram (JPG)</a></li>
+                            </ul>
+                        </details>
+                    </div>
+                </article>
             </div>
         </section>
         <section id="resume" class="section alt">
