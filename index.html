@@ -228,48 +228,125 @@
                 </div>
             </div>
 
-            <div class="container grid-2 gap">
-                <article class="card">
-                    <div class="card-head">
-                        <p class="eyebrow">Profile summary</p>
+            <!-- Profile Summary Card -->
+            <div class="container about-profile-card">
+                <div class="about-avatar-section">
+                    <div class="avatar-large" style="background-image:url('assets/hakanbayraktar.jpeg');"></div>
+                    <div class="about-intro">
                         <h3>AWS Certified Solutions Architect & DevOps Engineer</h3>
+                        <p class="about-tagline">Transforming infrastructure into reliable, scalable, and secure cloud platforms</p>
                     </div>
-                    <div class="about-inline">
-                        <div class="avatar" style="width:72px;height:72px;border-radius:16px;background-image:url('assets/hakanbayraktar.jpeg');"></div>
-                        <div class="muted">20+ years in IT; last 5+ on cloud architectures, Kubernetes, and CI/CD automation. I modernize legacy systems, operate production-grade platforms, and enforce GitOps-first delivery.</div>
+                </div>
+                <div class="about-stats-row">
+                    <div class="about-stat-item">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                        </svg>
+                        <div>
+                            <p class="stat-number">20+</p>
+                            <p class="stat-label">Years IT Experience</p>
+                        </div>
                     </div>
-                    <ul class="list">
-                        <li>Deep hands-on: AWS (EC2, VPC, EKS/ECS, RDS, S3, CloudWatch), GCP (GKE, Compute, Storage).</li>
-                        <li>IaC & CI/CD: Terraform, Ansible, AWS CDK; GitHub Actions, Jenkins, GitLab CI; GitOps with ArgoCD/Helm.</li>
-                        <li>Containers: Docker/Compose, Kubernetes (EKS/GKE/AKS/on-prem), zero-downtime deployment strategies.</li>
-                        <li>Observability: Prometheus, Grafana, ELK; alerting and capacity planning playbooks.</li>
-                        <li>Proven results: ~40% faster releases, standardized ops across 50+ servers, secure repeatable delivery via GitOps.</li>
-                    </ul>
+                    <div class="about-stat-item">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <div>
+                            <p class="stat-number">5+</p>
+                            <p class="stat-label">Years Cloud & K8s</p>
+                        </div>
+                    </div>
+                    <div class="about-stat-item">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                        <div>
+                            <p class="stat-number">50+</p>
+                            <p class="stat-label">Servers Monitored</p>
+                        </div>
+                    </div>
+                    <div class="about-stat-item">
+                        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <div>
+                            <p class="stat-number">40%</p>
+                            <p class="stat-label">Faster Releases</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="about-summary">
+                    I specialize in modernizing legacy systems and building production-grade cloud platforms. My approach combines AWS/GCP expertise, Kubernetes orchestration, and GitOps-first delivery to create reliable, secure, and scalable infrastructure. I've standardized operations across 50+ servers, achieved 40% faster release cycles, and reduced downtime by 25% through automation and observability.
+                </p>
+            </div>
+
+            <!-- Core Expertise Grid -->
+            <div class="container expertise-grid">
+                <article class="expertise-card">
+                    <div class="expertise-icon cloud">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                        </svg>
+                    </div>
+                    <h4>Cloud Platforms</h4>
+                    <p class="muted">Deep hands-on experience with AWS (EC2, VPC, EKS/ECS, RDS, S3, CloudWatch) and GCP (GKE, Compute, Storage). Building scalable, cost-optimized architectures with high availability.</p>
                 </article>
 
-                <article class="card stack-card">
-                    <div class="stack">
-                        <div>
-                            <p class="meta-label">Platforms</p>
-                            <p class="meta-value">AWS · GCP · Kubernetes (EKS/GKE/AKS/on-prem) · Docker · Linux</p>
-                        </div>
-                        <div>
-                            <p class="meta-label">IaC & Pipelines</p>
-                            <p class="meta-value">Terraform · Helm · ArgoCD · GitHub Actions</p>
-                        </div>
-                        <div>
-                            <p class="meta-label">Observability</p>
-                            <p class="meta-value">Prometheus · Grafana · ELK · OpenTelemetry</p>
-                        </div>
-                        <div>
-                            <p class="meta-label">Security</p>
-                            <p class="meta-value">IAM · VPC · Secrets · Policy as Code</p>
-                        </div>
-                        <div>
-                            <p class="meta-label">Certifications</p>
-                            <p class="meta-value">AWS SA Associate · Terraform Associate · CKA · RHCT · CEH · MCSE</p>
-                        </div>
+                <article class="expertise-card">
+                    <div class="expertise-icon container-tech">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
                     </div>
+                    <h4>Containers & Orchestration</h4>
+                    <p class="muted">Kubernetes expert across EKS, GKE, AKS, and on-prem clusters. Docker/Compose, zero-downtime deployments, and production-grade container strategies.</p>
+                </article>
+
+                <article class="expertise-card">
+                    <div class="expertise-icon automation">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h4>Infrastructure as Code</h4>
+                    <p class="muted">Terraform, Ansible, AWS CDK for repeatable infrastructure. GitOps workflows with ArgoCD and Helm for automated, auditable deployments.</p>
+                </article>
+
+                <article class="expertise-card">
+                    <div class="expertise-icon cicd">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                    </div>
+                    <h4>CI/CD Pipelines</h4>
+                    <p class="muted">GitHub Actions, Jenkins, GitLab CI for automated build, test, and deploy. Security scanning, quality gates, and shift-left practices integrated into every pipeline.</p>
+                </article>
+
+                <article class="expertise-card">
+                    <div class="expertise-icon observability">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h4>Monitoring & Observability</h4>
+                    <p class="muted">Prometheus, Grafana, ELK stack for complete visibility. Alerting, capacity planning, and SLO-based monitoring for proactive operations.</p>
+                </article>
+
+                <article class="expertise-card">
+                    <div class="expertise-icon security">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h4>Security & Compliance</h4>
+                    <p class="muted">IAM, VPC design, secrets management, policy as code. CEH-certified with security-first approach to infrastructure and application delivery.</p>
                 </article>
             </div>
         </section>
