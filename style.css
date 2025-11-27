@@ -483,8 +483,11 @@ details[open] summary {
 }
 
 .social-row {
-    display: grid;
-    gap: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 0.2rem;
 }
 
 .social {
@@ -495,11 +498,16 @@ details[open] summary {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #f5f7fb;
 }
 
 .social svg {
     width: 18px;
     height: 18px;
+    flex-shrink: 0;
 }
 
 .contact {
