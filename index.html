@@ -212,21 +212,24 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/project-observability.png');" data-label="Observability"></div>
+                    <div class="project-thumb" style="background-image:url('assets/project-observability.jpg');" data-label="Observability"></div>
                     <div class="project-body">
-                        <h3>Observability Package</h3>
-                        <p>Centralized monitoring for 50+ servers with Prometheus, Grafana, ELK, and OpenTelemetry.</p>
+                        <h3>Enterprise-Grade Monitoring & Observability</h3>
+                        <p>Centralized Prometheus/Grafana stack for 50+ servers, shifting from reactive incidents to proactive operations.</p>
                         <ul class="chip-list">
                             <li>Prometheus · Grafana</li>
-                            <li>ELK · Alerts</li>
-                            <li>Capacity planning</li>
+                            <li>Alertmanager</li>
+                            <li>node_exporter</li>
                         </ul>
                         <details>
                             <summary>Details</summary>
                             <ul class="list">
-                                <li>Multi-environment metrics and logs, alerts, and SLO dashboards.</li>
-                                <li>Agent rollout standardized with Ansible; drift controlled.</li>
-                                <li>Dashboards and records ready for post-incident reviews.</li>
+                                <li>Prometheus TSDB scraping via HTTP pull; exporters on 50+ Linux/Windows nodes for CPU, memory, disk, network.</li>
+                                <li>Grafana dashboards with USE method and capacity-planning views for long-term forecasting.</li>
+                                <li>Alertmanager rules (high CPU, disk space, service down) routed to Slack/PagerDuty to cut MTTD.</li>
+                                <li>100% fleet visibility; data-driven hardware planning and proactive scaling.</li>
+                                <li>Stack: Prometheus, Grafana, Alertmanager, node_exporter, Linux, Docker.</li>
+                                <li><a class="link" href="assets/project-observability.jpg" target="_blank" rel="noreferrer">View monitoring architecture</a></li>
                             </ul>
                         </details>
                     </div>
