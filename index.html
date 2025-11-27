@@ -104,7 +104,6 @@
                 </div>
                 <div class="section-actions">
                     <a id="cv" class="btn primary" href="https://docs.google.com/document/d/1pPn1MhG-YN19O8LtYAuhQoycKrOXxYmi/edit?usp=sharing&ouid=101251433821200801934&rtpof=true&sd=true" target="_blank" rel="noreferrer">CV (Google Drive)</a>
-                    <span class="pill subtle">Update link if you move the doc</span>
                 </div>
             </div>
 
@@ -166,19 +165,22 @@
                 <article class="project-card">
                     <div class="project-thumb" style="background-image:url('assets/project-eks-gitops.png');" data-label="EKS GitOps"></div>
                     <div class="project-body">
-                        <h3>EKS GitOps Platform</h3>
-                        <p>Production platform on AWS with Terraform, ArgoCD, Jenkins, Keycloak, and SonarQube.</p>
+                        <h3>End-to-End EKS GitOps Platform</h3>
+                        <p>Production-grade AWS platform built with Terraform, GitOps (ArgoCD), Jenkins CI, OIDC, and observability.</p>
                         <ul class="chip-list">
-                            <li>Terraform · EKS · ArgoCD</li>
-                            <li>Jenkins · OIDC</li>
-                            <li>Prometheus/Grafana</li>
+                            <li>Terraform · EKS</li>
+                            <li>Jenkins · ArgoCD</li>
+                            <li>Keycloak · Prometheus/Grafana</li>
                         </ul>
                         <details>
                             <summary>Details</summary>
                             <ul class="list">
-                                <li>VPC, EKS, bastion, and VPN access defined with Terraform.</li>
-                                <li>Jenkins CI + ArgoCD GitOps; image scanning and quality gates via SonarQube.</li>
-                                <li>RabbitMQ and MariaDB Operator for stateful services; observability stack included.</li>
+                                <li>IaC: VPC, EKS, bastion, VPN all codified with Terraform; single-command rebuild/DR.</li>
+                                <li>CI/CD: Jenkins builds/tests/images with SonarQube quality gates; ArgoCD syncs manifests from Git.</li>
+                                <li>Security: Keycloak OIDC for SSO; controlled access via VPN/Bastion.</li>
+                                <li>Stateful: RabbitMQ and MariaDB Operator managed natively on Kubernetes.</li>
+                                <li>Observability: Prometheus scraping, Grafana dashboards for health and capacity.</li>
+                                <li><a class="link" href="assets/project-eks-gitops.png" target="_blank" rel="noreferrer">View architecture diagram</a></li>
                             </ul>
                         </details>
                     </div>
@@ -366,10 +368,6 @@
                             </div>
                         </li>
                     </ul>
-                </article>
-                <article class="card highlight">
-                    <h3>Leave a note</h3>
-                    <p>“I help teams move from ad-hoc deployments to secure, observable, automated platforms.”</p>
                 </article>
             </div>
         </section>
