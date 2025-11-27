@@ -187,10 +187,10 @@
                 </article>
 
                 <article class="project-card">
-                    <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.png');" data-label="Laravel AWS"></div>
+                    <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.jpg');" data-label="Laravel AWS"></div>
                     <div class="project-body">
-                        <h3>Laravel Modernization (AWS)</h3>
-                        <p>Modernized legacy PHP by migrating to AWS EC2 + RDS and accelerating CI/CD with GitHub Actions.</p>
+                        <h3>Laravel Modernization (AWS + CI/CD)</h3>
+                        <p>Migrated legacy PHP Laravel to AWS EC2/RDS with highly available architecture and automated GitHub Actions pipeline.</p>
                         <ul class="chip-list">
                             <li>EC2 · RDS · ALB</li>
                             <li>GitHub Actions</li>
@@ -199,9 +199,12 @@
                         <details>
                             <summary>Details</summary>
                             <ul class="list">
-                                <li>Automated tests, security scans, and deploy steps; ~40% faster releases.</li>
-                                <li>Safer rollouts with ALB-managed traffic shifts.</li>
-                                <li>Backups and observability via CloudWatch and RDS snapshot policies.</li>
+                                <li>AWS migration: EC2 with Auto Scaling + ALB for HA/elasticity; RDS for managed relational DB.</li>
+                                <li>CI/CD: GitHub Actions runs PHPUnit, static analysis, and security scans on every PR; zero-downtime deploys on approval.</li>
+                                <li>Impact: ~40% faster release lead time; standardized quality gates reduced manual errors.</li>
+                                <li>Stack: PHP (Laravel), AWS (EC2, RDS, ALB, ASG), GitHub Actions, Linux, Docker (build envs).</li>
+                                <li><a class="link" href="assets/project-laravel-modernization.jpg" target="_blank" rel="noreferrer">View architecture preview (JPG)</a></li>
+                                <li><a class="link" href="assets/project-laravel-modernization.png" target="_blank" rel="noreferrer">View architecture diagram (PNG)</a></li>
                             </ul>
                         </details>
                     </div>
