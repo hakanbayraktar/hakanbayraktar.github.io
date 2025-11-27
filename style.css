@@ -439,6 +439,62 @@ nav a:hover {
     box-shadow: var(--shadow);
 }
 
+.training-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.training-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.training-media {
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: saturate(1.05);
+}
+
+.training-body {
+    padding: 1.2rem 1.3rem 1.4rem;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+details {
+    border-top: 1px solid var(--border);
+    padding-top: 0.6rem;
+}
+
+details summary {
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: 600;
+    list-style: none;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details[open] summary {
+    color: var(--text);
+}
+
 .timeline-meta {
     color: var(--accent);
     font-size: 0.9rem;
