@@ -594,6 +594,30 @@ details[open] summary {
     margin-top: 0.35rem;
 }
 
+/* Certifications & Education Layout */
+.credentials-layout {
+    align-items: flex-start;
+}
+
+.credentials-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.credentials-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.cert-list,
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 /* Certifications */
 .cert-grid {
     display: grid;
