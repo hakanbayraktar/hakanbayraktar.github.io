@@ -1326,7 +1326,7 @@ details[open] summary {
 }
 
 .cert-badge.aws {
-    background-image: url('https://images.credly.com/size/160x160/images/0e8c2a3c-721f-4b05-b43d-2ba3e7f7a6e6/AWS-SAA-2020.png');
+    background-image: url('assets/aws-saa.svg');
 }
 
 .cert-badge.terraform {
