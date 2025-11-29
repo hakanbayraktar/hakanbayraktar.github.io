@@ -463,102 +463,32 @@
                                 </div>
                             </article>
 
+                            <!-- 4. Auto-Scaling EKS -->
                             <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.jpg');" data-label="Laravel AWS"></div>
+                                <div class="project-thumb" style="background-image:url('assets/autoscaling-EKS.jpg');" data-label="Auto-Scaling EKS"></div>
                                 <div class="project-body">
-                                    <h3>Laravel Modernization (AWS + CI/CD)</h3>
-                                    <p>Migrated legacy PHP Laravel to AWS EC2/RDS with highly available architecture and automated GitHub Actions pipeline.</p>
+                                    <h3>High-Availability & Auto-Scaling Microservices on AWS EKS</h3>
+                                    <p>Resilient, self-healing FastAPI microservices architecture on EKS with Dual-Layer auto-scaling (HPA + Cluster Autoscaler) for zero-downtime traffic spikes.</p>
                                     <ul class="chip-list">
-                                        <li>EC2 · RDS · ALB</li>
-                                        <li>GitHub Actions</li>
-                                        <li>Security scans</li>
+                                        <li>EKS · Terraform · HPA</li>
+                                        <li>Cluster Autoscaler · PDB</li>
+                                        <li>FastAPI · Redis · Prometheus</li>
                                     </ul>
                                     <details>
                                         <summary>Details</summary>
                                         <ul class="list">
-                                            <li>AWS migration: EC2 with Auto Scaling + ALB for HA/elasticity; RDS for managed relational DB.</li>
-                                            <li>CI/CD: GitHub Actions runs PHPUnit, static analysis, and security scans on every PR; zero-downtime deploys on approval.</li>
-                                            <li>Impact: ~40% faster release lead time; standardized quality gates reduced manual errors.</li>
-                                            <li>Stack: PHP (Laravel), AWS (EC2, RDS, ALB, ASG), GitHub Actions, Linux, Docker (build envs).</li>
-                                            <li><a class="link" href="assets/project-laravel-modernization.jpg" target="_blank" rel="noreferrer">View architecture preview (JPG)</a></li>
-                                            <li><a class="link" href="assets/project-laravel-modernization.png" target="_blank" rel="noreferrer">View architecture diagram (PNG)</a></li>
+                                            <li>Infrastructure as Code: Terraform automates provisioning of EKS cluster, Node Groups, and VPC networking for reproducible, version-controlled infrastructure.</li>
+                                            <li>Dual-Layer Auto-Scaling: HPA scales FastAPI pods based on CPU/Memory metrics; Cluster Autoscaler provisions new EC2 instances when nodes reach capacity.</li>
+                                            <li>High Availability: Pod Disruption Budgets (PDB) maintain minimum pod availability during disruptions; Liveness/Readiness probes ensure healthy traffic routing.</li>
+                                            <li>Zero-Downtime Deployments: Rolling Update strategies deploy new versions gradually without interrupting active sessions.</li>
+                                            <li>Stack: AWS EKS, Terraform, Kubernetes (HPA, Cluster Autoscaler, PDB), Helm, Python (FastAPI), Redis, Docker, Prometheus (Metrics).</li>
+                                            <li><a class="link" href="assets/autoscaling-EKS.jpg" target="_blank" rel="noreferrer">View architecture diagram</a></li>
                                         </ul>
                                     </details>
                                 </div>
                             </article>
 
-                            <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/project-observability.jpg');" data-label="Observability"></div>
-                                <div class="project-body">
-                                    <h3>Enterprise-Grade Monitoring and Observability</h3>
-                                    <p>Centralized Prometheus/Grafana stack for 50+ servers, shifting from reactive incidents to proactive operations.</p>
-                                    <ul class="chip-list">
-                                        <li>Prometheus · Grafana</li>
-                                        <li>Alertmanager</li>
-                                        <li>node_exporter</li>
-                                    </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Prometheus TSDB scraping via HTTP pull; exporters on 50+ Linux/Windows nodes for CPU, memory, disk, network.</li>
-                                            <li>Grafana dashboards with USE method and capacity-planning views for long-term forecasting.</li>
-                                            <li>Alertmanager rules (high CPU, disk space, service down) routed to Slack/PagerDuty to cut MTTD.</li>
-                                            <li>100% fleet visibility; data-driven hardware planning and proactive scaling.</li>
-                                            <li>Stack: Prometheus, Grafana, Alertmanager, node_exporter, Linux, Docker.</li>
-                                            <li><a class="link" href="assets/project-observability.jpg" target="_blank" rel="noreferrer">View monitoring architecture</a></li>
-                                        </ul>
-                                    </details>
-                                </div>
-                            </article>
-
-                            <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/Docker-inDocker.jpg');" data-label="CI/CD"></div>
-                                <div class="project-body">
-                                    <h3>Container-Native CI/CD with DinD</h3>
-                                    <p>Modernized pipelines with Docker-in-Docker across GitLab CI and Jenkins; secure, isolated builds with integrated scanning.</p>
-                                    <ul class="chip-list">
-                                        <li>Docker DinD</li>
-                                        <li>GitLab CI · Jenkins</li>
-                                        <li>Nexus · Trivy</li>
-                                    </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Ephemeral DinD build jobs ensure isolated, consistent environments and no host conflicts.</li>
-                                            <li>Standardized pipeline patterns across GitLab CI and Jenkins; same build logic, different tooling.</li>
-                                            <li>Automated build + SemVer tagging; images pushed to Nexus as single source of truth.</li>
-                                            <li>Shift-left security: container scans (e.g., Trivy/Clair) fail builds with CVEs before registry publish.</li>
-                                            <li><a class="link" href="assets/Docker-inDocker.jpg" target="_blank" rel="noreferrer">View pipeline diagram</a></li>
-                                        </ul>
-                                    </details>
-                                </div>
-                            </article>
-
-                            <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/devsecops.png');" data-label="DevSecOps CAASM"></div>
-                                <div class="project-body">
-                                    <h3>DevSecOps Architecture for Cyber Asset Attack Surface Management (CAASM) Platform</h3>
-                                    <p>End-to-end DevOps infrastructure for a CAASM startup: on-premise Kubernetes with GitOps, hybrid PostgreSQL/ELK data architecture, and comprehensive security-first CI/CD pipeline.</p>
-                                    <ul class="chip-list">
-                                        <li>Kubernetes · GitOps · ArgoCD</li>
-                                        <li>Spring Boot · Angular · PostgreSQL</li>
-                                        <li>SonarQube · Trivy · Keycloak · New Relic</li>
-                                    </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Hybrid Data Architecture: PostgreSQL for transactional data; Elasticsearch (ELK) integrated into Spring Boot for complex analytics on large-scale cyber asset data.</li>
-                                            <li>GitOps-Driven Delivery: ArgoCD ensures on-premise Kubernetes cluster state is always synchronized with GitHub configuration; eliminated manual deployments and drift.</li>
-                                            <li>DevSecOps Pipeline: GitHub Actions CI for Spring Boot (Maven) and Angular; SonarQube for static analysis; Trivy for container vulnerability scanning; Nexus for artifact management.</li>
-                                            <li>Identity & Observability: Keycloak for centralized SSO/Identity Management; New Relic APM for real-time error tracking and latency monitoring.</li>
-                                            <li>Impact: Reduced deployment cycle from days to minutes; blocked critical CVEs during build phase; improved Elasticsearch search performance by 60%.</li>
-                                            <li>Stack: Kubernetes (On-Prem), GitHub Actions, ArgoCD, Nexus, Spring Boot, Angular, PostgreSQL, Elasticsearch (ELK), New Relic, Keycloak, SonarQube, Trivy.</li>
-                                            <li><a class="link" href="assets/devsecops.png" target="_blank" rel="noreferrer">View architecture diagram</a></li>
-                                        </ul>
-                                    </details>
-                                </div>
-                            </article>
-
+                            <!-- 5. Django ECS Fargate -->
                             <article class="project-card">
                                 <div class="project-thumb" style="background-image:url('assets/django-ECS.jpg');" data-label="Django ECS"></div>
                                 <div class="project-body">
@@ -583,6 +513,81 @@
                                 </div>
                             </article>
 
+                            <!-- 6. Laravel Modernization -->
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/project-laravel-modernization.jpg');" data-label="Laravel AWS"></div>
+                                <div class="project-body">
+                                    <h3>Laravel Modernization (AWS + CI/CD)</h3>
+                                    <p>Migrated legacy PHP Laravel to AWS EC2/RDS with highly available architecture and automated GitHub Actions pipeline.</p>
+                                    <ul class="chip-list">
+                                        <li>EC2 · RDS · ALB</li>
+                                        <li>GitHub Actions</li>
+                                        <li>Security scans</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>AWS migration: EC2 with Auto Scaling + ALB for HA/elasticity; RDS for managed relational DB.</li>
+                                            <li>CI/CD: GitHub Actions runs PHPUnit, static analysis, and security scans on every PR; zero-downtime deploys on approval.</li>
+                                            <li>Impact: ~40% faster release lead time; standardized quality gates reduced manual errors.</li>
+                                            <li>Stack: PHP (Laravel), AWS (EC2, RDS, ALB, ASG), GitHub Actions, Linux, Docker (build envs).</li>
+                                            <li><a class="link" href="assets/project-laravel-modernization.jpg" target="_blank" rel="noreferrer">View architecture preview (JPG)</a></li>
+                                            <li><a class="link" href="assets/project-laravel-modernization.png" target="_blank" rel="noreferrer">View architecture diagram (PNG)</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- 7. Enterprise Monitoring -->
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/project-observability.jpg');" data-label="Observability"></div>
+                                <div class="project-body">
+                                    <h3>Enterprise-Grade Monitoring and Observability</h3>
+                                    <p>Centralized Prometheus/Grafana stack for 50+ servers, shifting from reactive incidents to proactive operations.</p>
+                                    <ul class="chip-list">
+                                        <li>Prometheus · Grafana</li>
+                                        <li>Alertmanager</li>
+                                        <li>node_exporter</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Prometheus TSDB scraping via HTTP pull; exporters on 50+ Linux/Windows nodes for CPU, memory, disk, network.</li>
+                                            <li>Grafana dashboards with USE method and capacity-planning views for long-term forecasting.</li>
+                                            <li>Alertmanager rules (high CPU, disk space, service down) routed to Slack/PagerDuty to cut MTTD.</li>
+                                            <li>100% fleet visibility; data-driven hardware planning and proactive scaling.</li>
+                                            <li>Stack: Prometheus, Grafana, Alertmanager, node_exporter, Linux, Docker.</li>
+                                            <li><a class="link" href="assets/project-observability.jpg" target="_blank" rel="noreferrer">View monitoring architecture</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- 8. Container CI/CD with DinD -->
+                            <article class="project-card">
+                                <div class="project-thumb" style="background-image:url('assets/Docker-inDocker.jpg');" data-label="CI/CD"></div>
+                                <div class="project-body">
+                                    <h3>Container-Native CI/CD with DinD</h3>
+                                    <p>Modernized pipelines with Docker-in-Docker across GitLab CI and Jenkins; secure, isolated builds with integrated scanning.</p>
+                                    <ul class="chip-list">
+                                        <li>Docker DinD</li>
+                                        <li>GitLab CI · Jenkins</li>
+                                        <li>Nexus · Trivy</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Ephemeral DinD build jobs ensure isolated, consistent environments and no host conflicts.</li>
+                                            <li>Standardized pipeline patterns across GitLab CI and Jenkins; same build logic, different tooling.</li>
+                                            <li>Automated build + SemVer tagging; images pushed to Nexus as single source of truth.</li>
+                                            <li>Shift-left security: container scans (e.g., Trivy/Clair) fail builds with CVEs before registry publish.</li>
+                                            <li><a class="link" href="assets/Docker-inDocker.jpg" target="_blank" rel="noreferrer">View pipeline diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- 9. ELK Stack -->
                             <article class="project-card">
                                 <div class="project-thumb" style="background-image:url('assets/centralized-log-management.jpg');" data-label="ELK Stack"></div>
                                 <div class="project-body">
@@ -625,30 +630,6 @@
                                             <li>Ingress: Nginx Ingress + Cert-Manager automates Let's Encrypt TLS for HTTPS by default.</li>
                                             <li>Impact: Reusable SPA template reduces setup from days to minutes; 99.9% uptime via K8s self-healing and rolling updates.</li>
                                             <li><a class="link" href="assets/doks-deployment.jpg" target="_blank" rel="noreferrer">View deployment diagram (JPG)</a></li>
-                                        </ul>
-                                    </details>
-                                </div>
-                            </article>
-
-                            <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/autoscaling-EKS.jpg');" data-label="Auto-Scaling EKS"></div>
-                                <div class="project-body">
-                                    <h3>High-Availability & Auto-Scaling Microservices on AWS EKS</h3>
-                                    <p>Resilient, self-healing FastAPI microservices architecture on EKS with Dual-Layer auto-scaling (HPA + Cluster Autoscaler) for zero-downtime traffic spikes.</p>
-                                    <ul class="chip-list">
-                                        <li>EKS · Terraform · HPA</li>
-                                        <li>Cluster Autoscaler · PDB</li>
-                                        <li>FastAPI · Redis · Prometheus</li>
-                                    </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Infrastructure as Code: Terraform automates provisioning of EKS cluster, Node Groups, and VPC networking for reproducible, version-controlled infrastructure.</li>
-                                            <li>Dual-Layer Auto-Scaling: HPA scales FastAPI pods based on CPU/Memory metrics; Cluster Autoscaler provisions new EC2 instances when nodes reach capacity.</li>
-                                            <li>High Availability: Pod Disruption Budgets (PDB) maintain minimum pod availability during disruptions; Liveness/Readiness probes ensure healthy traffic routing.</li>
-                                            <li>Zero-Downtime Deployments: Rolling Update strategies deploy new versions gradually without interrupting active sessions.</li>
-                                            <li>Stack: AWS EKS, Terraform, Kubernetes (HPA, Cluster Autoscaler, PDB), Helm, Python (FastAPI), Redis, Docker, Prometheus (Metrics).</li>
-                                            <li><a class="link" href="assets/autoscaling-EKS.jpg" target="_blank" rel="noreferrer">View architecture diagram</a></li>
                                         </ul>
                                     </details>
                                 </div>
