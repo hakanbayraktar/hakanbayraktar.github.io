@@ -386,33 +386,6 @@
 
                     <div class="project-carousel-container">
                         <div class="project-carousel-track">
-                            <!-- 1. DevSecOps CAASM - Most Comprehensive -->
-                            <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/devsecops.png');" data-label="DevSecOps CAASM"></div>
-                                <div class="project-body">
-                                    <h3>DevSecOps Architecture for Cyber Asset Attack Surface Management (CAASM) Platform</h3>
-                                    <p>End-to-end DevOps infrastructure for a CAASM startup: on-premise Kubernetes with GitOps, hybrid PostgreSQL/ELK data architecture, and comprehensive security-first CI/CD pipeline.</p>
-                                    <ul class="chip-list">
-                                        <li>Kubernetes · GitOps · ArgoCD</li>
-                                        <li>Spring Boot · Angular · PostgreSQL</li>
-                                        <li>SonarQube · Trivy · Keycloak · New Relic</li>
-                                    </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Hybrid Data Architecture: PostgreSQL for transactional data; Elasticsearch (ELK) integrated into Spring Boot for complex analytics on large-scale cyber asset data.</li>
-                                            <li>GitOps-Driven Delivery: ArgoCD ensures on-premise Kubernetes cluster state is always synchronized with GitHub configuration; eliminated manual deployments and drift.</li>
-                                            <li>DevSecOps Pipeline: GitHub Actions CI for Spring Boot (Maven) and Angular; SonarQube for static analysis; Trivy for container vulnerability scanning; Nexus for artifact management.</li>
-                                            <li>Identity & Observability: Keycloak for centralized SSO/Identity Management; New Relic APM for real-time error tracking and latency monitoring.</li>
-                                            <li>Impact: Reduced deployment cycle from days to minutes; blocked critical CVEs during build phase; improved Elasticsearch search performance by 60%.</li>
-                                            <li>Stack: Kubernetes (On-Prem), GitHub Actions, ArgoCD, Nexus, Spring Boot, Angular, PostgreSQL, Elasticsearch (ELK), New Relic, Keycloak, SonarQube, Trivy.</li>
-                                            <li><a class="link" href="assets/devsecops.png" target="_blank" rel="noreferrer">View architecture diagram</a></li>
-                                        </ul>
-                                    </details>
-                                </div>
-                            </article>
-
-                            <!-- 2. EKS GitOps Platform -->
                             <article class="project-card">
                                 <div class="project-thumb" style="background-image:url('assets/project-eks-gitops.jpg');" data-label="EKS GitOps"></div>
                                 <div class="project-body">
@@ -438,7 +411,6 @@
                                 </div>
                             </article>
 
-                            <!-- 3. On-Prem Kubernetes Platform -->
                             <article class="project-card">
                                 <div class="project-thumb" style="background-image:url('assets/onpremise-kubernetes.jpeg');" data-label="On-Prem K8s"></div>
                                 <div class="project-body">
