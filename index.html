@@ -858,10 +858,9 @@
                                     <div class="training-badge">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2">
-                                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
                                         </svg>
-                                        <span>Kubernetes</span>
+                                        <span>AWS · GCP · Azure</span>
                                     </div>
                                 </div>
                                 <div class="training-body">
@@ -919,10 +918,11 @@
                                 <div class="training-body">
                                     <p class="eyebrow">Bootcamp · 12 Weeks · Middle Level · Zoom</p>
                                     <h3>DevOps Engineering Bootcamp</h3>
-                                    <p class="muted">An intensive 3-month hands-on bootcamp delivered via Zoom for a
-                                        private cohort of mid-level engineers. Covers the complete DevOps lifecycle
-                                        through production-grade capstone projects — from Linux and containerization to
-                                        Kubernetes, CI/CD, GitOps, IaC, monitoring, and log management.</p>
+                                    <p class="muted">Step-by-step, guided, industry-level projects delivered via
+                                        Zoom-based live sessions for a small private group. An intensive 3-month
+                                        hands-on bootcamp covering the complete DevOps lifecycle — from Linux and
+                                        containerization to Kubernetes, CI/CD, GitOps, Terraform IaC, monitoring, and
+                                        log management.</p>
                                     <ul class="chip-list">
                                         <li>Linux · Docker · Git</li>
                                         <li>Kubernetes · Helm · ArgoCD</li>
@@ -936,21 +936,25 @@
                                                 scripting, Docker deep-dive (multi-stage builds, networking, volumes,
                                                 Compose), container security, Git workflows.</li>
                                             <li><strong>Month 2 — Orchestration & Delivery:</strong> Kubernetes (Pods,
-                                                Deployments, Services, Ingress, RBAC, PV/PVC), Helm charts, CI/CD with
-                                                Jenkins & GitLab CI, Docker-in-Docker, Nexus, Trivy scanning.</li>
+                                                Deployments, Services, Ingress, RBAC, PV/PVC), Helm charts, Terraform
+                                                IaC, CI/CD with Jenkins & GitLab CI, Docker-in-Docker, Nexus, Trivy
+                                                scanning.</li>
                                             <li><strong>Month 3 — Platform Engineering:</strong> GitOps with ArgoCD,
-                                                Terraform IaC, Prometheus + Grafana monitoring, ELK Stack log
-                                                aggregation, Keycloak identity, AWS & DigitalOcean deployment.</li>
+                                                Terraform multi-environment provisioning, Prometheus + Grafana
+                                                monitoring, ELK Stack log aggregation, AWS & DigitalOcean cloud
+                                                deployment.</li>
                                         </ul>
                                     </details>
                                     <details>
-                                        <summary>Capstone Projects (5)</summary>
+                                        <summary>Capstone Projects (7)</summary>
                                         <ul class="list">
                                             <li>On-Prem Kubernetes Platform (GitOps)</li>
                                             <li>Container-Native CI/CD with DinD</li>
                                             <li>Centralized Log Management (ELK)</li>
                                             <li>Laravel Cloud Migration (AWS)</li>
                                             <li>Kubernetes SPA Deployment (DigitalOcean)</li>
+                                            <li>3-Tier App on EKS with Terraform</li>
+                                            <li>Blue/Green Deployment with Jenkins</li>
                                         </ul>
                                     </details>
                                 </div>
@@ -1183,6 +1187,111 @@
                                                 uptime via K8s self-healing and rolling updates.</li>
                                             <li><a class="link" href="assets/doks-deployment.jpg" target="_blank"
                                                     rel="noreferrer">View deployment diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 6: 3-Tier EKS with Terraform -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/3tier-eks-terraform.png"
+                                        alt="3-Tier Application on EKS with Terraform architecture" loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>3-Tier Application on AWS EKS with Terraform</h3>
+                                    <p class="muted">Deployed a production-grade 3-tier application (Frontend + Backend
+                                        + Database) on AWS EKS, fully provisioned with Terraform. Multi-AZ high
+                                        availability with ALB ingress and RDS PostgreSQL.</p>
+                                    <ul class="chip-list">
+                                        <li>EKS · Terraform · VPC</li>
+                                        <li>React · Node.js · RDS</li>
+                                        <li>ALB · ECR · GitHub Actions</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Infrastructure as Code: Terraform provisions complete AWS environment —
+                                                VPC with public/private subnets across 2 AZs, EKS cluster, node groups,
+                                                IAM roles, and security groups.</li>
+                                            <li>Frontend Tier: React/Angular SPA served via Nginx containers with
+                                                multi-stage Docker builds; routed through ALB Ingress Controller.</li>
+                                            <li>Backend Tier: Node.js/Python API pods handling business logic;
+                                                communicates with database via Kubernetes Services and internal DNS.
+                                            </li>
+                                            <li>Database Tier: RDS PostgreSQL Multi-AZ for high availability;
+                                                credentials managed via Kubernetes Secrets and AWS Secrets Manager.</li>
+                                            <li>CI/CD: GitHub Actions pipeline builds images, pushes to ECR, and deploys
+                                                via kubectl rolling updates for zero-downtime releases.</li>
+                                            <li>Impact: Fully reproducible infrastructure; single command to provision
+                                                or tear down entire stack; 99.9% uptime with multi-AZ resilience.</li>
+                                            <li><a class="link" href="assets/3tier-eks-terraform.png" target="_blank"
+                                                    rel="noreferrer">View architecture diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 7: Blue/Green Deployment -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/bluegreen-jenkins-terraform.png"
+                                        alt="Blue/Green Deployment with Jenkins and Terraform" loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>Blue/Green Deployment on AWS with Jenkins & Terraform</h3>
+                                    <p class="muted">Implemented zero-downtime Blue/Green deployment strategy on AWS
+                                        using Jenkins CI/CD pipelines and Terraform-managed infrastructure with ALB
+                                        traffic switching.</p>
+                                    <ul class="chip-list">
+                                        <li>Jenkins · Terraform</li>
+                                        <li>ALB · ASG · Route 53</li>
+                                        <li>Blue/Green · Zero-Downtime</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Dual Environment: Terraform provisions identical Blue and Green
+                                                environments (VPC, ASG, ALB Target Groups) for instant rollback
+                                                capability.</li>
+                                            <li>Jenkins Pipeline: Multi-stage Jenkinsfile orchestrates build, test,
+                                                deploy-to-green, smoke-test, and ALB traffic switch with manual approval
+                                                gate.</li>
+                                            <li>Traffic Switching: ALB listener rules shift 100% traffic from Blue to
+                                                Green target group after health checks pass; instant rollback by
+                                                reverting listener.</li>
+                                            <li>Infrastructure as Code: All AWS resources (VPC, subnets, ASGs, ALB,
+                                                Route 53, IAM) defined in Terraform modules for reproducible
+                                                deployments.</li>
+                                            <li>Impact: Zero-downtime releases with sub-second rollback; eliminated
+                                                deployment-related incidents by 95%.</li>
+                                            <li><a class="link" href="assets/bluegreen-jenkins-terraform.png"
+                                                    target="_blank" rel="noreferrer">View deployment strategy
+                                                    diagram</a></li>
                                         </ul>
                                     </details>
                                 </div>

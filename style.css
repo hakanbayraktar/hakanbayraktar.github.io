@@ -773,7 +773,8 @@ nav a:hover {
 }
 
 .training-media {
-    height: 150px;
+    height: auto;
+    max-height: 200px;
     background: #f8fafc;
     position: relative;
     overflow: hidden;
@@ -1080,6 +1081,7 @@ details[open] summary {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
