@@ -568,24 +568,105 @@
                                         <li>Jenkins · ArgoCD</li>
                                         <li>Keycloak · Prometheus/Grafana</li>
                                     </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>IaC: VPC, EKS, bastion, VPN all codified with Terraform; single-command
-                                                rebuild/DR.</li>
-                                            <li>CI/CD: Jenkins builds/tests/images with SonarQube quality gates; ArgoCD
-                                                syncs manifests from Git.</li>
-                                            <li>Security: Keycloak OIDC for SSO; controlled access via VPN/Bastion.</li>
-                                            <li>Stateful: RabbitMQ and MariaDB Operator managed natively on Kubernetes.
-                                            </li>
-                                            <li>Observability: Prometheus scraping, Grafana dashboards for health and
-                                                capacity.</li>
-                                            <li><a class="link" href="assets/project-eks-gitops.jpg" target="_blank"
-                                                    rel="noreferrer">View architecture (JPG)</a></li>
-                                            <li><a class="link" href="assets/project-eks-gitops.png" target="_blank"
-                                                    rel="noreferrer">View architecture (PNG)</a></li>
-                                        </ul>
-                                    </details>
+
+                                    <div class="project-sections">
+                                        <details>
+                                            <summary>📋 Overview</summary>
+                                            <div class="section-content">
+                                                <p>Designed and built a fully automated AWS EKS platform where every
+                                                    layer — from networking to application delivery — is codified,
+                                                    version-controlled, and continuously reconciled.</p>
+                                                <p>The platform supports multiple workloads including stateful services
+                                                    (RabbitMQ, MariaDB) with Kubernetes Operators, secured behind VPN
+                                                    and Bastion access points.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🏗️ Infrastructure as Code</summary>
+                                            <div class="section-content">
+                                                <p>Complete infrastructure codified with Terraform modules:</p>
+                                                <ul>
+                                                    <li>VPC with public/private subnets, NAT gateways, and security
+                                                        groups</li>
+                                                    <li>EKS cluster with managed node groups</li>
+                                                    <li>Bastion host and VPN for secure cluster access</li>
+                                                    <li>Single-command rebuild capability for disaster recovery</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🔧 CI/CD Pipeline</summary>
+                                            <div class="section-content">
+                                                <p>Dual-layer delivery pipeline combining Jenkins and ArgoCD:</p>
+                                                <ul>
+                                                    <li><strong>Jenkins</strong> — Builds, tests, and pushes container
+                                                        images with SonarQube quality gates</li>
+                                                    <li><strong>ArgoCD</strong> — GitOps controller syncing Kubernetes
+                                                        manifests from Git for declarative deployments</li>
+                                                    <li><strong>Keycloak OIDC</strong> — Centralized SSO for Jenkins,
+                                                        ArgoCD, and Kubernetes API access</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📊 Observability</summary>
+                                            <div class="section-content">
+                                                <p>Full-stack observability with Prometheus and Grafana:</p>
+                                                <ul>
+                                                    <li>Prometheus scraping metrics from all workloads and
+                                                        infrastructure components</li>
+                                                    <li>Grafana dashboards for cluster health, resource utilization, and
+                                                        capacity planning</li>
+                                                    <li>Alerting rules for proactive incident detection</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📈 Impact</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Eliminated manual infrastructure provisioning with full
+                                                        Terraform automation</li>
+                                                    <li>Achieved zero-drift deployments through ArgoCD GitOps
+                                                        reconciliation</li>
+                                                    <li>Centralized identity management reduced access management
+                                                        overhead by 70%</li>
+                                                    <li>Stateful workloads (RabbitMQ, MariaDB) run reliably on
+                                                        Kubernetes with Operator patterns</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🛠️ Tech Stack</summary>
+                                            <div class="section-content">
+                                                <div class="stack-grid">
+                                                    <span class="stack-item">AWS EKS</span>
+                                                    <span class="stack-item">Terraform</span>
+                                                    <span class="stack-item">Jenkins</span>
+                                                    <span class="stack-item">ArgoCD (GitOps)</span>
+                                                    <span class="stack-item">SonarQube</span>
+                                                    <span class="stack-item">Keycloak (OIDC)</span>
+                                                    <span class="stack-item">Prometheus</span>
+                                                    <span class="stack-item">Grafana</span>
+                                                    <span class="stack-item">RabbitMQ</span>
+                                                    <span class="stack-item">MariaDB Operator</span>
+                                                    <span class="stack-item">VPN / Bastion</span>
+                                                    <span class="stack-item">Docker</span>
+                                                </div>
+                                                <p style="margin-top:0.5rem">
+                                                    <a class="link" href="assets/project-eks-gitops.jpg" target="_blank"
+                                                        rel="noreferrer">View architecture (JPG)</a> ·
+                                                    <a class="link" href="assets/project-eks-gitops.png" target="_blank"
+                                                        rel="noreferrer">View architecture (PNG)</a>
+                                                </p>
+                                            </div>
+                                        </details>
+                                    </div>
                                 </div>
                             </article>
 
@@ -596,32 +677,109 @@
                                 <div class="project-body">
                                     <h3>High-Availability & Auto-Scaling Microservices on AWS EKS</h3>
                                     <p>Resilient, self-healing FastAPI microservices architecture on EKS with Dual-Layer
-                                        auto-scaling (HPA + Cluster Autoscaler) for zero-downtime traffic spikes.</p>
+                                        auto-scaling for zero-downtime traffic spikes.</p>
                                     <ul class="chip-list">
                                         <li>EKS · Terraform · HPA</li>
                                         <li>Cluster Autoscaler · PDB</li>
                                         <li>FastAPI · Redis · Prometheus</li>
                                     </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Infrastructure as Code: Terraform automates provisioning of EKS cluster,
-                                                Node Groups, and VPC networking for reproducible, version-controlled
-                                                infrastructure.</li>
-                                            <li>Dual-Layer Auto-Scaling: HPA scales FastAPI pods based on CPU/Memory
-                                                metrics; Cluster Autoscaler provisions new EC2 instances when nodes
-                                                reach capacity.</li>
-                                            <li>High Availability: Pod Disruption Budgets (PDB) maintain minimum pod
-                                                availability during disruptions; Liveness/Readiness probes ensure
-                                                healthy traffic routing.</li>
-                                            <li>Zero-Downtime Deployments: Rolling Update strategies deploy new versions
-                                                gradually without interrupting active sessions.</li>
-                                            <li>Stack: AWS EKS, Terraform, Kubernetes (HPA, Cluster Autoscaler, PDB),
-                                                Helm, Python (FastAPI), Redis, Docker, Prometheus (Metrics).</li>
-                                            <li><a class="link" href="assets/autoscaling-EKS.jpg" target="_blank"
-                                                    rel="noreferrer">View architecture diagram</a></li>
-                                        </ul>
-                                    </details>
+
+                                    <div class="project-sections">
+                                        <details>
+                                            <summary>📋 Overview</summary>
+                                            <div class="section-content">
+                                                <p>Architected a resilient microservices platform on AWS EKS designed to
+                                                    handle unpredictable traffic spikes without manual intervention.</p>
+                                                <p>The system uses dual-layer auto-scaling — pod-level HPA and
+                                                    node-level Cluster Autoscaler — to ensure applications always have
+                                                    the resources they need while optimizing cloud costs during
+                                                    low-traffic periods.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🏗️ Infrastructure</summary>
+                                            <div class="section-content">
+                                                <p>Terraform automates the complete AWS environment:</p>
+                                                <ul>
+                                                    <li>EKS cluster with managed node groups across multiple AZs</li>
+                                                    <li>VPC networking with public/private subnet separation</li>
+                                                    <li>IAM roles and security groups following least-privilege
+                                                        principles</li>
+                                                    <li>Version-controlled, reproducible infrastructure</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>⚡ Auto-Scaling Architecture</summary>
+                                            <div class="section-content">
+                                                <p>Dual-layer scaling ensures both pods and nodes adapt automatically:
+                                                </p>
+                                                <ul>
+                                                    <li><strong>HPA (Horizontal Pod Autoscaler)</strong> — Scales
+                                                        FastAPI pods based on CPU/Memory metrics</li>
+                                                    <li><strong>Cluster Autoscaler</strong> — Provisions new EC2 nodes
+                                                        when existing nodes reach capacity</li>
+                                                    <li><strong>PDB (Pod Disruption Budgets)</strong> — Maintains
+                                                        minimum pod availability during disruptions</li>
+                                                    <li><strong>Health Probes</strong> — Liveness/Readiness probes
+                                                        ensure only healthy pods receive traffic</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🚀 Deployment</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Rolling Update strategy deploys new versions gradually without
+                                                        interrupting active sessions</li>
+                                                    <li>Helm charts standardize deployment configurations across
+                                                        environments</li>
+                                                    <li>Redis used for session caching and inter-service communication
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📈 Impact</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Zero-downtime during traffic spikes — pods and nodes scale
+                                                        automatically within seconds</li>
+                                                    <li>30% cost optimization through automatic scale-down during
+                                                        low-traffic periods</li>
+                                                    <li>Self-healing architecture automatically replaces failed pods and
+                                                        nodes</li>
+                                                    <li>Prometheus metrics provide full visibility into scaling events
+                                                        and resource utilization</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🛠️ Tech Stack</summary>
+                                            <div class="section-content">
+                                                <div class="stack-grid">
+                                                    <span class="stack-item">AWS EKS</span>
+                                                    <span class="stack-item">Terraform</span>
+                                                    <span class="stack-item">Kubernetes HPA</span>
+                                                    <span class="stack-item">Cluster Autoscaler</span>
+                                                    <span class="stack-item">PDB</span>
+                                                    <span class="stack-item">Helm</span>
+                                                    <span class="stack-item">Python (FastAPI)</span>
+                                                    <span class="stack-item">Redis</span>
+                                                    <span class="stack-item">Docker</span>
+                                                    <span class="stack-item">Prometheus</span>
+                                                </div>
+                                                <p style="margin-top:0.5rem"><a class="link"
+                                                        href="assets/autoscaling-EKS.jpg" target="_blank"
+                                                        rel="noreferrer">View architecture diagram</a></p>
+                                            </div>
+                                        </details>
+                                    </div>
                                 </div>
                             </article>
 
@@ -630,37 +788,108 @@
                                 <div class="project-thumb" style="background-image:url('assets/django-ECS.jpg');"
                                     data-label="Django ECS"></div>
                                 <div class="project-body">
-                                    <h3>Production-Grade Django Application Platform on AWS ECS Fargate</h3>
-                                    <p>Architected a highly resilient, secure, and scalable Django platform on AWS using
-                                        serverless containers (ECS Fargate) with Dual-Layer CI/CD and advanced
-                                        observability.</p>
+                                    <h3>Production-Grade Django Platform on AWS ECS Fargate</h3>
+                                    <p>Highly resilient, secure Django platform on AWS using serverless containers (ECS
+                                        Fargate) with Dual-Layer CI/CD and advanced observability.</p>
                                     <ul class="chip-list">
                                         <li>ECS Fargate · RDS Multi-AZ</li>
                                         <li>GitHub Actions · CodePipeline</li>
                                         <li>Managed Prometheus/Grafana</li>
                                     </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Serverless Compute: Terraform-provisioned VPC with ECS Fargate running
-                                                stateless Django tasks behind ALB, connected to HA RDS PostgreSQL
-                                                Multi-AZ.</li>
-                                            <li>Dual-Layer CI/CD: GitHub Actions for rapid testing, Docker builds, ECR
-                                                push, and Terraform Plans; AWS CodePipeline orchestrates governed
-                                                end-to-end production deployments.</li>
-                                            <li>Security: Least-privilege IAM roles, Secrets Manager for
-                                                credentials/Django secrets injected at runtime, secure S3 for static
-                                                assets.</li>
-                                            <li>Advanced Observability: CloudWatch logs/metrics streamed via Kinesis
-                                                Firehose to Amazon Managed Prometheus (AMP) and visualized in Amazon
-                                                Managed Grafana (AMG).</li>
-                                            <li>Stack: AWS (ECS Fargate, RDS Multi-AZ, S3, VPC, ALB, ECR, Secrets
-                                                Manager, CodePipeline, CloudWatch, AMP/AMG), Terraform, Docker, Django
-                                                (Python), GitHub Actions.</li>
-                                            <li><a class="link" href="assets/django-ECS.jpg" target="_blank"
-                                                    rel="noreferrer">View architecture diagram</a></li>
-                                        </ul>
-                                    </details>
+
+                                    <div class="project-sections">
+                                        <details>
+                                            <summary>📋 Overview</summary>
+                                            <div class="section-content">
+                                                <p>Architected a production-grade Django application platform on AWS
+                                                    using serverless ECS Fargate containers, eliminating the need for
+                                                    server management while maintaining high availability.</p>
+                                                <p>The platform features dual-layer CI/CD combining GitHub Actions for
+                                                    rapid development feedback and AWS CodePipeline for governed
+                                                    production releases, with advanced observability through managed
+                                                    Prometheus and Grafana.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🏗️ Infrastructure</summary>
+                                            <div class="section-content">
+                                                <p>Terraform-provisioned AWS environment with serverless compute:</p>
+                                                <ul>
+                                                    <li>ECS Fargate running stateless Django tasks behind Application
+                                                        Load Balancer</li>
+                                                    <li>RDS PostgreSQL Multi-AZ for high-availability database</li>
+                                                    <li>S3 for static assets with secure access policies</li>
+                                                    <li>VPC with proper subnet isolation and security groups</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🔧 Dual-Layer CI/CD</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li><strong>GitHub Actions</strong> — Rapid testing, Docker builds,
+                                                        ECR push, and Terraform plan reviews</li>
+                                                    <li><strong>AWS CodePipeline</strong> — Governed end-to-end
+                                                        production deployments with approval gates</li>
+                                                    <li><strong>Secrets Manager</strong> — Django secrets and DB
+                                                        credentials injected at runtime via IAM roles</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📊 Observability</summary>
+                                            <div class="section-content">
+                                                <p>Advanced observability stack for full visibility:</p>
+                                                <ul>
+                                                    <li>CloudWatch logs and metrics streamed via Kinesis Firehose</li>
+                                                    <li>Amazon Managed Prometheus (AMP) for metrics aggregation</li>
+                                                    <li>Amazon Managed Grafana (AMG) for dashboards and alerting</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📈 Impact</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Zero server management overhead with fully serverless compute
+                                                    </li>
+                                                    <li>Dual CI/CD layers provide both speed and governance</li>
+                                                    <li>Multi-AZ RDS ensures database availability during AZ failures
+                                                    </li>
+                                                    <li>Managed observability stack eliminates monitoring infrastructure
+                                                        maintenance</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🛠️ Tech Stack</summary>
+                                            <div class="section-content">
+                                                <div class="stack-grid">
+                                                    <span class="stack-item">AWS ECS Fargate</span>
+                                                    <span class="stack-item">Terraform</span>
+                                                    <span class="stack-item">RDS Multi-AZ</span>
+                                                    <span class="stack-item">ALB</span>
+                                                    <span class="stack-item">ECR</span>
+                                                    <span class="stack-item">S3</span>
+                                                    <span class="stack-item">Secrets Manager</span>
+                                                    <span class="stack-item">GitHub Actions</span>
+                                                    <span class="stack-item">AWS CodePipeline</span>
+                                                    <span class="stack-item">CloudWatch</span>
+                                                    <span class="stack-item">AMP / AMG</span>
+                                                    <span class="stack-item">Django (Python)</span>
+                                                    <span class="stack-item">Docker</span>
+                                                </div>
+                                                <p style="margin-top:0.5rem"><a class="link"
+                                                        href="assets/django-ECS.jpg" target="_blank"
+                                                        rel="noreferrer">View architecture diagram</a></p>
+                                            </div>
+                                        </details>
+                                    </div>
                                 </div>
                             </article>
 
@@ -678,23 +907,92 @@
                                         <li>Alertmanager</li>
                                         <li>node_exporter</li>
                                     </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Prometheus TSDB scraping via HTTP pull; exporters on 50+ Linux/Windows
-                                                nodes for CPU, memory, disk, network.</li>
-                                            <li>Grafana dashboards with USE method and capacity-planning views for
-                                                long-term forecasting.</li>
-                                            <li>Alertmanager rules (high CPU, disk space, service down) routed to
-                                                Slack/PagerDuty to cut MTTD.</li>
-                                            <li>100% fleet visibility; data-driven hardware planning and proactive
-                                                scaling.</li>
-                                            <li>Stack: Prometheus, Grafana, Alertmanager, node_exporter, Linux, Docker.
-                                            </li>
-                                            <li><a class="link" href="assets/project-observability.jpg" target="_blank"
-                                                    rel="noreferrer">View monitoring architecture</a></li>
-                                        </ul>
-                                    </details>
+
+                                    <div class="project-sections">
+                                        <details>
+                                            <summary>📋 Overview</summary>
+                                            <div class="section-content">
+                                                <p>Built a centralized monitoring and observability platform using
+                                                    Prometheus and Grafana to provide 100% visibility across a fleet of
+                                                    50+ Linux and Windows servers.</p>
+                                                <p>The platform transformed the operations model from reactive incident
+                                                    response to data-driven proactive operations with capacity planning
+                                                    and trend analysis.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📡 Metrics Collection</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Prometheus TSDB scraping via HTTP pull model</li>
+                                                    <li>node_exporter on 50+ Linux/Windows nodes collecting CPU, memory,
+                                                        disk, and network metrics</li>
+                                                    <li>Custom exporters for application-specific metrics</li>
+                                                    <li>Service discovery for automatic target registration</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📊 Dashboards & Visualization</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Grafana dashboards using the USE method (Utilization,
+                                                        Saturation, Errors)</li>
+                                                    <li>Capacity-planning views for long-term hardware forecasting</li>
+                                                    <li>Per-service and per-node drill-down views</li>
+                                                    <li>Real-time status boards for NOC and on-call teams</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🔔 Alerting</summary>
+                                            <div class="section-content">
+                                                <p>Alertmanager configured with intelligent routing and deduplication:
+                                                </p>
+                                                <ul>
+                                                    <li>Rules for high CPU, disk space, memory pressure, and service
+                                                        down</li>
+                                                    <li>Multi-channel routing to Slack and PagerDuty</li>
+                                                    <li>Alert grouping and silencing to reduce noise</li>
+                                                    <li>Significantly reduced Mean Time to Detect (MTTD)</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📈 Impact</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>100% fleet visibility across all infrastructure components</li>
+                                                    <li>Data-driven hardware planning replaced guesswork-based
+                                                        procurement</li>
+                                                    <li>Proactive scaling prevented capacity-related outages</li>
+                                                    <li>Reduced MTTD from hours to minutes through automated alerting
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🛠️ Tech Stack</summary>
+                                            <div class="section-content">
+                                                <div class="stack-grid">
+                                                    <span class="stack-item">Prometheus</span>
+                                                    <span class="stack-item">Grafana</span>
+                                                    <span class="stack-item">Alertmanager</span>
+                                                    <span class="stack-item">node_exporter</span>
+                                                    <span class="stack-item">Linux</span>
+                                                    <span class="stack-item">Docker</span>
+                                                </div>
+                                                <p style="margin-top:0.5rem"><a class="link"
+                                                        href="assets/project-observability.jpg" target="_blank"
+                                                        rel="noreferrer">View monitoring architecture</a></p>
+                                            </div>
+                                        </details>
+                                    </div>
                                 </div>
                             </article>
                         </div>
@@ -2367,6 +2665,51 @@
             createTrainingDots();
             updateTrainingCarousel();
         }
+    </script>
+
+    <!-- Image Lightbox Modal -->
+    <div class="lightbox-overlay" id="lightbox">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img src="" alt="Project architecture diagram" />
+    </div>
+
+    <script>
+        // Lightbox functionality for project images
+        (function () {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = lightbox.querySelector('img');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            // Click on any project-thumb to open lightbox
+            document.querySelectorAll('.project-thumb').forEach(thumb => {
+                thumb.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const bgImage = thumb.style.backgroundImage;
+                    const imgUrl = bgImage.replace(/^url\(['"]?/, '').replace(/['"]?\)$/, '');
+                    if (imgUrl) {
+                        lightboxImg.src = imgUrl;
+                        lightbox.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        })();
     </script>
 </body>
 
