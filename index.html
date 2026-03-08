@@ -923,71 +923,152 @@
                                 </div>
                             </article>
 
-                            <!-- 4. Django ECS Fargate -->
+                            <!-- 4. Django Startup Platform on ECS Fargate -->
                             <article class="project-card">
                                 <div class="project-thumb" style="background-image:url('assets/django-ECS.jpg');"
                                     data-label="Django ECS"></div>
                                 <div class="project-body">
-                                    <h3>Production-Grade Django Platform on AWS ECS Fargate</h3>
-                                    <p>Highly resilient, secure Django platform on AWS using serverless containers (ECS
-                                        Fargate) with Dual-Layer CI/CD and advanced observability.</p>
+                                    <h3>Production-Grade Django Startup Platform on AWS ECS Fargate</h3>
+                                    <p style="font-size:0.85rem;color:#64748b;margin-top:-0.3rem;margin-bottom:0.5rem;">
+                                        Serverless Containers · Blue/Green Deployment · CloudWatch Observability</p>
+                                    <p>Designed a production-grade Django platform for a startup using ECS Fargate with
+                                        blue/green deployment, WAF security, CloudWatch alerting, and operational
+                                        runbooks.</p>
                                     <ul class="chip-list">
-                                        <li>ECS Fargate · RDS Multi-AZ</li>
-                                        <li>GitHub Actions · CodePipeline</li>
-                                        <li>Managed Prometheus/Grafana</li>
+                                        <li>ECS Fargate · Terraform · RDS MySQL</li>
+                                        <li>Blue/Green · WAF · Secrets Manager</li>
+                                        <li>GitHub Actions · CloudWatch · SNS</li>
                                     </ul>
 
                                     <div class="project-sections">
                                         <details>
                                             <summary>📋 Overview</summary>
                                             <div class="section-content">
-                                                <p>Architected a production-grade Django application platform on AWS
-                                                    using serverless ECS Fargate containers, eliminating the need for
-                                                    server management while maintaining high availability.</p>
-                                                <p>The platform features dual-layer CI/CD combining GitHub Actions for
-                                                    rapid development feedback and AWS CodePipeline for governed
-                                                    production releases, with advanced observability through managed
-                                                    Prometheus and Grafana.</p>
+                                                <p>Designed a production-grade Django platform for a fast-growing
+                                                    startup building a subscription-based digital content platform.</p>
+                                                <p>The startup needed to launch fast with minimal ops overhead — no
+                                                    server management, zero-downtime deployments, strong security,
+                                                    automated backups, and centralized alerting for a small engineering
+                                                    team.</p>
+                                                <p>ECS Fargate was chosen as the runtime because it eliminates EC2
+                                                    management, patching, and cluster node overhead — making it ideal
+                                                    for a startup that needs to move quickly with a lean team.</p>
                                             </div>
                                         </details>
 
                                         <details>
                                             <summary>🏗️ Infrastructure</summary>
                                             <div class="section-content">
-                                                <p>Terraform-provisioned AWS environment with serverless compute:</p>
+                                                <p>All infrastructure provisioned with <strong>Terraform</strong>:</p>
                                                 <ul>
-                                                    <li>ECS Fargate running stateless Django tasks behind Application
-                                                        Load Balancer</li>
-                                                    <li>RDS PostgreSQL Multi-AZ for high-availability database</li>
-                                                    <li>S3 for static assets with secure access policies</li>
-                                                    <li>VPC with proper subnet isolation and security groups</li>
+                                                    <li>VPC with public/private subnets, Internet Gateway, NAT Gateway
+                                                    </li>
+                                                    <li>ECS Fargate Cluster + Service</li>
+                                                    <li>Application Load Balancer + Target Groups (blue/green)</li>
+                                                    <li>Amazon RDS MySQL (automated backups, 7-day retention, storage
+                                                        autoscaling)</li>
+                                                    <li>Amazon ECR for container images</li>
+                                                    <li>S3 bucket for static/media assets</li>
+                                                    <li>AWS WAF for edge protection</li>
+                                                    <li>AWS Secrets Manager for Django secret key and DB credentials
+                                                    </li>
+                                                    <li>CloudWatch Log Groups + SNS Topic</li>
+                                                    <li>IAM Roles and Policies (task-level access control)</li>
                                                 </ul>
                                             </div>
                                         </details>
 
                                         <details>
-                                            <summary>🔧 Dual-Layer CI/CD</summary>
+                                            <summary>🔧 Deployment Workflow</summary>
                                             <div class="section-content">
+                                                <p>GitHub Actions-based CI/CD pipeline:</p>
                                                 <ul>
-                                                    <li><strong>GitHub Actions</strong> — Rapid testing, Docker builds,
-                                                        ECR push, and Terraform plan reviews</li>
-                                                    <li><strong>AWS CodePipeline</strong> — Governed end-to-end
-                                                        production deployments with approval gates</li>
-                                                    <li><strong>Secrets Manager</strong> — Django secrets and DB
-                                                        credentials injected at runtime via IAM roles</li>
+                                                    <li><strong>Developer push</strong> → GitHub repository</li>
+                                                    <li><strong>GitHub Actions</strong> — Run tests</li>
+                                                    <li><strong>Docker build</strong> — Build application image</li>
+                                                    <li><strong>Push image</strong> → Amazon ECR</li>
+                                                    <li><strong>Trigger</strong> ECS blue/green deployment</li>
                                                 </ul>
                                             </div>
                                         </details>
 
                                         <details>
-                                            <summary>📊 Observability</summary>
+                                            <summary>🟦🟩 Blue/Green Deployment</summary>
                                             <div class="section-content">
-                                                <p>Advanced observability stack for full visibility:</p>
+                                                <p>Zero-downtime deployment strategy for production safety:</p>
                                                 <ul>
-                                                    <li>CloudWatch logs and metrics streamed via Kinesis Firehose</li>
-                                                    <li>Amazon Managed Prometheus (AMP) for metrics aggregation</li>
-                                                    <li>Amazon Managed Grafana (AMG) for dashboards and alerting</li>
+                                                    <li><strong>Blue</strong> — Current production version serving live
+                                                        traffic</li>
+                                                    <li><strong>Green</strong> — New release deployed alongside blue
+                                                    </li>
+                                                    <li>Health checks validate the green task set</li>
+                                                    <li>ALB shifts traffic from blue to green</li>
+                                                    <li>If issues detected → instant rollback to blue</li>
+                                                    <li>Blue tasks terminated after successful cutover</li>
                                                 </ul>
+                                                <p style="margin-top:0.5rem;font-style:italic;color:#94a3b8;">"We used
+                                                    blue/green deployment on ECS to ensure zero-downtime releases and
+                                                    safer rollback during production updates."</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🛡️ Security Design</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li><strong>AWS WAF</strong> — Placed in front of ALB for bot
+                                                        protection, rate limiting, and web exploit filtering</li>
+                                                    <li><strong>Secrets Manager</strong> — Django secret key and DB
+                                                        credentials injected at runtime, never hardcoded</li>
+                                                    <li><strong>IAM Task Roles</strong> — Each ECS task accesses only
+                                                        the AWS services it needs</li>
+                                                    <li><strong>Security Groups</strong> — Network-level isolation
+                                                        between components</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>💾 Backup & Data Protection</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>RDS automated backups enabled with <strong>7-day
+                                                            retention</strong></li>
+                                                    <li>Point-in-time restore support</li>
+                                                    <li>Automatic snapshot lifecycle management</li>
+                                                    <li><strong>Storage autoscaling</strong> — DB grows without manual
+                                                        resize</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📊 Observability & Alerting</summary>
+                                            <div class="section-content">
+                                                <p><strong>CloudWatch</strong> monitors ECS task logs, ALB metrics, ECS
+                                                    CPU/memory, RDS CPU/connections/storage, and deployment events.</p>
+                                                <p><strong>Alarm examples:</strong> ECS CPU high, task unhealthy, ALB
+                                                    5xx errors, RDS CPU high, low free storage, deployment failure.</p>
+                                                <p><strong>Alerting flow:</strong> CloudWatch Alarms → SNS → Slack +
+                                                    Email notifications. The team is instantly notified of scaling
+                                                    events, errors, and deployment issues.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📋 Runbooks & Documentation</summary>
+                                            <div class="section-content">
+                                                <p><strong>Runbooks prepared:</strong></p>
+                                                <ul>
+                                                    <li>Deployment rollback runbook</li>
+                                                    <li>ECS task unhealthy runbook</li>
+                                                    <li>RDS high CPU runbook</li>
+                                                    <li>ALB 5xx troubleshooting runbook</li>
+                                                    <li>WAF false positive runbook</li>
+                                                </ul>
+                                                <p><strong>Documentation:</strong> Architecture overview, environment
+                                                    variables, deployment workflow, incident escalation path,
+                                                    backup/restore notes, access/IAM guide.</p>
                                             </div>
                                         </details>
 
@@ -995,13 +1076,18 @@
                                             <summary>📈 Impact</summary>
                                             <div class="section-content">
                                                 <ul>
-                                                    <li>Zero server management overhead with fully serverless compute
+                                                    <li>No server management overhead — fully serverless with ECS
+                                                        Fargate</li>
+                                                    <li>Zero-downtime deployments with blue/green strategy</li>
+                                                    <li>Safer production releases with instant rollback capability</li>
+                                                    <li>Improved security with WAF, Secrets Manager, and IAM isolation
                                                     </li>
-                                                    <li>Dual CI/CD layers provide both speed and governance</li>
-                                                    <li>Multi-AZ RDS ensures database availability during AZ failures
-                                                    </li>
-                                                    <li>Managed observability stack eliminates monitoring infrastructure
-                                                        maintenance</li>
+                                                    <li>Automated operational alerting via CloudWatch + SNS +
+                                                        Slack/Email</li>
+                                                    <li>Simplified database operations with RDS backups and storage
+                                                        autoscaling</li>
+                                                    <li>Better operational readiness with runbooks and platform
+                                                        documentation</li>
                                                 </ul>
                                             </div>
                                         </details>
@@ -1010,18 +1096,21 @@
                                             <summary>🛠️ Tech Stack</summary>
                                             <div class="section-content">
                                                 <div class="stack-grid">
+                                                    <span class="stack-item">Django (Python)</span>
+                                                    <span class="stack-item">Gunicorn</span>
                                                     <span class="stack-item">AWS ECS Fargate</span>
                                                     <span class="stack-item">Terraform</span>
-                                                    <span class="stack-item">RDS Multi-AZ</span>
-                                                    <span class="stack-item">ALB</span>
-                                                    <span class="stack-item">ECR</span>
-                                                    <span class="stack-item">S3</span>
-                                                    <span class="stack-item">Secrets Manager</span>
+                                                    <span class="stack-item">Amazon RDS MySQL</span>
+                                                    <span class="stack-item">Amazon S3</span>
+                                                    <span class="stack-item">Amazon ECR</span>
+                                                    <span class="stack-item">AWS WAF</span>
+                                                    <span class="stack-item">AWS Secrets Manager</span>
                                                     <span class="stack-item">GitHub Actions</span>
-                                                    <span class="stack-item">AWS CodePipeline</span>
+                                                    <span class="stack-item">Blue/Green Deploy</span>
                                                     <span class="stack-item">CloudWatch</span>
-                                                    <span class="stack-item">AMP / AMG</span>
-                                                    <span class="stack-item">Django (Python)</span>
+                                                    <span class="stack-item">Amazon SNS</span>
+                                                    <span class="stack-item">ALB</span>
+                                                    <span class="stack-item">IAM Roles</span>
                                                     <span class="stack-item">Docker</span>
                                                 </div>
                                             </div>
@@ -1030,8 +1119,22 @@
                                         <details>
                                             <summary>🖼️ Architecture Diagram</summary>
                                             <div class="section-content">
-                                                <p><a class="link" href="assets/django-ECS.jpg" target="_blank"
-                                                        rel="noreferrer">View full architecture diagram →</a></p>
+                                                <p>
+                                                    <a class="link" href="assets/django-ECS.jpg" target="_blank"
+                                                        rel="noreferrer">View architecture (JPG) →</a> ·
+                                                    <a class="link" href="assets/django-ECS.png" target="_blank"
+                                                        rel="noreferrer">View architecture (PNG) →</a>
+                                                </p>
+                                                <p style="margin-top:0.7rem"><strong>Architecture Overview</strong></p>
+                                                <p>This platform demonstrates a production-grade serverless architecture
+                                                    for a Django startup application on AWS ECS Fargate. Users are
+                                                    protected by AWS WAF at the edge, with traffic routed through ALB to
+                                                    Fargate containers running Django + Gunicorn. Blue/green deployment
+                                                    ensures zero-downtime releases through GitHub Actions CI/CD.
+                                                    Application secrets are managed via AWS Secrets Manager with
+                                                    task-level IAM roles. CloudWatch provides full observability with
+                                                    SNS alerting to Slack and email. Operational runbooks support
+                                                    incident response and platform maintenance.</p>
                                             </div>
                                         </details>
                                     </div>
