@@ -620,6 +620,97 @@ nav a:hover {
     font-size: 0.9rem;
 }
 
+/* Multi-section expandable project details */
+.project-sections {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.project-sections details {
+    border-top: 1px solid var(--border);
+}
+
+.project-sections details:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.project-sections summary {
+    padding: 0.6rem 0.2rem;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    color: var(--heading);
+    transition: color 0.2s ease, background 0.2s ease;
+    border-radius: 4px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+}
+
+.project-sections summary::after {
+    content: '▸';
+    margin-left: auto;
+    transition: transform 0.2s ease;
+    color: var(--muted);
+    font-size: 0.75rem;
+}
+
+.project-sections details[open] summary::after {
+    transform: rotate(90deg);
+}
+
+.project-sections summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-sections summary:hover {
+    color: var(--primary);
+    background: rgba(37, 99, 235, 0.04);
+}
+
+.section-content {
+    padding: 0.3rem 0.5rem 0.8rem;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: var(--text);
+}
+
+.section-content p {
+    margin-bottom: 0.5rem;
+}
+
+.section-content p:last-child {
+    margin-bottom: 0;
+}
+
+.section-content ul {
+    margin: 0.4rem 0;
+    padding-left: 1.2rem;
+}
+
+.section-content li {
+    margin-bottom: 0.3rem;
+}
+
+.stack-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+}
+
+.stack-item {
+    padding: 0.25rem 0.55rem;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #eff6ff, #e0edff);
+    border: 1px solid #bfdbfe;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #1e40af;
+}
+
 .project-carousel-btn {
     width: 38px;
     height: 38px;

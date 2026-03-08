@@ -434,41 +434,123 @@
                                 <div class="project-thumb" style="background-image:url('assets/devsecops.png');"
                                     data-label="DevSecOps CAASM"></div>
                                 <div class="project-body">
-                                    <h3>DevSecOps Architecture for Cyber Asset Attack Surface Management (CAASM)
-                                        Platform</h3>
-                                    <p>End-to-end DevOps infrastructure for a CAASM startup: on-premise Kubernetes with
-                                        GitOps, hybrid PostgreSQL/ELK data architecture, and comprehensive
-                                        security-first CI/CD pipeline.</p>
+                                    <h3>DevSecOps Architecture for CAASM Platform</h3>
+                                    <p>Security-first DevSecOps platform for a Cyber Asset Attack Surface Management
+                                        application on on-prem Kubernetes with GitOps-driven delivery and full
+                                        observability.</p>
                                     <ul class="chip-list">
                                         <li>Kubernetes · GitOps · ArgoCD</li>
                                         <li>Spring Boot · Angular · PostgreSQL</li>
                                         <li>SonarQube · Trivy · Keycloak · New Relic</li>
                                     </ul>
-                                    <details>
-                                        <summary>Details</summary>
-                                        <ul class="list">
-                                            <li>Hybrid Data Architecture: PostgreSQL for transactional data;
-                                                Elasticsearch (ELK) integrated into Spring Boot for complex analytics on
-                                                large-scale cyber asset data.</li>
-                                            <li>GitOps-Driven Delivery: ArgoCD ensures on-premise Kubernetes cluster
-                                                state is always synchronized with GitHub configuration; eliminated
-                                                manual deployments and drift.</li>
-                                            <li>DevSecOps Pipeline: GitHub Actions CI for Spring Boot (Maven) and
-                                                Angular; SonarQube for static analysis; Trivy for container
-                                                vulnerability scanning; Nexus for artifact management.</li>
-                                            <li>Identity & Observability: Keycloak for centralized SSO/Identity
-                                                Management; New Relic APM for real-time error tracking and latency
-                                                monitoring.</li>
-                                            <li>Impact: Reduced deployment cycle from days to minutes; blocked critical
-                                                CVEs during build phase; improved Elasticsearch search performance by
-                                                60%.</li>
-                                            <li>Stack: Kubernetes (On-Prem), GitHub Actions, ArgoCD, Nexus, Spring Boot,
-                                                Angular, PostgreSQL, Elasticsearch (ELK), New Relic, Keycloak,
-                                                SonarQube, Trivy.</li>
-                                            <li><a class="link" href="assets/devsecops.png" target="_blank"
-                                                    rel="noreferrer">View architecture diagram</a></li>
-                                        </ul>
-                                    </details>
+
+                                    <div class="project-sections">
+                                        <details>
+                                            <summary>📋 Overview</summary>
+                                            <div class="section-content">
+                                                <p>Designed a security-first DevSecOps platform for a Cyber Asset Attack
+                                                    Surface Management (CAASM) application running on an on-prem
+                                                    Kubernetes cluster.</p>
+                                                <p>The platform automated the full delivery lifecycle using GitHub
+                                                    Actions for CI and ArgoCD for GitOps-based deployment, ensuring
+                                                    cluster state always matched Git configuration.</p>
+                                                <p>The application stack consisted of an Angular frontend and a Spring
+                                                    Boot backend, with PostgreSQL for transactional data and
+                                                    Elasticsearch powering large-scale search and analytics across cyber
+                                                    asset records.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🔧 DevSecOps Pipeline</summary>
+                                            <div class="section-content">
+                                                <p>A comprehensive CI pipeline was implemented using GitHub Actions to
+                                                    build, test, and secure application artifacts. Security and quality
+                                                    gates integrated directly into the pipeline:</p>
+                                                <ul>
+                                                    <li><strong>SonarQube</strong> — Static code analysis and quality
+                                                        enforcement</li>
+                                                    <li><strong>Trivy</strong> — Container vulnerability scanning</li>
+                                                    <li><strong>Nexus Repository</strong> — Centralized artifact and
+                                                        image management</li>
+                                                </ul>
+                                                <p>This shift-left approach ensured that vulnerable builds were blocked
+                                                    before reaching the runtime environment.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🚀 Deployment Architecture</summary>
+                                            <div class="section-content">
+                                                <p>Continuous delivery was implemented using ArgoCD and the GitOps
+                                                    model, enabling:</p>
+                                                <ul>
+                                                    <li>Declarative Kubernetes deployments</li>
+                                                    <li>Automatic drift detection</li>
+                                                    <li>Fully traceable releases through Git history</li>
+                                                </ul>
+                                                <p>The application ran on an on-prem Kubernetes cluster behind an
+                                                    ingress controller. Authentication and identity management were
+                                                    handled through Keycloak using OIDC, providing centralized SSO for
+                                                    the platform.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📊 Observability</summary>
+                                            <div class="section-content">
+                                                <p>Application performance and reliability were monitored using New
+                                                    Relic APM, allowing the team to track:</p>
+                                                <ul>
+                                                    <li>Request latency and error rates</li>
+                                                    <li>Transaction traces across services</li>
+                                                    <li>Performance regressions after releases</li>
+                                                </ul>
+                                                <p>This significantly improved operational visibility and incident
+                                                    response capabilities.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📈 Impact</summary>
+                                            <div class="section-content">
+                                                <ul>
+                                                    <li>Reduced deployment cycle from manual multi-step releases to
+                                                        automated GitOps deployments</li>
+                                                    <li>Introduced security gates in CI to block vulnerable container
+                                                        images</li>
+                                                    <li>Standardized artifact management through Nexus</li>
+                                                    <li>Improved observability and release confidence with APM
+                                                        monitoring</li>
+                                                    <li>Enabled scalable search capabilities through PostgreSQL +
+                                                        Elasticsearch hybrid architecture</li>
+                                                </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🛠️ Tech Stack</summary>
+                                            <div class="section-content">
+                                                <div class="stack-grid">
+                                                    <span class="stack-item">Kubernetes (On-Prem)</span>
+                                                    <span class="stack-item">GitHub Actions</span>
+                                                    <span class="stack-item">ArgoCD (GitOps)</span>
+                                                    <span class="stack-item">SonarQube</span>
+                                                    <span class="stack-item">Trivy</span>
+                                                    <span class="stack-item">Nexus Repository</span>
+                                                    <span class="stack-item">Spring Boot</span>
+                                                    <span class="stack-item">Angular</span>
+                                                    <span class="stack-item">PostgreSQL</span>
+                                                    <span class="stack-item">Elasticsearch</span>
+                                                    <span class="stack-item">Keycloak (OIDC)</span>
+                                                    <span class="stack-item">New Relic APM</span>
+                                                </div>
+                                                <p style="margin-top:0.5rem"><a class="link" href="assets/devsecops.png"
+                                                        target="_blank" rel="noreferrer">View architecture diagram</a>
+                                                </p>
+                                            </div>
+                                        </details>
+                                    </div>
                                 </div>
                             </article>
 
