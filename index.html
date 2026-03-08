@@ -742,6 +742,8 @@
                                     data-label="Laravel EKS"></div>
                                 <div class="project-body">
                                     <h3>High-Availability Laravel News Platform on AWS EKS</h3>
+                                    <p style="font-size:0.85rem;color:#64748b;margin-top:-0.3rem;margin-bottom:0.5rem;">
+                                        Auto-Scaling Kubernetes Architecture for Breaking-News Traffic</p>
                                     <p>Migrated a legacy EC2-based Laravel news platform to a scalable containerized
                                         architecture on AWS EKS with automated scaling, Redis caching, and Cloudflare
                                         CDN.</p>
@@ -788,16 +790,24 @@
                                         </details>
 
                                         <details>
-                                            <summary>🔧 CI/CD Pipeline</summary>
+                                            <summary>🔧 Deployment Workflow</summary>
                                             <div class="section-content">
-                                                <p>AWS-native CI/CD pipeline:</p>
+                                                <p>AWS-native CI/CD pipeline with Helm-based deployment:</p>
                                                 <ul>
-                                                    <li><strong>CodePipeline</strong> — Triggered by GitHub commits</li>
-                                                    <li><strong>CodeBuild</strong> — Runs tests and builds Docker images
+                                                    <li><strong>Developer push</strong> → GitHub repository</li>
+                                                    <li><strong>CodePipeline</strong> triggered automatically</li>
+                                                    <li><strong>CodeBuild</strong> — Runs tests and builds Docker image
                                                     </li>
-                                                    <li><strong>ECR</strong> — Container image registry</li>
-                                                    <li><strong>Rolling Updates</strong> — Zero-downtime deployments to
-                                                        EKS</li>
+                                                    <li><strong>Push image</strong> → Amazon ECR (container registry)
+                                                    </li>
+                                                    <li><strong>Helm upgrade</strong> — Updates image tag in Helm chart
+                                                        values</li>
+                                                    <li><strong>Rolling Deployment</strong> — New pods created alongside
+                                                        old pods</li>
+                                                    <li><strong>Readiness checks pass</strong> — Health probes validate
+                                                        new pods</li>
+                                                    <li><strong>Traffic shifts</strong> — Old pods terminated, traffic
+                                                        routes to new pods</li>
                                                 </ul>
                                             </div>
                                         </details>
@@ -881,6 +891,7 @@
                                                     <span class="stack-item">Cluster Autoscaler</span>
                                                     <span class="stack-item">Prometheus</span>
                                                     <span class="stack-item">Grafana</span>
+                                                    <span class="stack-item">Helm</span>
                                                     <span class="stack-item">Docker</span>
                                                 </div>
                                             </div>
@@ -898,11 +909,14 @@
                                                 <p style="margin-top:0.7rem"><strong>Architecture Overview</strong></p>
                                                 <p>This platform demonstrates a high-availability architecture for a
                                                     news portal built on AWS EKS. Users access the platform through
-                                                    Cloudflare CDN with S3-backed media delivery. The application runs
-                                                    as containerized Laravel services with Redis caching, dual-layer
-                                                    auto-scaling (HPA + Cluster Autoscaler), and AWS-native CI/CD
-                                                    pipelines (CodePipeline, CodeBuild, ECR). Full observability is
-                                                    provided through Prometheus and Grafana.</p>
+                                                    Cloudflare CDN with S3-backed media delivery. The CI/CD pipeline
+                                                    flows
+                                                    through CodePipeline → CodeBuild → ECR → Helm upgrade → Rolling
+                                                    Deployment with readiness checks. The application runs as
+                                                    containerized
+                                                    Laravel services with Redis caching, dual-layer auto-scaling (HPA +
+                                                    Cluster Autoscaler), and full observability through Prometheus and
+                                                    Grafana.</p>
                                             </div>
                                         </details>
                                     </div>
