@@ -736,76 +736,112 @@
                                 </div>
                             </article>
 
-                            <!-- 3. Auto-Scaling EKS -->
+                            <!-- 3. High-Availability Laravel News Platform -->
                             <article class="project-card">
-                                <div class="project-thumb" style="background-image:url('assets/autoscaling-EKS.jpg');"
-                                    data-label="Auto-Scaling EKS"></div>
+                                <div class="project-thumb" style="background-image:url('assets/laravel-eks-news.jpg');"
+                                    data-label="Laravel EKS"></div>
                                 <div class="project-body">
-                                    <h3>High-Availability & Auto-Scaling Microservices on AWS EKS</h3>
-                                    <p>Resilient, self-healing FastAPI microservices architecture on EKS with Dual-Layer
-                                        auto-scaling for zero-downtime traffic spikes.</p>
+                                    <h3>High-Availability Laravel News Platform on AWS EKS</h3>
+                                    <p>Migrated a legacy EC2-based Laravel news platform to a scalable containerized
+                                        architecture on AWS EKS with automated scaling, Redis caching, and Cloudflare
+                                        CDN.</p>
                                     <ul class="chip-list">
-                                        <li>EKS · Terraform · HPA</li>
-                                        <li>Cluster Autoscaler · PDB</li>
-                                        <li>FastAPI · Redis · Prometheus</li>
+                                        <li>Laravel · AWS EKS · Terraform</li>
+                                        <li>Redis · RDS · S3 · Cloudflare</li>
+                                        <li>CodePipeline · HPA · Prometheus</li>
                                     </ul>
 
                                     <div class="project-sections">
                                         <details>
                                             <summary>📋 Overview</summary>
                                             <div class="section-content">
-                                                <p>Architected a resilient microservices platform on AWS EKS designed to
-                                                    handle unpredictable traffic spikes without manual intervention.</p>
-                                                <p>The system uses dual-layer auto-scaling — pod-level HPA and
-                                                    node-level Cluster Autoscaler — to ensure applications always have
-                                                    the resources they need while optimizing cloud costs during
-                                                    low-traffic periods.</p>
+                                                <p>Modernized a high-traffic news platform that experiences
+                                                    unpredictable traffic spikes during breaking news events.</p>
+                                                <p>The original infrastructure relied on EC2 auto-scaling groups, a
+                                                    single MySQL database, CloudFront CDN, and AWS
+                                                    CodePipeline/CodeBuild/CodeDeploy. While it worked under normal
+                                                    conditions, it struggled during sudden traffic surges — leading to
+                                                    scaling delays, database bottlenecks, and high infrastructure costs.
+                                                </p>
+                                                <p>The platform was redesigned using a containerized architecture on AWS
+                                                    EKS with Terraform, automated dual-layer scaling, Redis caching,
+                                                    Cloudflare CDN, and Prometheus/Grafana observability.</p>
                                             </div>
                                         </details>
 
                                         <details>
                                             <summary>🏗️ Infrastructure</summary>
                                             <div class="section-content">
-                                                <p>Terraform automates the complete AWS environment:</p>
+                                                <p>All infrastructure provisioned with <strong>Terraform</strong>:</p>
                                                 <ul>
-                                                    <li>EKS cluster with managed node groups across multiple AZs</li>
-                                                    <li>VPC networking with public/private subnet separation</li>
-                                                    <li>IAM roles and security groups following least-privilege
-                                                        principles</li>
-                                                    <li>Version-controlled, reproducible infrastructure</li>
+                                                    <li>AWS VPC with public/private subnets</li>
+                                                    <li>EKS Cluster with managed Node Groups</li>
+                                                    <li>Security Groups, IAM Roles</li>
+                                                    <li>Application Load Balancer + Kubernetes Ingress</li>
+                                                    <li>Amazon RDS (MySQL) for persistent data</li>
+                                                    <li>Amazon S3 for media storage (images/videos)</li>
+                                                </ul>
+                                                <p><strong>Cloudflare</strong> provides CDN, DNS management, and DDoS
+                                                    protection. Media assets served from S3 through Cloudflare globally.
+                                                </p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🔧 CI/CD Pipeline</summary>
+                                            <div class="section-content">
+                                                <p>AWS-native CI/CD pipeline:</p>
+                                                <ul>
+                                                    <li><strong>CodePipeline</strong> — Triggered by GitHub commits</li>
+                                                    <li><strong>CodeBuild</strong> — Runs tests and builds Docker images
+                                                    </li>
+                                                    <li><strong>ECR</strong> — Container image registry</li>
+                                                    <li><strong>Rolling Updates</strong> — Zero-downtime deployments to
+                                                        EKS</li>
                                                 </ul>
                                             </div>
                                         </details>
 
                                         <details>
-                                            <summary>⚡ Auto-Scaling Architecture</summary>
+                                            <summary>⚡ Scaling Strategy</summary>
                                             <div class="section-content">
-                                                <p>Dual-layer scaling ensures both pods and nodes adapt automatically:
-                                                </p>
+                                                <p>Dual-layer auto-scaling for handling breaking-news traffic:</p>
                                                 <ul>
                                                     <li><strong>HPA (Horizontal Pod Autoscaler)</strong> — Scales
-                                                        FastAPI pods based on CPU/Memory metrics</li>
-                                                    <li><strong>Cluster Autoscaler</strong> — Provisions new EC2 nodes
-                                                        when existing nodes reach capacity</li>
+                                                        Laravel pods based on CPU/memory metrics</li>
+                                                    <li><strong>Cluster Autoscaler</strong> — Provisions/removes EC2
+                                                        worker nodes based on pod scheduling demand</li>
                                                     <li><strong>PDB (Pod Disruption Budgets)</strong> — Maintains
-                                                        minimum pod availability during disruptions</li>
-                                                    <li><strong>Health Probes</strong> — Liveness/Readiness probes
-                                                        ensure only healthy pods receive traffic</li>
+                                                        minimum availability during scaling events</li>
+                                                    <li><strong>Health Probes</strong> — Readiness/liveness probes
+                                                        ensure only healthy containers receive traffic</li>
                                                 </ul>
                                             </div>
                                         </details>
 
                                         <details>
-                                            <summary>🚀 Deployment</summary>
+                                            <summary>💾 Redis Caching Layer</summary>
                                             <div class="section-content">
+                                                <p>Redis reduces database pressure significantly during traffic spikes:
+                                                </p>
                                                 <ul>
-                                                    <li>Rolling Update strategy deploys new versions gradually without
-                                                        interrupting active sessions</li>
-                                                    <li>Helm charts standardize deployment configurations across
-                                                        environments</li>
-                                                    <li>Redis used for session caching and inter-service communication
-                                                    </li>
+                                                    <li>Homepage content caching</li>
+                                                    <li>Breaking news widget caching</li>
+                                                    <li>Popular article metadata</li>
+                                                    <li>Session storage</li>
+                                                    <li>Rate limiting</li>
                                                 </ul>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📊 Observability</summary>
+                                            <div class="section-content">
+                                                <p><strong>Prometheus</strong> collects container, node, scaling event,
+                                                    and resource utilization metrics.</p>
+                                                <p><strong>Grafana</strong> dashboards visualize cluster health,
+                                                    application performance, and auto-scaling activity — enabling
+                                                    engineers to quickly identify bottlenecks during traffic spikes.</p>
                                             </div>
                                         </details>
 
@@ -813,14 +849,16 @@
                                             <summary>📈 Impact</summary>
                                             <div class="section-content">
                                                 <ul>
-                                                    <li>Zero-downtime during traffic spikes — pods and nodes scale
-                                                        automatically within seconds</li>
-                                                    <li>30% cost optimization through automatic scale-down during
-                                                        low-traffic periods</li>
-                                                    <li>Self-healing architecture automatically replaces failed pods and
-                                                        nodes</li>
-                                                    <li>Prometheus metrics provide full visibility into scaling events
-                                                        and resource utilization</li>
+                                                    <li>Zero downtime during breaking-news traffic spikes — pods and
+                                                        nodes scale automatically</li>
+                                                    <li>Redis caching significantly reduced repeated database queries
+                                                    </li>
+                                                    <li>Media assets served globally through S3 + Cloudflare CDN</li>
+                                                    <li>Cluster Autoscaler enables scale-down during low traffic,
+                                                        reducing costs</li>
+                                                    <li>Prometheus + Grafana provide full visibility into scaling
+                                                        behavior</li>
+                                                    <li>Rolling deployments ensure minimal service disruption</li>
                                                 </ul>
                                             </div>
                                         </details>
@@ -829,16 +867,21 @@
                                             <summary>🛠️ Tech Stack</summary>
                                             <div class="section-content">
                                                 <div class="stack-grid">
+                                                    <span class="stack-item">Laravel (PHP)</span>
                                                     <span class="stack-item">AWS EKS</span>
                                                     <span class="stack-item">Terraform</span>
+                                                    <span class="stack-item">Redis</span>
+                                                    <span class="stack-item">Amazon RDS</span>
+                                                    <span class="stack-item">Amazon S3</span>
+                                                    <span class="stack-item">Cloudflare CDN</span>
+                                                    <span class="stack-item">AWS CodePipeline</span>
+                                                    <span class="stack-item">AWS CodeBuild</span>
+                                                    <span class="stack-item">AWS ECR</span>
                                                     <span class="stack-item">Kubernetes HPA</span>
                                                     <span class="stack-item">Cluster Autoscaler</span>
-                                                    <span class="stack-item">PDB</span>
-                                                    <span class="stack-item">Helm</span>
-                                                    <span class="stack-item">Python (FastAPI)</span>
-                                                    <span class="stack-item">Redis</span>
-                                                    <span class="stack-item">Docker</span>
                                                     <span class="stack-item">Prometheus</span>
+                                                    <span class="stack-item">Grafana</span>
+                                                    <span class="stack-item">Docker</span>
                                                 </div>
                                             </div>
                                         </details>
@@ -846,8 +889,20 @@
                                         <details>
                                             <summary>🖼️ Architecture Diagram</summary>
                                             <div class="section-content">
-                                                <p><a class="link" href="assets/autoscaling-EKS.jpg" target="_blank"
-                                                        rel="noreferrer">View full architecture diagram →</a></p>
+                                                <p>
+                                                    <a class="link" href="assets/laravel-eks-news.jpg" target="_blank"
+                                                        rel="noreferrer">View architecture (JPG) →</a> ·
+                                                    <a class="link" href="assets/laravel-eks-news.png" target="_blank"
+                                                        rel="noreferrer">View architecture (PNG) →</a>
+                                                </p>
+                                                <p style="margin-top:0.7rem"><strong>Architecture Overview</strong></p>
+                                                <p>This platform demonstrates a high-availability architecture for a
+                                                    news portal built on AWS EKS. Users access the platform through
+                                                    Cloudflare CDN with S3-backed media delivery. The application runs
+                                                    as containerized Laravel services with Redis caching, dual-layer
+                                                    auto-scaling (HPA + Cluster Autoscaler), and AWS-native CI/CD
+                                                    pipelines (CodePipeline, CodeBuild, ECR). Full observability is
+                                                    provided through Prometheus and Grafana.</p>
                                             </div>
                                         </details>
                                     </div>
