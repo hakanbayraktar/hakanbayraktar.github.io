@@ -1141,72 +1141,144 @@
                                 </div>
                             </article>
 
-                            <!-- 5. Enterprise Monitoring -->
+                            <!-- 5. Enterprise-Grade Observability Platform on Google Cloud -->
                             <article class="project-card">
                                 <div class="project-thumb"
                                     style="background-image:url('assets/project-observability.jpg');"
-                                    data-label="Observability"></div>
+                                    data-label="GCP Observability"></div>
                                 <div class="project-body">
-                                    <h3>Enterprise-Grade Monitoring and Observability</h3>
-                                    <p>Centralized Prometheus/Grafana stack for 50+ servers, shifting from reactive
-                                        incidents to proactive operations.</p>
+                                    <h3>Enterprise-Grade Observability Platform on Google Cloud</h3>
+                                    <p style="font-size:0.85rem;color:#64748b;margin-top:-0.3rem;margin-bottom:0.5rem;">
+                                        Centralized Monitoring · SLO/SLI · Actionable Alerting</p>
+                                    <p>Centralized observability and reliability platform for production microservices
+                                        on GKE with SLO-based monitoring, distributed tracing, and actionable alerting.
+                                    </p>
                                     <ul class="chip-list">
-                                        <li>Prometheus · Grafana</li>
-                                        <li>Alertmanager</li>
-                                        <li>node_exporter</li>
+                                        <li>GKE · Cloud Monitoring · Prometheus</li>
+                                        <li>Cloud Logging · Cloud Trace</li>
+                                        <li>SLO/SLI · Alerting · Runbooks</li>
                                     </ul>
 
                                     <div class="project-sections">
                                         <details>
                                             <summary>📋 Overview</summary>
                                             <div class="section-content">
-                                                <p>Built a centralized monitoring and observability platform using
-                                                    Prometheus and Grafana to provide 100% visibility across a fleet of
-                                                    50+ Linux and Windows servers.</p>
-                                                <p>The platform transformed the operations model from reactive incident
-                                                    response to data-driven proactive operations with capacity planning
-                                                    and trend analysis.</p>
+                                                <p>A SaaS company running multiple microservices on Google Cloud
+                                                    experienced growing pains as the platform scaled — logs were
+                                                    scattered, incidents were detected late through user complaints, no
+                                                    SLO definitions existed, and alert fatigue caused the team to ignore
+                                                    most notifications.</p>
+                                                <p>The company needed a centralized observability and reliability
+                                                    platform to unify monitoring across all services, define measurable
+                                                    reliability targets, and enable faster incident response with
+                                                    actionable alerts and operational runbooks.</p>
                                             </div>
                                         </details>
 
                                         <details>
-                                            <summary>📡 Metrics Collection</summary>
+                                            <summary>🏗️ GKE Microservices</summary>
                                             <div class="section-content">
+                                                <p>Production services running on <strong>Google Kubernetes
+                                                        Engine</strong>:</p>
                                                 <ul>
-                                                    <li>Prometheus TSDB scraping via HTTP pull model</li>
-                                                    <li>node_exporter on 50+ Linux/Windows nodes collecting CPU, memory,
-                                                        disk, and network metrics</li>
-                                                    <li>Custom exporters for application-specific metrics</li>
-                                                    <li>Service discovery for automatic target registration</li>
+                                                    <li>Auth Service — user authentication and authorization</li>
+                                                    <li>API Service — core business logic and REST API</li>
+                                                    <li>Worker Service — background job processing</li>
+                                                    <li>Payment Service — billing and subscription management</li>
+                                                    <li>Notification Service — email and push notifications</li>
                                                 </ul>
+                                                <p><strong>Memorystore for Redis</strong> used for API rate limiting,
+                                                    session cache, and distributed locks.</p>
+                                                <p><strong>HPA + Node Autoscaling</strong> for automatic scaling based
+                                                    on CPU, memory, and request rate.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📡 Observability Design</summary>
+                                            <div class="section-content">
+                                                <p>Three-pillar observability implementation:</p>
+                                                <p><strong>Metrics</strong> — Managed Service for Prometheus collects
+                                                    request rate, error rate, latency, pod metrics, and node metrics
+                                                    from all GKE services.</p>
+                                                <p><strong>Logs</strong> — Cloud Logging centralizes container logs,
+                                                    application logs, audit logs, and ingress logs. Log-based metrics
+                                                    created for custom alerting.</p>
+                                                <p><strong>Traces</strong> — Cloud Trace provides distributed tracing
+                                                    and request flow visualization across microservices.</p>
+                                                <p><strong>Error Reporting</strong> — Automated error grouping and
+                                                    analysis across all services.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>📐 SLO / SLI Implementation</summary>
+                                            <div class="section-content">
+                                                <p>SRE approach with measurable reliability targets:</p>
+                                                <ul>
+                                                    <li><strong>API Service SLI:</strong> successful requests / total
+                                                        requests</li>
+                                                    <li><strong>API Service SLO:</strong> 99.9% success rate</li>
+                                                    <li><strong>Latency SLO:</strong> 95% of requests &lt; 200ms</li>
+                                                    <li><strong>Error Budget:</strong> tracked per service per rolling
+                                                        window</li>
+                                                </ul>
+                                                <p>SLO monitoring integrated into Cloud Monitoring dashboards with burn
+                                                    rate alerts when error budget consumption accelerates.</p>
+                                            </div>
+                                        </details>
+
+                                        <details>
+                                            <summary>🔔 Alerting Strategy</summary>
+                                            <div class="section-content">
+                                                <p>Actionable alert policies replacing noisy legacy alerts:</p>
+                                                <ul>
+                                                    <li><strong>High error rate</strong> — error rate &gt; 5% triggers
+                                                        immediate alert</li>
+                                                    <li><strong>High latency</strong> — p95 latency &gt; 500ms</li>
+                                                    <li><strong>Pod crash loop</strong> — restart count exceeds
+                                                        threshold</li>
+                                                    <li><strong>SLO burn rate</strong> — error budget consumption too
+                                                        fast</li>
+                                                    <li><strong>Node pressure</strong> — CPU or memory pressure on GKE
+                                                        nodes</li>
+                                                </ul>
+                                                <p><strong>Alert flow:</strong> Cloud Monitoring → Notification Channels
+                                                    → Slack + Email</p>
                                             </div>
                                         </details>
 
                                         <details>
                                             <summary>📊 Dashboards & Visualization</summary>
                                             <div class="section-content">
+                                                <p>Cloud Monitoring dashboards with Metrics Explorer:</p>
                                                 <ul>
-                                                    <li>Grafana dashboards using the USE method (Utilization,
-                                                        Saturation, Errors)</li>
-                                                    <li>Capacity-planning views for long-term hardware forecasting</li>
-                                                    <li>Per-service and per-node drill-down views</li>
-                                                    <li>Real-time status boards for NOC and on-call teams</li>
+                                                    <li>Service-level dashboards — latency, error rate, throughput per
+                                                        service</li>
+                                                    <li>Infrastructure dashboards — GKE node health, pod resource usage
+                                                    </li>
+                                                    <li>SLO dashboards — error budget remaining, burn rate trends</li>
+                                                    <li>Real-time status boards for on-call teams</li>
                                                 </ul>
                                             </div>
                                         </details>
 
                                         <details>
-                                            <summary>🔔 Alerting</summary>
+                                            <summary>📋 Runbooks & Documentation</summary>
                                             <div class="section-content">
-                                                <p>Alertmanager configured with intelligent routing and deduplication:
-                                                </p>
+                                                <p><strong>Incident runbooks prepared:</strong></p>
                                                 <ul>
-                                                    <li>Rules for high CPU, disk space, memory pressure, and service
-                                                        down</li>
-                                                    <li>Multi-channel routing to Slack and PagerDuty</li>
-                                                    <li>Alert grouping and silencing to reduce noise</li>
-                                                    <li>Significantly reduced Mean Time to Detect (MTTD)</li>
+                                                    <li>High latency runbook — check service metrics, inspect logs,
+                                                        check downstream services</li>
+                                                    <li>Pod crash runbook — inspect container logs, check resource
+                                                        limits, restart deployment</li>
+                                                    <li>Error spike runbook — check error reporting, inspect recent
+                                                        deployments, rollback if necessary</li>
+                                                    <li>SLO breach runbook — evaluate error budget, escalate if needed
+                                                    </li>
                                                 </ul>
+                                                <p><strong>Documentation:</strong> Architecture overview, service
+                                                    catalog, incident escalation path, on-call rotation guide.</p>
                                             </div>
                                         </details>
 
@@ -1214,12 +1286,18 @@
                                             <summary>📈 Impact</summary>
                                             <div class="section-content">
                                                 <ul>
-                                                    <li>100% fleet visibility across all infrastructure components</li>
-                                                    <li>Data-driven hardware planning replaced guesswork-based
-                                                        procurement</li>
-                                                    <li>Proactive scaling prevented capacity-related outages</li>
-                                                    <li>Reduced MTTD from hours to minutes through automated alerting
+                                                    <li>Faster incident detection — MTTD reduced from hours to minutes
                                                     </li>
+                                                    <li>Centralized monitoring — all services visible from a single
+                                                        platform</li>
+                                                    <li>Actionable alerts — reduced alert fatigue with meaningful
+                                                        notifications</li>
+                                                    <li>SLO-based reliability — service health became measurable and
+                                                        trackable</li>
+                                                    <li>Better debugging — distributed tracing enables quick root cause
+                                                        analysis</li>
+                                                    <li>Operational readiness — runbooks ensure consistent incident
+                                                        response</li>
                                                 </ul>
                                             </div>
                                         </details>
@@ -1228,11 +1306,19 @@
                                             <summary>🛠️ Tech Stack</summary>
                                             <div class="section-content">
                                                 <div class="stack-grid">
-                                                    <span class="stack-item">Prometheus</span>
-                                                    <span class="stack-item">Grafana</span>
-                                                    <span class="stack-item">Alertmanager</span>
-                                                    <span class="stack-item">node_exporter</span>
-                                                    <span class="stack-item">Linux</span>
+                                                    <span class="stack-item">Google Kubernetes Engine</span>
+                                                    <span class="stack-item">Cloud Monitoring</span>
+                                                    <span class="stack-item">Cloud Logging</span>
+                                                    <span class="stack-item">Managed Prometheus</span>
+                                                    <span class="stack-item">Cloud Trace</span>
+                                                    <span class="stack-item">Error Reporting</span>
+                                                    <span class="stack-item">Memorystore Redis</span>
+                                                    <span class="stack-item">SLO / SLI</span>
+                                                    <span class="stack-item">Alert Policies</span>
+                                                    <span class="stack-item">Notification Channels</span>
+                                                    <span class="stack-item">HPA</span>
+                                                    <span class="stack-item">Node Autoscaling</span>
+                                                    <span class="stack-item">Terraform</span>
                                                     <span class="stack-item">Docker</span>
                                                 </div>
                                             </div>
@@ -1241,9 +1327,22 @@
                                         <details>
                                             <summary>🖼️ Architecture Diagram</summary>
                                             <div class="section-content">
-                                                <p><a class="link" href="assets/project-observability.jpg"
-                                                        target="_blank" rel="noreferrer">View monitoring architecture
-                                                        →</a></p>
+                                                <p>
+                                                    <a class="link" href="assets/project-observability.jpg"
+                                                        target="_blank" rel="noreferrer">View architecture (JPG) →</a> ·
+                                                    <a class="link" href="assets/project-observability.png"
+                                                        target="_blank" rel="noreferrer">View architecture (PNG) →</a>
+                                                </p>
+                                                <p style="margin-top:0.7rem"><strong>Architecture Overview</strong></p>
+                                                <p>This platform demonstrates a centralized observability architecture
+                                                    for production microservices on Google Cloud. Five GKE services emit
+                                                    metrics, logs, and traces to a three-pillar observability pipeline —
+                                                    Managed Service for Prometheus for metrics, Cloud Logging for
+                                                    centralized log management, and Cloud Trace for distributed tracing.
+                                                    Cloud Monitoring provides unified dashboards, SLO/SLI tracking with
+                                                    error budget monitoring, and actionable alert policies. Alerts flow
+                                                    through notification channels to Slack and email. Operational
+                                                    runbooks ensure consistent incident response across the team.</p>
                                             </div>
                                         </details>
                                     </div>
