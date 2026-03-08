@@ -1373,6 +1373,10 @@ details[open] summary {
     background-image: url('assets/aws-saa.svg');
 }
 
+.cert-badge.gcp {
+    background-image: url('https://cdn.simpleicons.org/googlecloud/4285F4');
+}
+
 .cert-badge.terraform {
     background-image: url('https://cdn.simpleicons.org/terraform/7B42BC');
 }
