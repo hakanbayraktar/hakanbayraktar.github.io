@@ -903,10 +903,11 @@
                                 </div>
                             </article>
 
-                            <!-- Training 4: DevOps Bootcamp -->
+                            <!-- Training 4: DevOps Bootcamp Overview -->
                             <article class="training-card">
                                 <div class="training-media">
-                                    <img src="assets/devops-atolyesi.jpg" alt="DevOps Bootcamp banner" loading="lazy" />
+                                    <img src="assets/devops-bootcamp.png" alt="DevOps Engineering Bootcamp brochure"
+                                        loading="lazy" />
                                     <div class="training-badge">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                             stroke="currentColor" stroke-width="2">
@@ -916,60 +917,272 @@
                                     </div>
                                 </div>
                                 <div class="training-body">
-                                    <p class="eyebrow">Bootcamp · 12 Weeks · Middle Level</p>
+                                    <p class="eyebrow">Bootcamp · 12 Weeks · Middle Level · Zoom</p>
                                     <h3>DevOps Engineering Bootcamp</h3>
-                                    <p class="muted">An intensive 3-month hands-on bootcamp designed for mid-level
-                                        engineers looking to master modern DevOps practices. Covers the full lifecycle
-                                        from Linux fundamentals and containerization to Kubernetes orchestration, CI/CD
-                                        pipelines, GitOps workflows, Infrastructure as Code, centralized monitoring, and
-                                        log management — all through production-grade capstone projects.</p>
-
+                                    <p class="muted">An intensive 3-month hands-on bootcamp delivered via Zoom for a
+                                        private cohort of mid-level engineers. Covers the complete DevOps lifecycle
+                                        through production-grade capstone projects — from Linux and containerization to
+                                        Kubernetes, CI/CD, GitOps, IaC, monitoring, and log management.</p>
+                                    <ul class="chip-list">
+                                        <li>Linux · Docker · Git</li>
+                                        <li>Kubernetes · Helm · ArgoCD</li>
+                                        <li>Jenkins · GitLab CI · DinD</li>
+                                        <li>Terraform · Prometheus · ELK</li>
+                                    </ul>
                                     <details>
-                                        <summary>Curriculum Overview</summary>
+                                        <summary>Curriculum</summary>
                                         <ul class="list">
-                                            <li><strong>Month 1 — Foundations:</strong> Linux administration and shell
+                                            <li><strong>Month 1 — Foundations:</strong> Linux administration, shell
                                                 scripting, Docker deep-dive (multi-stage builds, networking, volumes,
-                                                Compose), container security best practices, and Git workflows for team
-                                                collaboration.</li>
-                                            <li><strong>Month 2 — Orchestration & Delivery:</strong> Kubernetes
-                                                architecture (Pods, Deployments, Services, Ingress, RBAC, PV/PVC), Helm
-                                                chart development, CI/CD pipeline design with Jenkins and GitLab CI,
-                                                Docker-in-Docker patterns, artifact management with Nexus, and container
-                                                scanning with Trivy.</li>
+                                                Compose), container security, Git workflows.</li>
+                                            <li><strong>Month 2 — Orchestration & Delivery:</strong> Kubernetes (Pods,
+                                                Deployments, Services, Ingress, RBAC, PV/PVC), Helm charts, CI/CD with
+                                                Jenkins & GitLab CI, Docker-in-Docker, Nexus, Trivy scanning.</li>
                                             <li><strong>Month 3 — Platform Engineering:</strong> GitOps with ArgoCD,
-                                                Infrastructure as Code with Terraform, centralized monitoring
-                                                (Prometheus + Grafana + Alertmanager), log aggregation with ELK Stack
-                                                (Elasticsearch, Logstash, Kibana, Filebeat), identity management with
-                                                Keycloak, and cloud deployment on AWS and DigitalOcean.</li>
+                                                Terraform IaC, Prometheus + Grafana monitoring, ELK Stack log
+                                                aggregation, Keycloak identity, AWS & DigitalOcean deployment.</li>
                                         </ul>
                                     </details>
-
                                     <details>
-                                        <summary>Capstone Projects</summary>
+                                        <summary>Capstone Projects (5)</summary>
                                         <ul class="list">
-                                            <li><strong>On-Prem Kubernetes Platform (GitOps):</strong> Built and managed
-                                                a production-grade on-prem Kubernetes cluster with ArgoCD for
-                                                GitOps-driven deployments, Keycloak SSO for centralized identity, Nexus
-                                                artifact registry, SonarQube quality gates, and HA PostgreSQL for
-                                                platform services.</li>
-                                            <li><strong>Container-Native CI/CD with DinD:</strong> Designed and
-                                                implemented Docker-in-Docker pipelines across GitLab CI and Jenkins with
-                                                automated SemVer tagging, Nexus image publishing, and shift-left
-                                                security scanning (Trivy/Clair) to block CVEs before registry publish.
-                                            </li>
-                                            <li><strong>Centralized Log Management (ELK):</strong> Deployed end-to-end
-                                                ELK stack with Filebeat log shippers, Logstash Grok parsing with GeoIP
-                                                enrichment, Elasticsearch ILM hot-warm-cold tiers, and Kibana dashboards
-                                                for real-time error tracking — achieving ~50% faster MTTR.</li>
-                                            <li><strong>Laravel Cloud Migration (AWS):</strong> Migrated a legacy PHP
-                                                Laravel application to AWS EC2 with Auto Scaling + ALB, RDS for managed
-                                                database, and GitHub Actions CI/CD with PHPUnit, static analysis, and
-                                                security scans — cutting release lead time by ~40%.</li>
-                                            <li><strong>Kubernetes SPA Deployment (DigitalOcean):</strong> Provisioned
-                                                DOKS + DOCR with Terraform, built Angular SPA via multi-stage Docker
-                                                builds (80% image size reduction), automated GitHub Actions CI/CD with
-                                                rolling updates, and configured Nginx Ingress + Cert-Manager for
-                                                automated TLS.</li>
+                                            <li>On-Prem Kubernetes Platform (GitOps)</li>
+                                            <li>Container-Native CI/CD with DinD</li>
+                                            <li>Centralized Log Management (ELK)</li>
+                                            <li>Laravel Cloud Migration (AWS)</li>
+                                            <li>Kubernetes SPA Deployment (DigitalOcean)</li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 1: On-Prem Kubernetes Platform -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/onpremise-kubernetes.jpeg"
+                                        alt="On-Prem Kubernetes Platform architecture" loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>On-Prem Kubernetes Platform (GitOps)</h3>
+                                    <p class="muted">Designed and operated a highly available on-prem K8s platform with
+                                        GitOps, centralized identity, and secure supply chain.</p>
+                                    <ul class="chip-list">
+                                        <li>Kubernetes (on-prem)</li>
+                                        <li>ArgoCD · Keycloak</li>
+                                        <li>Nexus · SonarQube · Postgres</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Built/managed on bare-metal/VMs with CSI storage, CNI networking, and
+                                                ingress controllers.</li>
+                                            <li>ArgoCD as the GitOps controller to standardize deployments and eliminate
+                                                drift across teams.</li>
+                                            <li>Keycloak SSO securing ArgoCD, SonarQube, and Kubernetes API; centralized
+                                                IAM.</li>
+                                            <li>Supply chain: Nexus as artifact registry; SonarQube quality gates in CI
+                                                before deploy.</li>
+                                            <li>Persistent data: HA PostgreSQL clusters for platform services (Keycloak,
+                                                SonarQube metadata).</li>
+                                            <li><a class="link" href="assets/onpremise-kubernetes.jpeg" target="_blank"
+                                                    rel="noreferrer">View platform diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 2: Container-Native CI/CD with DinD -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/Docker-inDocker.jpg" alt="Docker-in-Docker CI/CD pipeline"
+                                        loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>Container-Native CI/CD with DinD</h3>
+                                    <p class="muted">Modernized pipelines with Docker-in-Docker across GitLab CI and
+                                        Jenkins; secure, isolated builds with integrated scanning.</p>
+                                    <ul class="chip-list">
+                                        <li>Docker DinD</li>
+                                        <li>GitLab CI · Jenkins</li>
+                                        <li>Nexus · Trivy</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Ephemeral DinD build jobs ensure isolated, consistent environments and
+                                                no host conflicts.</li>
+                                            <li>Standardized pipeline patterns across GitLab CI and Jenkins; same build
+                                                logic, different tooling.</li>
+                                            <li>Automated build + SemVer tagging; images pushed to Nexus as single
+                                                source of truth.</li>
+                                            <li>Shift-left security: container scans (e.g., Trivy/Clair) fail builds
+                                                with CVEs before registry publish.</li>
+                                            <li><a class="link" href="assets/Docker-inDocker.jpg" target="_blank"
+                                                    rel="noreferrer">View pipeline diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 3: ELK Stack -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/centralized-log-management.jpg"
+                                        alt="ELK Stack log management architecture" loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>Centralized Log Management and Analytics (ELK)</h3>
+                                    <p class="muted">Built an ELK-based platform with Beats + Logstash pipelines,
+                                        optimized Elasticsearch ILM, and Kibana dashboards for real-time
+                                        troubleshooting.</p>
+                                    <ul class="chip-list">
+                                        <li>Elasticsearch · Logstash · Kibana</li>
+                                        <li>Filebeat</li>
+                                        <li>ILM · Dashboards</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>Filebeat on app/DB nodes ships logs to Logstash; Grok parsing enriches
+                                                with GeoIP and user-agent.</li>
+                                            <li>Elasticsearch tuned sharding/replication; ILM hot-warm-cold tiers keep
+                                                7-day hot retention while cutting costs.</li>
+                                            <li>Kibana dashboards for error rates, latency, anomalies; teams use
+                                                Discover for self-service search without SSH.</li>
+                                            <li>Impact: ~50% faster MTTR, 100% fleet visibility, 30% less storage via
+                                                automated archiving/deletion.</li>
+                                            <li><a class="link" href="assets/centralized-log-management.jpg"
+                                                    target="_blank" rel="noreferrer">View architecture diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 4: Laravel Modernization -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/project-laravel-modernization.jpg"
+                                        alt="Laravel AWS modernization architecture" loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>Laravel Cloud Migration (AWS + CI/CD)</h3>
+                                    <p class="muted">Migrated legacy PHP Laravel to AWS EC2/RDS with highly available
+                                        architecture and automated GitHub Actions pipeline.</p>
+                                    <ul class="chip-list">
+                                        <li>EC2 · RDS · ALB</li>
+                                        <li>GitHub Actions</li>
+                                        <li>Security scans</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>AWS migration: EC2 with Auto Scaling + ALB for HA/elasticity; RDS for
+                                                managed relational DB.</li>
+                                            <li>CI/CD: GitHub Actions runs PHPUnit, static analysis, and security scans
+                                                on every PR; zero-downtime deploys on approval.</li>
+                                            <li>Impact: ~40% faster release lead time; standardized quality gates
+                                                reduced manual errors.</li>
+                                            <li>Stack: PHP (Laravel), AWS (EC2, RDS, ALB, ASG), GitHub Actions, Linux,
+                                                Docker (build envs).</li>
+                                            <li><a class="link" href="assets/project-laravel-modernization.jpg"
+                                                    target="_blank" rel="noreferrer">View architecture preview</a></li>
+                                            <li><a class="link" href="assets/project-laravel-modernization.png"
+                                                    target="_blank" rel="noreferrer">View architecture diagram</a></li>
+                                        </ul>
+                                    </details>
+                                </div>
+                            </article>
+
+                            <!-- Bootcamp Project 5: DigitalOcean Angular -->
+                            <article class="training-card">
+                                <div class="training-media">
+                                    <img src="assets/doks-deployment.jpg"
+                                        alt="DigitalOcean Kubernetes Angular deployment" loading="lazy" />
+                                    <div class="training-badge">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10"></circle>
+                                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                                            <path
+                                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                            </path>
+                                        </svg>
+                                        <span>Bootcamp Project</span>
+                                    </div>
+                                </div>
+                                <div class="training-body">
+                                    <p class="eyebrow">Capstone · DevOps Bootcamp</p>
+                                    <h3>Scalable Angular SPA on DigitalOcean Kubernetes</h3>
+                                    <p class="muted">Terraform-provisioned DOKS + DOCR with GitHub Actions CI/CD,
+                                        multi-stage builds, and secure ingress/TLS for Angular SPA delivery.</p>
+                                    <ul class="chip-list">
+                                        <li>Terraform · DOKS · DOCR</li>
+                                        <li>Angular · Docker · Nginx</li>
+                                        <li>GitHub Actions · Cert-Manager</li>
+                                    </ul>
+                                    <details>
+                                        <summary>Details</summary>
+                                        <ul class="list">
+                                            <li>IaC: Terraform builds Kubernetes cluster, registry, networking on
+                                                DigitalOcean; full env up/down with one command.</li>
+                                            <li>Images: Multi-stage Docker builds compile Angular then serve static
+                                                assets from Nginx alpine, cutting image size 80%.</li>
+                                            <li>Delivery: GitHub Actions builds/tags/pushes to DOCR and triggers rolling
+                                                updates for zero-downtime deploys.</li>
+                                            <li>Ingress: Nginx Ingress + Cert-Manager automates Let's Encrypt TLS for
+                                                HTTPS by default.</li>
+                                            <li>Impact: Reusable SPA template reduces setup from days to minutes; 99.9%
+                                                uptime via K8s self-healing and rolling updates.</li>
+                                            <li><a class="link" href="assets/doks-deployment.jpg" target="_blank"
+                                                    rel="noreferrer">View deployment diagram</a></li>
                                         </ul>
                                     </details>
                                 </div>
