@@ -839,6 +839,7 @@ nav a:hover {
 }
 
 .timeline-item {
+    display: block;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.2rem 1.3rem;
