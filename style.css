@@ -873,6 +873,51 @@ nav a:hover {
     font-size: 0.9rem;
 }
 
+.timeline-summary {
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+    color: var(--text);
+}
+
+.impact-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--text);
+}
+
+.timeline-item .list {
+    margin-bottom: 1.5rem;
+}
+
+.timeline-item .list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+}
+
+.timeline-item .list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.tech-stack-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.tech-stack-list {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
 /* Training Carousel */
 .training-carousel-wrapper {
     position: relative;
