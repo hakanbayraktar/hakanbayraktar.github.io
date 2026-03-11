@@ -893,8 +893,8 @@ nav a:hover {
 .timeline-item .list li {
     position: relative;
     padding-left: 1.2rem;
-    margin-bottom: 0.6rem;
-    line-height: 1.6;
+    margin-bottom: 0.15rem; /* Minimal spacing for compactness */
+    line-height: 1.5;
 }
 
 .timeline-item .list li::before {
